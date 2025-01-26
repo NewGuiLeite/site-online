@@ -1,0 +1,3006 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farmácia Popular - Medicamentos Controlados</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <header>
+        <div>
+            <h2>TPG Online</h2>
+        </div>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    <li>Início</li>
+                </a>
+                <a href="#sobre">
+                    <li>Sobre</li>
+                </a>
+                <a href="#cursos">
+                    <li>Downloads</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <div>
+            <h1>Farmácia Popular - Medicamentos Controlados</h1>
+            <p>Consulta de medicamentos com base na Portaria 344/98</p>
+        </div>
+    </section>
+
+    <section id="consulta-medicamentos">
+        <div class="consulta-container">
+            <h1>Consulta de Medicamentos</h1>
+            <p>Pesquise os medicamentos diretamente na tabela</p>
+            <input type="text" id="searchInput" placeholder="Pesquise por nome comercial..." onkeyup="searchTable()">
+        </div>
+        <div class="tabela-container">
+            <table id="medicamentosTable">
+                <thead>
+                    <tr>
+                        <th>Nome Comercial</th>
+                        <th>Nome Genérico</th>
+                        <th>Lista</th>
+                        <th>Receita Externa</th>
+                        <th>Quantidade</th>
+                        <th>Substâncias por Receita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>​Nome Comercial ​</td>
+                        <td>undefined</td>
+                        <td>undefined</td>
+                        <td>​Tipo de Receita </td>
+                        <td>​Ampola</td>
+                        <td>​Outros</td>
+                    </tr>
+                    <tr>
+                        <td>​Abilify</td>
+                        <td>​Aripiprazol</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Adapaleno Creme/ Gel</td>
+                        <td>​Adapaleno</td>
+                        <td>​C2</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Agenerase</td>
+                        <td>​Amprenavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS/RCE DST - AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Akineton</td>
+                        <td>​Biperideno</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Alcytam</td>
+                        <td>​Citalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Alfast</td>
+                        <td>​Alfentanila</td>
+                        <td>A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Alois</td>
+                        <td>​Memantina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Alprazolam</td>
+                        <td>​Alprazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Amplictil</td>
+                        <td>​Clorpromazina</td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Amytril</td>
+                        <td>​Amitriptilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Anafranil</td>
+                        <td>​Clomipramina</td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Anafranil SR </td>
+                        <td>​Clomipramina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Anangor</td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até100mg)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Androxon</td>
+                        <td>​Testosterona, Undecanoato</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Anental</td>
+                        <td>​Tiopental</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Anestalcon Colírio</td>
+                        <td>​Proximetacaína</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Anestésico Colírio</td>
+                        <td>​Tetracaína</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ansitec</td>
+                        <td>​Buspirona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Antietanol</td>
+                        <td>​Dissulfuram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Apraz</td>
+                        <td>​Alprazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Arava</td>
+                        <td>​Leflunomida</td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Arcoxia</td>
+                        <td>​Etoricoxibe</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Aropax</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Artane</td>
+                        <td>​Cloridrato de Triexifenidil</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Assert</td>
+                        <td>​Sertralina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Aurorix</td>
+                        <td>​Moclobemida</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Bextra</td>
+                        <td>​Parecoxibe</td>
+                        <td>C1​</td>
+                        <td>RCE - 2 VIAS​</td>
+                        <td>​-</td>
+                        <td>p/60 dias​</td>
+                    </tr>
+                    <tr>
+                        <td>​Biomag</td>
+                        <td>​Sibutramina</td>
+                        <td>​B2</td>
+                        <td>​NR B2 - AZUL + TR</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Biovir</td>
+                        <td>​Lamivudina (3TC)</td>
+                        <td>​C4</td>
+                        <td>RCE-2VIAS / RCE DST - AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Bromazepam</td>
+                        <td>​Bromazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Calmociteno</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Carbamazepina</td>
+                        <td>​Carbamazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Carbolim</td>
+                        <td>​Litio</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Carbolitium</td>
+                        <td>​Litio</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Carbolitium CR</td>
+                        <td>​Litio</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cebrilin</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cefalium</td>
+                        <td>​Diidroergotamina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Cefaliv</td>
+                        <td>​Diidroergotamina + Assoc.</td>
+                        <td>D1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Celebra</td>
+                        <td>​Celecoxibe</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ciclolato Colírio</td>
+                        <td>​Ciclopentolato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cicloplégico Colírio</td>
+                        <td>​Ciclopentolato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cinetol</td>
+                        <td>​Biperideno</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cipramil</td>
+                        <td>​Citalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Citalopram</td>
+                        <td>​Citalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Citta</td>
+                        <td>​Citalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clo</td>
+                        <td>​Clomipramina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clonazepam</td>
+                        <td>​Clonazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clopam</td>
+                        <td>​Clonazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clopixol</td>
+                        <td>​Zuclopentixol</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clopixol Acuphase </td>
+                        <td>​Zuclopentixol</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Clopixol Depot </td>
+                        <td>​Zuclopentixol</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Clopsina</td>
+                        <td>​Clorpromazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Amitriptilina</td>
+                        <td>​Amitriptilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Bupropiona</td>
+                        <td>​Bupropiona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Clomipramina</td>
+                        <td>​Clomipramina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Fluoxetina </td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Nortriptilina </td>
+                        <td>​Nortriptilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Paroxetina </td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Selegilina </td>
+                        <td>​Selegilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Sertralina</td>
+                        <td>​Sertralina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Sibutramina</td>
+                        <td>​Sibutramina</td>
+                        <td>​B2</td>
+                        <td>​NR B2 - AZUL + TR</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloridrato de Tramadol</td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até100mg)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clorpromaz</td>
+                        <td>​Clorpromazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Clortamina</td>
+                        <td>​Cetamina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Cloxazolam</td>
+                        <td>​Cloxazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Codaten</td>
+                        <td>​Codeína + Assoc.</td>
+                        <td>​A2</td>
+                        <td>​RCE-2VIAS (até [  ] de 2.5%)</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Codein</td>
+                        <td>​Codeína, fosfato</td>
+                        <td>​A2</td>
+                        <td>​RCE-2VIAS (até [  ] de 2.5%)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Codex</td>
+                        <td>​Codeína + Assoc</td>
+                        <td>​A2</td>
+                        <td>​RCE-2VIAS (até [  ] de 2.5%)</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Compaz</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Comtan</td>
+                        <td>​Entacapona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Concerta</td>
+                        <td>​Metilfenidato</td>
+                        <td>​A3</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Crixivan</td>
+                        <td>​Indinavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Cymbalta</td>
+                        <td>​Duloxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Daforin</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dalap Gel</td>
+                        <td>​Adapaleno</td>
+                        <td>​C2</td>
+                        <td>​sem retenção </td>
+                        <td>​</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Dalmadorm</td>
+                        <td>​Flurazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Deca-Durabolin</td>
+                        <td>​Nandrolona</td>
+                        <td>​C5</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Denyl</td>
+                        <td>​Citalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Depacon</td>
+                        <td>​Valproato de Sódio</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Depakene</td>
+                        <td>​Ácido Valproico </td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Depakote</td>
+                        <td>​Ácido Valproico </td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Depakote Sprinkle</td>
+                        <td>​Ácido Valproico </td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Depakote ER</td>
+                        <td>​Ácido Valproico </td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Deposteron</td>
+                        <td>​Testosterona, Cipionato</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Depress</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Deprilan</td>
+                        <td>​Selegilina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Diasec</td>
+                        <td>​Loperamida</td>
+                        <td>​C1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Diazefast</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Diazepam</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Didanosina</td>
+                        <td>​Didanosina (ddl)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dienpax</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Differin Gel </td>
+                        <td>​Adapaleno</td>
+                        <td>​C2</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Dimorf</td>
+                        <td>​Morfina</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dimorf LC</td>
+                        <td>​Morfina, sulfato</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Diprivan 1%</td>
+                        <td>​Propofol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Diprivan 2%</td>
+                        <td>​Propofol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Dolantina</td>
+                        <td>​Petidina</td>
+                        <td>​A1</td>
+                        <td>​NR A- AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Dolosal</td>
+                        <td>​Petidina</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Donaren</td>
+                        <td>​Trazodona</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dorless</td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE-2VIAS (até 100mg)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dormire</td>
+                        <td>​Midazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dormium</td>
+                        <td>​Midazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dormonid</td>
+                        <td>​Midazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Dornot</td>
+                        <td>Petidina</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Droperdal</td>
+                        <td>​Droperidol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Durateston</td>
+                        <td>​Testosterona, Ésteres</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Durogesic adesivo</td>
+                        <td>​Fentanila</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ebix</td>
+                        <td>​Memantina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Edhanol</td>
+                        <td>​Fenobarbital</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Efedrin</td>
+                        <td>​Efedrina, Sulfato</td>
+                        <td>​D1</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Efexor</td>
+                        <td>​Venlafaxina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Efexor XR </td>
+                        <td>​Venlafaxina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Elum</td>
+                        <td>​Cloxazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Enfluran</td>
+                        <td>​Enflurano</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Entarkin</td>
+                        <td>​Entacapona</td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Epelin</td>
+                        <td>​Fenitoína</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Epilenil</td>
+                        <td>​Ácido Valproico </td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Epivir</td>
+                        <td>​Lamivudina</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Equilid</td>
+                        <td>​Sulpirida</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Eranz</td>
+                        <td>​Donepezila</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Estandron P</td>
+                        <td>​Testosterona + Assoc.</td>
+                        <td>​C5</td>
+                        <td>​​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Estavudina</td>
+                        <td>​Estavudina (d4T)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Etomidato</td>
+                        <td>​Etomidato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Etoxin</td>
+                        <td>​Etossuximida</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Eutonis</td>
+                        <td>​Cloxazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Eutropin</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Exelon</td>
+                        <td>​Rivastigmina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Exelon Patch</td>
+                        <td>​Rivastigmina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fastfen</td>
+                        <td>​Sufentanila, citrato</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Fenazepam</td>
+                        <td>​Fenazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fenital</td>
+                        <td>​Fenitoína</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fenobarbital</td>
+                        <td>​Fenobarbital</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fenocris</td>
+                        <td>​Fenobarbital</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fentanest</td>
+                        <td>​Fentanila, citrato</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Fentanil</td>
+                        <td>​Fentanila, citrato</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Flufenan</td>
+                        <td>​Flufenazina, cloridrato</td>
+                        <td>​C1</td>
+                        <td>​​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Flufenan Depot</td>
+                        <td>​Flufenazina, enantato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Flumazen</td>
+                        <td>​Flumazenil</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Flumazenil</td>
+                        <td>​Flumazenil</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Flumazil</td>
+                        <td>​Flumazenil</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Fluox</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fluoxetin</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Fluxene</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Forane</td>
+                        <td>​Isoflurano</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Franol</td>
+                        <td>​Efedrina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Fresofol 1% </td>
+                        <td>​Propofol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Frisium</td>
+                        <td>​Clobazam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Frontal</td>
+                        <td>​Alprazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Frontal XR </td>
+                        <td>​Alprazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Gabapentina</td>
+                        <td>​Gabapentina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Gardenal</td>
+                        <td>​Fenobarbital</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Genotropin</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Geodon</td>
+                        <td>​Ziprazidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Haldol decanoato </td>
+                        <td>​Haloperidol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Haldol</td>
+                        <td>​Haloperidol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Halo decanoato</td>
+                        <td>​Haloperidol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Haloperidol</td>
+                        <td>​Haloperidol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Hidantal</td>
+                        <td>​Fenitoína</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Hidrato de Cloral </td>
+                        <td>​Hidrato de cloral</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Hemogenin</td>
+                        <td>​Oximetolona</td>
+                        <td>​C5</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Hormotrop</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Hypnomidate</td>
+                        <td>​Etomidato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Imipra</td>
+                        <td>​Imipramina Cloridrato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Imosec</td>
+                        <td>​Loperamida</td>
+                        <td>​C1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Imovane</td>
+                        <td>​Zopiclona</td>
+                        <td>​B1</td>
+                        <td>​RCE- 2 VIAS (até 7,5 mg)</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Invega</td>
+                        <td>​Paliperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Isoforine</td>
+                        <td>​Isoflurano</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Isotretinoina</td>
+                        <td>​Isotretinoína</td>
+                        <td>​C2</td>
+                        <td>​NR ER-branca+TCPI</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Isotrex</td>
+                        <td>​Isotretinoína</td>
+                        <td>​C2</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Isotrexol Creme</td>
+                        <td>​Isotretinoína</td>
+                        <td>​C2</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Jumexil</td>
+                        <td>​Selegilina</td>
+                        <td>C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Kaletra</td>
+                        <td>​Ritonavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ketamin S </td>
+                        <td>​Cetamina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Kiatrium</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lamictal</td>
+                        <td>​Lamotrigina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lamitor</td>
+                        <td>​Lamotrigina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lanexat</td>
+                        <td>​Flumazenil</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Leponex</td>
+                        <td>​Clozapina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Levozine</td>
+                        <td>​Levomepromazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lexapro</td>
+                        <td>​Escitalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lexfast</td>
+                        <td>​Bromazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lexotan</td>
+                        <td>​Bromazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lexotan CR </td>
+                        <td>​Bromazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Limbitrol</td>
+                        <td>​Clordiazepóxido + Assoc.</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lioram</td>
+                        <td>​Zolpidem</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS (até 10mg)</td>
+                        <td>​- </td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Longactil</td>
+                        <td>​Clorpromazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lorax</td>
+                        <td>​Lorazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lorazefast</td>
+                        <td>​Lorazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lorazepam</td>
+                        <td>​Lorazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ludiomil</td>
+                        <td>​Maprotilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Luvox</td>
+                        <td>​Fluvoxamina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Lyrica</td>
+                        <td>​Pregabalina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Mantidan</td>
+                        <td>​Amantadin</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Marax</td>
+                        <td>​Efedrina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Melleril</td>
+                        <td>​Tioridazina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Meprozin</td>
+                        <td>​Levomepromazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Midadorm</td>
+                        <td>​Midazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Midazolam</td>
+                        <td>​Midazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Migraliv</td>
+                        <td>​Diidroergotamina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Migrane</td>
+                        <td>​Ergotamina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Mirtazapina</td>
+                        <td>​Mirtazapina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Mytedom</td>
+                        <td>​Metadona</td>
+                        <td>​A1 </td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Narcan</td>
+                        <td>​Naloxona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Nebido </td>
+                        <td>​Testosterona, Undecanoato</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Neotigason</td>
+                        <td>​Acitretina</td>
+                        <td>​C2</td>
+                        <td>​NR ER-branca+TCPI</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Neozine</td>
+                        <td>​Levomepromazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Neuleptil</td>
+                        <td>​Periciazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Neural</td>
+                        <td>​Lamotrigina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Neurontin</td>
+                        <td>​Gabapentina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Niar</td>
+                        <td>​Selegilina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​ p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Nilperidol</td>
+                        <td>​Droperidol + Assoc</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Nitrapan</td>
+                        <td>​Nitrazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Nitrazepam</td>
+                        <td>​Nitrazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Noctal</td>
+                        <td>​Estazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Norditropin Nordiflexx</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Norditropin Nordilet 10</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Norditropin Simplexx</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Norvir</td>
+                        <td>​Ritonavir</td>
+                        <td>​C4</td>
+                        <td>RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Novaderm</td>
+                        <td>​Clostebol + Assoc.</td>
+                        <td>​C5</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Nubain</td>
+                        <td>​Nalbufina</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2VIAS (até 10mg)</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Olcadil</td>
+                        <td>​Cloxazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Oleptal</td>
+                        <td>​Oxcarbazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Orap</td>
+                        <td>​Pimozida</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Oxandrolona Manipulada</td>
+                        <td>​Oxandrolona</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Oxcarb</td>
+                        <td>​Oxcarbazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Oxcarbazepina</td>
+                        <td>​Oxcarbazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Oxinest Colírio</td>
+                        <td>​Oxibuprocaína</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Oxycontin</td>
+                        <td>​Oxicodona</td>
+                        <td>​A1</td>
+                        <td>​“RCE - 2 VIAS (até 40mg/dia)NR A - AMARELA”</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Pamelor</td>
+                        <td>​Nortriptilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Paratram</td>
+                        <td>​Tramadol + Paracetamol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até 100 mg)</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Parcel </td>
+                        <td>​Diidroergotamina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Parnate</td>
+                        <td>​Tranilcipromina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Paroxetina</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Paxil</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Paxtrat</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Petinan</td>
+                        <td>​Petidina</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Piportil L4</td>
+                        <td>​Pipotiazina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Plenty</td>
+                        <td>​Sibutramina</td>
+                        <td>​B2</td>
+                        <td>​NR B2 - AZUL + TR</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Pondera</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Precedex</td>
+                        <td>​Dexmedetomidina</td>
+                        <td>​C1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Primidon</td>
+                        <td>​Primidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Pristiq</td>
+                        <td>​Succinato de Desvenlafaxina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Procimax</td>
+                        <td>​Citalopram</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​ p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Profolen</td>
+                        <td>​Propofol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Prolift</td>
+                        <td>​Reboxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Propofol</td>
+                        <td>​Propofol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Propovan</td>
+                        <td>​Propofol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Prostokos</td>
+                        <td>​Misoprostol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Proviron</td>
+                        <td>​Mesterolona</td>
+                        <td>​C5</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Prozac</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Psicosedin</td>
+                        <td>​Clordiazepóxido</td>
+                        <td>​B1</td>
+                        <td>​NR B AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Psiquial</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Rapifen</td>
+                        <td>​Alfentanila</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Remeron Sol Tab</td>
+                        <td>​Mirtazapina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Reminyl</td>
+                        <td>​Galantamina</td>
+                        <td>​C1</td>
+                        <td>​​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Respidon</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Restiva</td>
+                        <td>​Buprenorfina</td>
+                        <td>C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Retin A</td>
+                        <td>​Tretinoína</td>
+                        <td>​C2</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Retrovir AZT </td>
+                        <td>​Zidovudina (AZT)</td>
+                        <td>C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Revia</td>
+                        <td>​Naltrexona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Revirax</td>
+                        <td>​Zidovudina (AZT)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Reyataz</td>
+                        <td>​Atazanavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ribavirin</td>
+                        <td>​Ribavirina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Rinisone</td>
+                        <td>​Efedrina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>Risperdal</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Risperdal Consta</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Risperidon</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Risperidona</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​​RCE - </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ritalina</td>
+                        <td>​Metilfenidato</td>
+                        <td>​A3</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ritalina LA</td>
+                        <td>​Metilfenidato</td>
+                        <td>​A3</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ritovir</td>
+                        <td>​Ritonavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Rivotril</td>
+                        <td>​Clonazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Roacutan</td>
+                        <td>​Isotretinoína</td>
+                        <td>​C2</td>
+                        <td>​NR ER-branca+TCPI</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Rohydorm</td>
+                        <td>​Flunitrazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Rohypnol</td>
+                        <td>​Flunitrazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Roxetin</td>
+                        <td>​Paroxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Rufinamida</td>
+                        <td>​Rufinamida</td>
+                        <td>​C1</td>
+                        <td>RCE - 2 VIAS​</td>
+                        <td>​-</td>
+                        <td>p/60 dias​</td>
+                    </tr>
+                    <tr>
+                        <td>​Sabril</td>
+                        <td>​Vigabatrina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Saizen</td>
+                        <td>​Somatropina</td>
+                        <td>​C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Sensitram</td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2VIAS (até100mg)</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Serenata</td>
+                        <td>​Sertralina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Seroquel</td>
+                        <td>​Quetiapina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Sevocris</td>
+                        <td>​Sevoflurano</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Sevorane</td>
+                        <td>​Sevoflurano</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Sifrol</td>
+                        <td>​Pramipexol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Socian</td>
+                        <td>​Amissulprida</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Somalium</td>
+                        <td>​Bromazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Sonebon</td>
+                        <td>​Nitrazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Stablon</td>
+                        <td>​Tianeptina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Stalevo</td>
+                        <td>​Levodopa/ Carbidopa/ Entacapona</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Stavigile</td>
+                        <td>​Modafinila</td>
+                        <td>​A3</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Stelazine</td>
+                        <td>​Trifluoperazina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Stilamin</td>
+                        <td>​Somatostatina</td>
+                        <td>C5</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Stilnox</td>
+                        <td>​Zolpidem</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS (até 10mg)</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Stocrin</td>
+                        <td>​Efavirenz</td>
+                        <td>C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Sufenta</td>
+                        <td>​Sufentanila, citrato</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Sulpan</td>
+                        <td>​Bromazepam + Assoc.</td>
+                        <td>​B1</td>
+                        <td>​​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Svir</td>
+                        <td>​Saquinavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Svudin</td>
+                        <td>​Estavudina (d4T)</td>
+                        <td>C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tacrinal</td>
+                        <td>​Tacrina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Talidomida</td>
+                        <td>​Ftalimidoglutarimida</td>
+                        <td>​C3</td>
+                        <td>​NRT branca + TE + TR</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tanohalo</td>
+                        <td>​Halotano</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tasmar</td>
+                        <td>​Tolcapona</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tegretol</td>
+                        <td>​Carbamazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tegretol CR </td>
+                        <td>​Carbamazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Thiopentax</td>
+                        <td>​Tiopental</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Tiapridal</td>
+                        <td>​Tiaprida</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Timasen SR </td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até100mg)</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tofranil </td>
+                        <td>​Imipramina Cloridrato</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tofranil Pamoato </td>
+                        <td>​Imipramina pamoato</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tolrest</td>
+                        <td>​Sertralina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tonopan </td>
+                        <td>​Diidroergotamina + Assoc.</td>
+                        <td>​D1</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Topamax</td>
+                        <td>​Topiramato</td>
+                        <td>C1</td>
+                        <td>​RCE- 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Torval CR </td>
+                        <td>​Ácido Valproico </td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tramadon</td>
+                        <td>​Tramadol </td>
+                        <td>​A2</td>
+                        <td>​RCE-2VIAS (até100mg)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tramal</td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até100mg)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tranquinal</td>
+                        <td>​Alprazolam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Trileptal</td>
+                        <td>​Oxcarbazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Trisomatol</td>
+                        <td>​Amitriptilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Trofodermin</td>
+                        <td>​Clostebol + Assoc.</td>
+                        <td>​C5</td>
+                        <td>​sem retenção </td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Tryptanol</td>
+                        <td>​Amitriptilina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Tylex</td>
+                        <td>​Codeína + Assoc</td>
+                        <td>​A2</td>
+                        <td>​RCE-2VIAS (até [  ] de 2.5%)</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ultiva</td>
+                        <td>​Remifentanila</td>
+                        <td>​A1</td>
+                        <td>​NR A - AMARELA</td>
+                        <td>​5</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Ultracet</td>
+                        <td>​Tramadol + Assoc</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até100mg)</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Uni Bromazepax </td>
+                        <td>​Bromazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Uni Carbamaz</td>
+                        <td>​Carbamazepina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Uni Clonazepax</td>
+                        <td>​Clonazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Uni Diazepax </td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Uni Fenobarb</td>
+                        <td>​Fenobarbital</td>
+                        <td>​B1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Uni Haloper </td>
+                        <td>​Haloperidol</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Urbanil</td>
+                        <td>​Clobazam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Valdoxan</td>
+                        <td>​Agomelatina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Valium</td>
+                        <td>​Diazepam</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Valpakine</td>
+                        <td>​Valproato de Sódio</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Valproato de Sódio</td>
+                        <td>​Valproato de Sódio </td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Venlift OD</td>
+                        <td>​Venlafaxina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Verotina</td>
+                        <td>​Fluoxetina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Vesanoid</td>
+                        <td>​Tretinoína</td>
+                        <td>​C2</td>
+                        <td>​NR ER-branca+TCPI</td>
+                        <td>​-</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Videx</td>
+                        <td>​Didanosina (ddl)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Videx EC</td>
+                        <td>​Didanosina (ddl)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Vimpat</td>
+                        <td>​Lacosamida</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Viracept</td>
+                        <td>​Nelfinavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Viramid</td>
+                        <td>​Ribavirina (tópico)</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Virazole</td>
+                        <td>​Ribavirina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Viread</td>
+                        <td>​Tenofovir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Vitanol A Gel/Creme</td>
+                        <td>​Tretinoína</td>
+                        <td>​C2</td>
+                        <td>​sem retenção</td>
+                        <td>​-</td>
+                        <td>​-</td>
+                    </tr>
+                    <tr>
+                        <td>​Viverdal</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Visonest Colírio</td>
+                        <td>​Proximetacaína</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Wellbutrin SR </td>
+                        <td>​Bupropiona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zamadol</td>
+                        <td>​Tramadol</td>
+                        <td>​A2</td>
+                        <td>​RCE - 2 VIAS (até100mg)</td>
+                        <td>​5</td>
+                        <td>​p/30 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zargus</td>
+                        <td>​Risperidona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zetron</td>
+                        <td>​Bupropiona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS </td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Ziagenavir</td>
+                        <td>​Abacavir</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zidovir</td>
+                        <td>​Zidovudina (AZT)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​5</td>
+                        <td>​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zidovudina</td>
+                        <td>​Zidovudina (AZT)</td>
+                        <td>​C4</td>
+                        <td>​RCE-2VIAS / RCE DST-AIDS</td>
+                        <td>​5</td>
+                        <td>​​​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zoloft</td>
+                        <td>​Sertralina</td>
+                        <td>​C1</td>
+                        <td>​RCE- 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zopiclona</td>
+                        <td>​Zopiclona</td>
+                        <td>​B1</td>
+                        <td>​NR B - AZUL</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zyban</td>
+                        <td>​Bupropiona</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zyprexa</td>
+                        <td>​Olanzapina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​5</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                    <tr>
+                        <td>​Zyprexa Zydis</td>
+                        <td>​Olanzapina</td>
+                        <td>​C1</td>
+                        <td>​RCE - 2 VIAS</td>
+                        <td>​-</td>
+                        <td>​p/60 dias</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+
+  
+
+    <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("medicamentosTable");
+            tr = table.getElementsByTagName("tr");
+    
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                if (td) {
+                    // Verifica nas duas primeiras colunas: Nome Comercial (td[0]) e Nome Genérico (td[1])
+                    var txtValueComercial = td[0].textContent || td[0].innerText;
+                    var txtValueGenerico = td[1].textContent || td[1].innerText;
+    
+                    // Se algum dos valores corresponder ao filtro, exibe a linha
+                    if (txtValueComercial.toUpperCase().indexOf(filter) > -1 || txtValueGenerico.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    
+
+<section id="cursos">
+    <div>
+        <h1>Junte-se à nossa comunidade</h1>
+        <img src="/assets/494641.png" alt="">
+    </div>
+    <form action="POST">
+        <label for="">Nome</label>
+        <input type="text" name="" id="" placeholder="Seu nome completo">
+        <label for="">Usuário</label>
+        <input type="text" name="" id="" placeholder="username">
+        <label for="">Senha</label>
+        <input type="text" name="" id="" placeholder="Digite uma senha">
+        <label for="">E-mail</label>
+        <input type="text" name="" id="" placeholder="Seu endereço de e-mail">
+        <button type="submit">Cadastrar</button>
+    </form>
+</section>
+
+<footer>
+    <p>© Todos os direitos reservados - TPG Online</p>   
+</footer>
+
+</body>
+
+</html>
