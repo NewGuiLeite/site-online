@@ -14,35 +14,37 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 80px 0 80px;
+    padding: 20px;
     background-image: linear-gradient(-90deg, #27274D, #643488);
 }
 
 header h2 {
     color: #74b9ff;
+    font-size: 1.5rem; /* Tamanho menor para celulares */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 nav ul li {
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1rem; /* Tamanho menor para celulares */
 }
 
 a {
@@ -51,7 +53,7 @@ a {
 }
 
 section {
-    padding: 40px 20px;
+    padding: 20px;
     text-align: center;
     margin: 20px auto;
     width: 90%;
@@ -61,32 +63,43 @@ section {
 }
 
 h1 {
-    font-size: 38px;
+    font-size: 2rem; /* Tamanho menor para celulares */
+    line-height: 1.2; /* Melhora a legibilidade */
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Tamanho menor para celulares */
     color: #74b9ff;
     margin-bottom: 20px;
 }
 
 #inicio {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Coluna em dispositivos móveis */
     align-items: center;
-    height: 500px;
-    padding: 30px 80px;
+    text-align: center;
+    padding: 20px;
     background-image: linear-gradient(-90deg, #27274D, #643488);
 }
 
-#inicio div {
-    width: 700px;
-    padding-right: 80px;
+#inicio .texto {
+    width: 100%; /* Ocupa toda a largura */
+    padding-right: 0; /* Remove o padding lateral */
 }
 
-#inicio div p {
-    margin-top: 20px;
-    font-size: 20px;
+#inicio h1 {
+    font-size: 2rem; /* Tamanho menor para celulares */
+}
+
+#inicio p {
+    font-size: 1rem; /* Tamanho menor para celulares */
+    margin-top: 10px;
+}
+
+#inicio img {
+    width: 100%; /* Imagem responsiva */
+    max-width: 300px; /* Limita o tamanho máximo */
+    margin-top: 20px; /* Espaçamento superior */
 }
 
 #inicio div button {
@@ -95,7 +108,7 @@ h2 {
     border-radius: 90px;
     border: none;
     margin: 20px 0;
-    font-size: 20px;
+    font-size: 1rem; /* Tamanho menor para celulares */
     font-weight: 600;
     background: #C14649;
     color: #fff;
@@ -108,20 +121,22 @@ h2 {
 
 #sobre {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column; /* Coluna em dispositivos móveis */
     align-items: center;
     text-align: center;
-    height: 350px;
+    height: auto; /* Altura automática */
+    padding: 20px;
     background: #fff;
 }
 
 #sobre div {
-    width: 300px;
+    width: 100%; /* Ocupa toda a largura */
+    margin-bottom: 20px; /* Espaçamento entre os itens */
 }
 
 #sobre div h1 {
     margin: 10px 0;
-    font-size: 30px;
+    font-size: 1.5rem; /* Tamanho menor para celulares */
     color: #2A2850;
 }
 
@@ -136,49 +151,51 @@ h2 {
 
 #cursos {
     display: flex;
+    flex-direction: column; /* Coluna em dispositivos móveis */
     align-items: center;
-    justify-content: space-around;
-    height: 650px;
+    height: auto; /* Altura automática */
+    padding: 20px;
     background-image: linear-gradient(-90deg, #27274D, #643488);
-    padding: 0 30px;
 }
 
 #cursos div {
     text-align: center;
+    margin-bottom: 20px; /* Espaçamento entre os itens */
 }
 
 #cursos div h1 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #cursos form {
-    width: 350px;
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 350px; /* Limita o tamanho máximo */
     color: #2A2850;
     background: #fff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 1rem; /* Tamanho menor para celulares */
 }
 
 #cursos form input {
-    width: 270px;
+    width: 100%; /* Ocupa toda a largura */
     margin: 10px 0;
     padding: 9px;
     background: #fff;
     border: solid 1px #2A2850;
-    font-size: 14px;
+    font-size: 1rem; /* Tamanho menor para celulares */
 }
 
 #cursos form button {
-    background: #2A2850;
-    width: 270px;
-    height: 55px;
+    width: 100%; /* Ocupa toda a largura */
+    height: 50px;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 1rem; /* Tamanho menor para celulares */
     font-weight: 600;
     margin-top: 20px;
     border-radius: 50px;
+    background: #2A2850;
     transition: background 0.3s ease;
 }
 
@@ -193,21 +210,21 @@ footer {
     height: 80px;
     background-image: linear-gradient(-90deg, #27274D, #643488);
     color: #ffffff;
-    font-size: 20px;
+    font-size: 1rem; /* Tamanho menor para celulares */
 }
 
 #sitepop {
     background-image: linear-gradient(-90deg, #27274D, #643488);
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 1300px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     border: 1px solid #ddd;
 }
 
 #sitepop h2 {
-    font-size: 2em;
+    font-size: 1.5rem; /* Tamanho menor para celulares */
     margin-bottom: 20px;
     color: #ededed;
     text-align: center;
@@ -222,7 +239,7 @@ footer {
 
 #sitepop li {
     margin-bottom: 15px;
-    font-size: 1.2em;
+    font-size: 1rem; /* Tamanho menor para celulares */
 }
 
 #sitepop strong {
@@ -243,7 +260,7 @@ footer {
 
 #sitepop p {
     margin-top: 20px;
-    font-size: 1em;
+    font-size: 1rem; /* Tamanho menor para celulares */
     color: #fff;
     line-height: 1.5;
     text-align: justify;
@@ -251,8 +268,8 @@ footer {
 
 #consulta-medicamentos {
     background-color: #f5f5f5;
-    padding: 30px;
-    margin: 30px auto;
+    padding: 20px;
+    margin: 20px auto;
     max-width: 1100px;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -264,20 +281,20 @@ footer {
 }
 
 #consulta-medicamentos h1 {
-    font-size: 24px;
+    font-size: 1.5rem; /* Tamanho menor para celulares */
     color: #333;
     margin-bottom: 10px;
 }
 
 #consulta-medicamentos p {
-    font-size: 16px;
+    font-size: 1rem; /* Tamanho menor para celulares */
     color: #555;
 }
 
 #consulta-medicamentos input[type="text"] {
-    width: 80%;
+    width: 100%; /* Ocupa toda a largura */
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem; /* Tamanho menor para celulares */
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -299,7 +316,7 @@ footer {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
-    font-size: 14px;
+    font-size: 1rem; /* Tamanho menor para celulares */
 }
 
 #medicamentosTable th {
@@ -322,8 +339,7 @@ footer {
 
 .categorias {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Coluna em dispositivos móveis */
     gap: 20px;
 }
 
@@ -331,7 +347,7 @@ footer {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 100%; /* Ocupa toda a largura */
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -360,62 +376,83 @@ h3 {
     color: #dfe6e9;
 }
 
-
-
 .autor {
-    font-family: 'Georgia', serif; /* Fonte mais elegante */
-    font-size: 1.5rem; /* Tamanho maior */
-    font-weight: bold; /* Negrito */
-    color: #74b9ff; /* Cor azul clara para destacar */
-    margin-top: 20px; /* Espaçamento superior */
-    padding: 10px 20px; /* Espaçamento interno */
-    background-color: rgba(116, 185, 255, 0.1); /* Fundo sutil */
-    border-left: 4px solid #74b9ff; /* Borda lateral */
-    display: inline-block; /* Ajusta o tamanho ao conteúdo */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem; /* Tamanho menor para celulares */
+    font-weight: bold;
+    color: #74b9ff;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(116, 185, 255, 0.1);
+    border-left: 4px solid #74b9ff;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .autor:hover {
-    background-color: rgba(116, 185, 255, 0.2); /* Fundo mais destacado ao passar o mouse */
-    transform: translateY(-2px); /* Efeito de levantar */
+    background-color: rgba(116, 185, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-@media (max-width: 1000px) {
-    #inicio img {
-        display: none;
-    }
-}
-
-@media (max-width: 800px) {
+/* Media Queries para telas maiores */
+@media (min-width: 768px) {
     header {
-        padding: 40px 40px 0 40px;
+        padding: 40px 80px 0 80px;
     }
 
-    nav ul li {
-        padding: 0 10px;
-        font-size: 18px;
+    header h2 {
+        font-size: 2rem;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
     }
 
     #inicio {
-        padding: 10px 40px;
+        flex-direction: row; /* Linha em telas maiores */
+        text-align: left;
+        padding: 30px 80px;
     }
 
-    #inicio div {
-        padding-right: 0;
+    #inicio .texto {
+        width: 700px;
+        padding-right: 80px;
+    }
+
+    #inicio h1 {
+        font-size: 2.5rem;
+    }
+
+    #inicio p {
+        font-size: 1.2rem;
     }
 
     #inicio img {
-        display: none;
+        max-width: 400px;
     }
 
-    #sobre {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 0;
+    .autor {
+        font-size: 1.5rem;
     }
 
-    #cursos div {
-        display: none;
+    section {
+        padding: 40px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .categorias {
+        flex-direction: row; /* Linha em telas maiores */
+    }
+
+    .categoria {
+        width: 300px;
+    }
+
+    footer {
+        font-size: 1.2rem;
     }
 }
