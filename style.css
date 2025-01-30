@@ -6,43 +6,68 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff
+    font-family: Arial, sans-serif;
+    background: #1e1e2e;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px 0 80px;
+    background-image: linear-gradient(-90deg, #27274D, #643488);
+}
+
+header h2 {
+    color: #74b9ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    padding: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
 }
 
 h1 {
     font-size: 38px;
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 40px 80px 0 80px;
-    background-image: linear-gradient(-90deg, #27274D, #643488);
-}
-
-header div {
-    margin: auto;
-    margin-left: 0;
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul li {
-    padding: 0 20px;
-    list-style: none;
-    font-size: 20px; 
-}
-
-a{
-    text-decoration:none;
-    color: white;
+h2 {
+    font-size: 2rem;
+    color: #74b9ff;
+    margin-bottom: 20px;
 }
 
 #inicio {
@@ -73,7 +98,8 @@ a{
     font-size: 20px;
     font-weight: 600;
     background: #C14649;
-    color: #fff
+    color: #fff;
+    transition: background 0.3s ease;
 }
 
 #inicio div button:hover {
@@ -153,10 +179,11 @@ a{
     font-weight: 600;
     margin-top: 20px;
     border-radius: 50px;
+    transition: background 0.3s ease;
 }
 
 #cursos form button:hover {
-    background: rgb(62, 59, 114); 
+    background: rgb(62, 59, 114);
 }
 
 footer {
@@ -169,29 +196,26 @@ footer {
     font-size: 20px;
 }
 
-
-
-/* Estilos para a seção sitepop */
 #sitepop {
     background-image: linear-gradient(-90deg, #27274D, #643488);
     padding: 30px;
-    border-radius: 15px; /* Bordas arredondadas */
+    border-radius: 15px;
     margin: 30px auto;
-    max-width: 1300px; /* Limita a largura */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
-    border: 1px solid #ddd; /* Bordas leves */
+    max-width: 1300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
 }
 
 #sitepop h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #ededed; /* Azul escuro */
+    color: #ededed;
     text-align: center;
-    text-transform: uppercase; /* Letras maiúsculas */
+    text-transform: uppercase;
 }
 
 #sitepop ul {
-    list-style-type: none; /* Remove marcadores */
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
@@ -202,47 +226,36 @@ footer {
 }
 
 #sitepop strong {
-    color: #fff; /* Texto em cinza escuro */
+    color: #fff;
 }
 
 #sitepop a {
-    color: #73b2f5; /* Cor azul vibrante */
+    color: #73b2f5;
     font-weight: bold;
-    text-decoration: none; /* Remove o sublinhado */
-    transition: color 0.3s ease; /* Animação de hover */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #sitepop a:hover {
-    color: #5297e1; /* Azul mais escuro ao passar o mouse */
-    text-decoration: underline; /* Adiciona sublinhado no hover */
+    color: #5297e1;
+    text-decoration: underline;
 }
 
 #sitepop p {
     margin-top: 20px;
     font-size: 1em;
-    color: #fff; /* Texto em cinza médio */
+    color: #fff;
     line-height: 1.5;
-    text-align: justify; /* Justifica o texto */
+    text-align: justify;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 #consulta-medicamentos {
-    background-color: #f5f5f5; /* Fundo claro */
+    background-color: #f5f5f5;
     padding: 30px;
     margin: 30px auto;
-    max-width: 1100px; /* Largura máxima */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    max-width: 1100px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #consulta-medicamentos .consulta-container {
@@ -272,7 +285,7 @@ footer {
 }
 
 .tabela-container {
-    overflow-x: auto; /* Habilita scroll horizontal */
+    overflow-x: auto;
 }
 
 #medicamentosTable {
@@ -307,32 +320,66 @@ footer {
     color: #555;
 }
 
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.categoria {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #81ecec;
+}
+
+.exemplos {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #dfe6e9;
+}
 
 
 
+.autor {
+    font-family: 'Georgia', serif; /* Fonte mais elegante */
+    font-size: 1.5rem; /* Tamanho maior */
+    font-weight: bold; /* Negrito */
+    color: #74b9ff; /* Cor azul clara para destacar */
+    margin-top: 20px; /* Espaçamento superior */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: rgba(116, 185, 255, 0.1); /* Fundo sutil */
+    border-left: 4px solid #74b9ff; /* Borda lateral */
+    display: inline-block; /* Ajusta o tamanho ao conteúdo */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.autor:hover {
+    background-color: rgba(116, 185, 255, 0.2); /* Fundo mais destacado ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de levantar */
+}
 
 @media (max-width: 1000px) {
     #inicio img {
@@ -344,32 +391,30 @@ footer {
     header {
         padding: 40px 40px 0 40px;
     }
-    
+
     nav ul li {
         padding: 0 10px;
-        list-style: none;
-        font-size: 18px; 
+        font-size: 18px;
     }
-    
+
     #inicio {
         padding: 10px 40px;
     }
 
     #inicio div {
-        padding-right: 0px;
+        padding-right: 0;
     }
-    
+
     #inicio img {
         display: none;
     }
-    
+
     #sobre {
-        display: flex;
         flex-direction: column;
-        height: 800px;
+        height: auto;
         padding: 40px 0;
     }
-    
+
     #cursos div {
         display: none;
     }
