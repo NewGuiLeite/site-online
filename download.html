@@ -1,98 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Downloads - TPG Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
-<body>
-    <header>
-        <div>
-            <a href="index.html">
-            <h2>TPG Online</h2>
-        </div>
-        <nav>
-            <ul>
-                <a href="index.html">
-                    <li>Início</li>
-                </a>
-                <a href="#sobre">
-                    <li>Sobre</li>
-                </a>
-                <a href="download.html">
-                    <li>Downloads</li>
-                </a>
+<body class="bg-dark text-light">
+    <!-- Header -->
+    <header class="sticky-top bg-gradient py-3">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-info fs-3 fw-bold" href="index.html">
+                <i class="bi bi-capsule-pill"></i> TPG Online
+            </a>
+            
+            <ul class="nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="#servicos">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="download.html">Downloads</a>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <main class="container py-5">
+        <!-- Seção Principal -->
+        <section class="card bg-secondary border-0 shadow-lg mb-5">
+            <div class="card-body text-center">
+                <h1 class="text-info mb-4">
+                    <i class="bi bi-download"></i> Downloads
+                </h1>
+                <p class="lead text-light mb-4">
+                    Fique à vontade para explorar e baixar o que precisar!
+                </p>
+            </div>
+        </section>
 
-    <section id="inicio">
-        <div>
-            <h1>
-                Bem-vindo à sua nova página de downloads!
-            </h1>
-            <p>
-                Fique à vontade para explorar e baixar o que precisar! 
-            </p>
-        </div>
-        <img src="/assets/downloads.png" alt="">
-    </section>
+        <!-- Seção de Downloads -->
+        <section class="row g-4">
+            <!-- WinRAR -->
+            <div class="col-md-4">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-zip fs-1 text-info mb-3"></i>
+                        <h3 class="text-info mb-3">WinRAR</h3>
+                        <p class="text-light mb-4">WinRAR 7.01 Portuguese Brazilian 64 bit</p>
+                        <a href="https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701br.exe" 
+                           class="btn btn-danger" 
+                           target="_blank">
+                            <i class="bi bi-download"></i> Baixar
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <section id="sobre">
-        <div>
-            <a href="https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-701br.exe">
-                <img src="/assets/winrar.png" alt="">
-                <h1>Winrar</h1>
-            </a>
-            <p>WinRAR 7.01 Portuguese Brazilian 64 bit</p>
-        </div>
-        <div>
-            <a href="https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.195/OpenShellSetup_4_4_195.exe">
-                <img src="/assets/openshell.png" alt="Consulta NCM">
-                <h1>OpenShell</h1>
-            </a>
-            <p>OpenShell Setup 4.4.195
-            </p>
-        </div>
-        <div>
-            <a href="https://anydesk.com/pt/downloads/thank-you?dv=win_exe">
-                <img src="/assets/anydesk.png" alt="">
-                <h1>Anydesk</h1>
-            </a>
-            <p>Anydesk v9.0.2</p>t</p>
-        </div>
+            <!-- OpenShell -->
+            <div class="col-md-4">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-windows fs-1 text-info mb-3"></i>
+                        <h3 class="text-info mb-3">OpenShell</h3>
+                        <p class="text-light mb-4">OpenShell Setup 4.4.195</p>
+                        <a href="https://github.com/Open-Shell/Open-Shell-Menu/releases/download/v4.4.195/OpenShellSetup_4_4_195.exe" 
+                           class="btn btn-danger" 
+                           target="_blank">
+                            <i class="bi bi-download"></i> Baixar
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-        
-    </section>
-    
+            <!-- AnyDesk -->
+            <div class="col-md-4">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-display fs-1 text-info mb-3"></i>
+                        <h3 class="text-info mb-3">AnyDesk</h3>
+                        <p class="text-light mb-4">AnyDesk v9.0.2</p>
+                        <a href="https://anydesk.com/pt/downloads/thank-you?dv=win_exe" 
+                           class="btn btn-danger" 
+                           target="_blank">
+                            <i class="bi bi-download"></i> Baixar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section id="cursos">
-        <div>
-            <h1>Junte-se à nossa comunidade</h1>
-            <img src="/assets/494641.png" alt="">
+    <!-- Footer -->
+    <footer class="bg-gradient py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-3">© 2024 TPG Online - Todos os direitos reservados</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="#" class="text-light text-decoration-none">Política de Privacidade</a>
+                <a href="#" class="text-light text-decoration-none">Termos de Uso</a>
+                <a href="#" class="text-light text-decoration-none">Contato</a>
+            </div>
         </div>
-        <form action="POST">
-            <label for="">Nome</label>
-            <input type="text" name="" id="" placeholder="Seu nome completo">
-            <label for="">Usuário</label>
-            <input type="text" name="" id="" placeholder="username">
-            <label for="">Senha</label>
-            <input type="text" name="" id="" placeholder="Digite uma senha">
-            <label for="">E-mail</label>
-            <input type="text" name="" id="" placeholder="Seu endereço de e-mail">
-            <button type="submit">Cadastrar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© Todos os direitos reservados - TPG Online</p>   
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

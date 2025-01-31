@@ -1,116 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TPG Online - Portal Farmacêutico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
-<body>
-    <header>
-        <div>
-            <a href="index.html">
-            <h2>TPG Online</h2>
-        </div>
-        <nav>
-            <ul>
-                <a href="index.html">
-                    <li>Início</li>
-                </a>
-                <a href="#sobre">
-                    <li>Sobre</li>
-                </a>
-                <a href="download.html">
-                    <li>Downloads</li>
-                </a>
+<body class="bg-dark text-light">
+    <!-- Header -->
+    <header class="sticky-top bg-gradient py-3">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-info fs-3 fw-bold" href="index.html">
+                <i class="bi bi-capsule-pill"></i> TPG Online
+            </a>
+            
+            <ul class="nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="#servicos">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="download.html">Downloads</a>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <main class="container py-5">
+        <!-- Seção Notícias -->
+        <section class="row g-4 mb-5">
+            <div class="col-12">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-4">
+                            <i class="bi bi-building fs-1 text-info"></i>
+                            <div>
+                                <h2 class="card-title text-info mb-3">Novos Portais - Farmácia Popular</h2>
+                                <p class="card-text text-light mb-4">
+                                    Acesso aos ambientes técnicos com documentação atualizada e suporte especializado.
+                                </p>
+                                <a href="sitesfarmaciapopular.html" class="btn btn-danger px-4">
+                                    <i class="bi bi-box-arrow-up-right"></i> Acessar Portais
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <section id="inicio">
-        <div>
-            <h1>
-                Site de HOMOLOGAÇÃO e PRODUÇÃO (novos) - Farmácia Popular
-            </h1>
-            <p>
-                Ambos os links dos sites estão disponíveis para consulta e uso conforme a necessidade da equipe técnica e demais envolvidos no processo de implementação
-            </p>
-            <a href="sitesfarmaciapopular.html">
-                <button>Saiba mais</button>
-            </a>
-        </div>
-        <img src="/assets/farmaciapoplink.svg" alt="">
-    </section>
+            <div class="col-12">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-4">
+                            <i class="bi bi-file-medical fs-1 text-info"></i>
+                            <div>
+                                <h2 class="card-title text-info mb-3">Regulação de Medicamentos</h2>
+                                <p class="card-text text-light mb-4">
+                                    Guia completo sobre controle de substâncias e atualizações regulatórias.
+                                </p>
+                                <a href="Medicamentos-Controlados-A-Regulacao-e-Tipos-de-Receitas.html" class="btn btn-danger px-4">
+                                    <i class="bi bi-journal-text"></i> Ver Diretrizes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="inicio">
-        <div>
-            <h1>
-                Medicamentos Controlados: A Regulação e Tipos de Receitas
-            </h1>
-            <p>
-                Este guia aborda a importância de entender os medicamentos controlados, suas categorias, regulamentação, e o papel crucial dos profissionais de saúde na garantia do uso seguro e responsável desses medicamentos.
-            </p>
-            
-            <a href="Medicamentos-Controlados-A-Regulacao-e-Tipos-de-Receitas.html">
-                
-                <button>Saiba mais</button>
-            </a>
-        </div>
-        <img src="/assets/carlos-farm.png" alt="">
-    </section>
+        <!-- Seção Serviços -->
+        <section id="servicos" class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-medical fs-1 text-info mb-3"></i>
+                        <h3 class="card-title text-info mb-3">Consulta Regulatória</h3>
+                        <p class="card-text text-light mb-4">
+                            Legislação atualizada sobre medicamentos controlados
+                        </p>
+                        <a href="consultaportaria.html" class="btn btn-outline-info">
+                            <i class="bi bi-search"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-4">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-clipboard-data fs-1 text-info mb-3"></i>
+                        <h3 class="card-title text-info mb-3">Classificação Fiscal</h3>
+                        <p class="card-text text-light mb-4">
+                            Consulta de códigos NCM e orientações tributárias
+                        </p>
+                        <a href="https://cosmos.bluesoft.com.br/ncms" class="btn btn-outline-info">
+                            <i class="bi bi-box-arrow-up-right"></i> Acessar
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <section id="sobre">
-        <div>
-            <a href="consultaportaria.html">
-                <img src="/assets/Ativo-2.png" alt="">
-                <h1>Consulta Portaria</h1>
-            </a>
-            <p>Medicamentos Controlados - Resumo Portaria 344/98</p>
-        </div>
-        <div>
-            <a href="https://cosmos.bluesoft.com.br/ncms">
-                <img src="/assets/Ativo-3.png" alt="Consulta NCM">
-                <h1>Consulta NCM</h1>
-            </a>
-            <p>Catálogo Online de Produtos - BlueSoftCosmos</p>
-        </div>
-        <div>
-            <a href="download.html">
-                <img src="/assets/downloads.png" alt="">
-                <h1>Downloads</h1>
-            </a>
-            <p>Fique à vontade para explorar e baixar o que precisar!</p>
-        </div>
-    </section>
-    
+            <div class="col-md-4">
+                <div class="card bg-secondary border-0 shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-download fs-1 text-info mb-3"></i>
+                        <h3 class="card-title text-info mb-3">Recursos Técnicos</h3>
+                        <p class="card-text text-light mb-4">
+                            Manuais e documentos oficiais para download
+                        </p>
+                        <a href="download.html" class="btn btn-outline-info">
+                            <i class="bi bi-download"></i> Baixar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section id="cursos">
-        <div>
-            <h1>Junte-se à nossa comunidade</h1>
-            <img src="/assets/494641.png" alt="">
+    <!-- Footer -->
+    <footer class="bg-gradient py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-3">© 2024 TPG Online - Todos os direitos reservados</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="#" class="text-light text-decoration-none">Política de Privacidade</a>
+                <a href="#" class="text-light text-decoration-none">Termos de Uso</a>
+                <a href="#" class="text-light text-decoration-none">Contato</a>
+            </div>
         </div>
-        <form action="POST">
-            <label for="">Nome</label>
-            <input type="text" name="" id="" placeholder="Seu nome completo">
-            <label for="">Usuário</label>
-            <input type="text" name="" id="" placeholder="username">
-            <label for="">Senha</label>
-            <input type="text" name="" id="" placeholder="Digite uma senha">
-            <label for="">E-mail</label>
-            <input type="text" name="" id="" placeholder="Seu endereço de e-mail">
-            <button type="submit">Cadastrar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© Todos os direitos reservados - TPG Online</p>   
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
