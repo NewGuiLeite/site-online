@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativar Office 365 - TPG Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XZ6RD9SGHR');
+    </script>
+</head>
+
+<body class="bg-dark text-light">
+    <!-- Header -->
+    <header class="sticky-top bg-gradient py-3">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-info fs-3 fw-bold" href="index.html">
+                <i class="bi bi-capsule-pill"></i> TPG Online
+            </a>
+            <ul class="nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="tutoriais.html">Utilitários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium" href="download.html">Downloads</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <!-- Seção Inicial -->
+        <section class="mb-5">
+            <div class="card bg-secondary border-0 shadow-lg">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h1 class="card-title text-info mb-4">Ative Seu Office 365 Facilmente Com Este Passo a Passo</h1>
+                            <p class="card-text text-light mb-4">
+                                Aprenda a ativar seu Office 365 sem precisar instalar programas adicionais. Siga nosso guia prático e tenha seu Office funcionando em minutos!
+                            </p>
+                            <p class="text-light fst-italic">Por Guilherme Leite</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="assets/office365/1.png" alt="Imagem representativa" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Tutorial -->
+        <section class="mb-5">
+            <div class="card bg-secondary border-0 shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-info mb-4">
+                        <i class="bi bi-tools"></i> Passo a Passo para Ativar o Office 365
+                    </h2>
+                    <p class="card-text text-light">
+                        Siga os passos abaixo para ativar seu Office 365:
+                    </p>
+
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card h-100 bg-dark text-light border-info">
+                                <div class="card-body">
+                                    <h3 class="card-title text-info">Passo 1: Abra o Prompt de Comando como Administrador</h3>
+                                    <p class="card-text">
+                                        Clique no menu Iniciar, digite <code>CMD</code>, clique com o botão direito e selecione <strong>Executar como Administrador</strong>.
+                                    </p>
+                                    <img src="assets/office365/2.png" alt="Prompt de Comando" class="img-fluid rounded mb-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 bg-dark text-light border-info">
+                                <div class="card-body">
+                                    <h3 class="card-title text-info">Passo 2: Navegue até a Pasta do Office</h3>
+                                    <p class="card-text">
+                                        Cole o código abaixo no prompt de comando, dependendo da versão do seu Office:
+                                        <br><br>
+                                        <strong>Para Office 64 Bits:</strong>
+                                        <code>cd /d %ProgramFiles%\Microsoft Office\Office16</code>
+                                        <br><br>
+                                        <strong>Para Office 32 Bits:</strong>
+                                        <code>cd /d %ProgramFiles(x86)%\Microsoft Office\Office16</code>
+                                    </p>
+                                    <img src="assets/office365/3.png" alt="Navegar até a pasta do Office" class="img-fluid rounded mb-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 bg-dark text-light border-info">
+                                <div class="card-body">
+                                    <h3 class="card-title text-info">Passo 3: Insira a Licença e Configure o Servidor KMS</h3>
+                                    <p class="card-text">
+                                        Cole o código abaixo no prompt de comando e pressione Enter:
+                                        <br><br>
+                                        <code>for /f %x in ('dir /b ..\root\Licenses16\proplusvl_kms*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"</code>
+                                    </p>
+                                    <img src="assets/office365/4.png" alt="Inserir Licença" class="img-fluid rounded mb-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 bg-dark text-light border-info">
+                                <div class="card-body">
+                                    <h3 class="card-title text-info">Passo 4: Ative o Office 365</h3>
+                                    <p class="card-text">
+                                        Cole os códigos abaixo no prompt de comando e pressione Enter após cada um:
+                                        <br><br>
+                                        <code>cscript ospp.vbs /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99</code>
+                                        <br><br>
+                                        <code>cscript ospp.vbs /unpkey:BTDRB >nul</code>
+                                        <br><br>
+                                        <code>cscript ospp.vbs /unpkey:KHGM9 >nul</code>
+                                        <br><br>
+                                        <code>cscript ospp.vbs /unpkey:CPQVG >nul</code>
+                                        <br><br>
+                                        <code>cscript ospp.vbs /sethst:e8.us.to</code>
+                                        <br><br>
+                                        <code>cscript ospp.vbs /setprt:1688</code>
+                                        <br><br>
+                                        <code>cscript ospp.vbs /act</code>
+                                    </p>
+                                   <p>Pressione Enter (Concluido a Ativação)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="card-text text-light mt-4">
+                        <strong>Observação:</strong> Este método é seguro e prático, mas pode haver variações dependendo da configuração do seu sistema. Se encontrar dificuldades, entre em contato conosco para suporte remoto.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Considerações Finais -->
+        <section class="mb-5">
+            <div class="card bg-secondary border-0 shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-info mb-4">
+                        <i class="bi bi-chat-square-text"></i> Considerações Finais
+                    </h2>
+                    <p class="card-text text-light">
+                        Seguindo esses passos, seu Office 365 deve estar ativado sem a necessidade de instalar programas de terceiros. Este método é direto e eficiente, mas caso precise de ajuda, estamos à disposição.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-3">© 2024 TPG Online - Todos os direitos reservados</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="#" class="text-light text-decoration-none">Política de Privacidade</a>
+                <a href="#" class="text-light text-decoration-none">Termos de Uso</a>
+                <a href="#" class="text-light text-decoration-none">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
