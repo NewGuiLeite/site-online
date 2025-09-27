@@ -1,204 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPG Online - Portal Farmacêutico</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/index.css">
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XZ6RD9SGHR');
-</script>
-
-
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TPG Online</title>
+  <meta name="description" content="Site simples, bonito e responsivo com consulta de CNPJ." />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Tema local -->
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="bg-dark text-light">
-    <!-- Header -->
-    <header class="sticky-top bg-gradient py-3">
-        <nav class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand text-info fs-3 fw-bold" href="index.html">
-                <i class="bi bi-capsule-pill"></i> TPG Online
-            </a>
-            
-            <ul class="nav gap-3">
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-medium" href="index.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-medium" href="tutoriais.html">Utilitários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-medium" href="download.html">Downloads</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient border-bottom border-secondary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">TPG<span class="text-primary">Online</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cnpj.html">Consultar CNPJ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="py-5 hero-bg">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <h1 class="display-5 fw-bold">Bonito, responsivo e funcional ✨</h1>
+          <p class="lead text-secondary">Base limpa com Bootstrap 5, pronta pra você crescer. Comece consultando CNPJ em segundos.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-primary btn-lg" href="cnpj.html">Ir para Consulta CNPJ</a>
+            <a class="btn btn-outline-light btn-lg" href="#features">Ver recursos</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 text-center">
+          <img src="img/hero.png" alt="Ilustração" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <!-- Features -->
+<section id="features" class="py-5">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12 col-md-3">
+        <div class="card h-100 shadow-sm bg-dark-subtle text-light border-0">
+          <div class="card-body">
+            <h5 class="card-title">Responsivo</h5>
+            <p class="card-text text-secondary">Funciona em celular, tablet e desktop.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="#" class="btn btn-outline-primary w-100 disabled">Em breve</a>
+          </div>
+        </div>
+      </div>
 
 
-    
+      <div class="col-12 col-md-3">
+        <div class="card h-100 shadow-sm bg-dark-subtle text-light border-0">
+          <div class="card-body">
+            <h5 class="card-title">Rápido</h5>
+            <p class="card-text text-secondary">HTML, CSS e JS direto, com Bootstrap.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="#" class="btn btn-outline-primary w-100 disabled">Em breve</a>
+          </div>
+        </div>
+      </div>
 
-    <main class="container py-5">
-      
 
-
-
-    </section>
-
-    <!-- Seção Serviços -->
-    <section id="servicos" class="row g-4 mb-5">
-        <div class="col-md-4">
-            <div class="card bg-secondary border-0 shadow-lg h-100">
-                <div class="card-body text-center">
-                    <i class="bi bi-file-earmark-medical fs-1 text-info mb-3"></i>
-                    <h3 class="card-title text-info mb-3">Consulta Portaria</h3>
-                    <p class="card-text text-light mb-4">
-                        Medicamentos Controlados - Resumo Portaria 344/98
-                    </p>
-                    <a href="consultaportaria.html" class="btn btn-outline-info">
-                        <i class="bi bi-search"></i> Consultar
-                    </a>
-                </div>
-            </div>
+      <div class="col-12 col-md-3">
+        <div class="card h-100 shadow-sm bg-dark-subtle text-light border-0">
+          <div class="card-body">
+            <h5 class="card-title">Seguro</h5>
+            <p class="card-text text-secondary">CSP, sem eval/inline, higienização de dados.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="#" class="btn btn-outline-primary w-100 disabled">Em breve</a>
+          </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card bg-secondary border-0 shadow-lg h-100">
-                <div class="card-body text-center">
-                    <i class="bi bi-clipboard-data fs-1 text-info mb-3"></i>
-                    <h3 class="card-title text-info mb-3">Classificação Fiscal</h3>
-                    <p class="card-text text-light mb-4">
-                        Consulta de códigos NCM e orientações tributárias
-                    </p>
-                    <a href="https://cosmos.bluesoft.com.br/ncms" class="btn btn-outline-info">
-                        <i class="bi bi-box-arrow-up-right"></i> Acessar
-                    </a>
-                </div>
-            </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="card h-100 shadow-sm bg-dark-subtle text-light border-0 d-flex flex-column justify-content-between">
+          <div class="card-body">
+            <h5 class="card-title">Conversor</h5>
+            <p class="card-text text-secondary">Ferramenta extra que estará disponível em breve.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="#" class="btn btn-outline-primary w-100 disabled">Em breve</a>
+          </div>
         </div>
-
-        <div class="col-md-4">
-            <div class="card bg-secondary border-0 shadow-lg h-100">
-                <div class="card-body text-center">
-                    <i class="bi bi-download fs-1 text-info mb-3"></i>
-                    <h3 class="card-title text-info mb-3">Recursos Técnicos</h3>
-                    <p class="card-text text-light mb-4">
-                        Manuais e documentos oficiais para download
-                    </p>
-                    <a href="download.html" class="btn btn-outline-info">
-                        <i class="bi bi-download"></i> Baixar
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-      
-      
-        <!-- Seção Notícias -->
-        <section class="row g-4 mb-5">
-            <div class="col-12">
-                <div class="card bg-secondary border-0 shadow-lg h-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center gap-4">
-                            <i class="bi bi-building fs-1 text-info"></i>
-                            <div>
-                                <h2 class="card-title text-info mb-3">Novos Portais - Farmácia Popular</h2>
-                                <p class="card-text text-light mb-4">
-                                    Acesso aos ambientes técnicos com documentação atualizada e suporte especializado.
-                                </p>
-                                <p>Publicado em 30/01/2025 22h03</p>
-                                <a href="sitesfarmaciapopular.html" class="btn btn-danger px-4">
-                                    <i class="bi bi-box-arrow-up-right"></i> Acessar Portais
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <div class="card bg-secondary border-0 shadow-lg h-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center gap-4">
-                            <i class="bi bi-file-medical fs-1 text-info"></i>
-                            <div>
-                                <h2 class="card-title text-info mb-3">Regulação de Medicamentos</h2>
-                                <p class="card-text text-light mb-4">
-                                    Guia completo sobre controle de substâncias e atualizações regulatórias.
-                                </p>
-                                <p>Publicado em 30/01/2025 22h03</p>
-                                <a href="Medicamentos-Controlados-A-Regulacao-e-Tipos-de-Receitas.html" class="btn btn-danger px-4">
-                                    <i class="bi bi-journal-text"></i> Ver Diretrizes
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <div class="card bg-secondary border-0 shadow-lg h-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center gap-4">
-                            <i class="bi bi-file-medical fs-1 text-info"></i>
-                            <div>
-                                <h2 class="card-title text-info mb-3">Lista de Medicamentos - Código de Barras PFPB</h2>
-                                <p class="card-text text-light mb-4">
-                                    Publicado em 30/01/2025 22h03
-                                </p>
-                                <a href="links-listas.-farmacia-popular-2025.html" class="btn btn-danger px-4">
-                                    <i class="bi bi-journal-text"></i> Ver Diretrizes
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <div class="card bg-secondary border-0 shadow-lg h-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center gap-4">
-                            <i class="bi bi-file-medical fs-1 text-info"></i>
-                            <div>
-                                <h2 class="card-title text-info mb-3">Acesse a Lista de Farmácias Credenciadas ao PFPB</h2>
-                                <p class="card-text text-light mb-4">
-                                    Programa Farmácia Popular do Brasil. Atualizada em 31/12/2024
-                                </p>
-                                <a href="link-farmacias-credenciadas-pfpb.html" class="btn btn-danger px-4">
-                                    <i class="bi bi-journal-text"></i> Link para Download
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-       
-    </main>
+  <!-- Footer -->
+  <footer class="py-4 border-top border-secondary bg-dark">
+    <div class="container small text-center text-secondary">
+      © <span id="year"></span> Seu Site. Todos os direitos reservados.
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="bg-gradient py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-3">© 2024 TPG Online - Todos os direitos reservados</p>
-            <div class="d-flex justify-content-center gap-4">
-                <a href="#" class="text-light text-decoration-none">Política de Privacidade</a>
-                <a href="#" class="text-light text-decoration-none">Termos de Uso</a>
-                <a href="#" class="text-light text-decoration-none">Contato</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Script local -->
+  <script src="js/index.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+.navbar.bg-gradient{
+  background: linear-gradient(180deg, #0f1524, #0b0f14);
+}
+.card, .bg-dark-subtle{ background-color: #141b2a !important; }
