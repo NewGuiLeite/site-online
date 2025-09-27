@@ -1,0 +1,58 @@
+/* ncm.css — ajustes da página de NCM */
+
+/* Prefixo "NCM" alinhado e com largura fixa */
+#ncm-form .input-group-text{
+  min-width: 72px;
+  justify-content: center;
+}
+
+/* Botão Consultar (NCM) — usa variáveis do Bootstrap */
+#ncm-form .btn-primary.btn-lg{
+  --bs-btn-bg: #2e8bff;
+  --bs-btn-border-color: #2e8bff;
+  --bs-btn-hover-bg: #1f6ed4;
+  --bs-btn-hover-border-color: #1f6ed4;
+  --bs-btn-active-bg: #1b5fb8;
+  --bs-btn-active-border-color: #1b5fb8;
+  --bs-btn-color: #fff;
+  font-weight: 600;
+  padding: .85rem 1.5rem;
+}
+
+/* Input e botão com a mesma altura */
+.input-group-lg .form-control,
+.input-group-lg .input-group-text,
+#ncm-form .btn-lg{
+  height: calc(3.25rem + 2px);
+}
+
+/* Contraste melhor nos textos auxiliares */
+.alert,
+.form-text,
+.text-muted-2{ color:#d0d6e1 !important; }
+
+/* Observação dentro do bloco Fonte */
+.alert .note{
+  color:#cbd6ff;
+  opacity:.95;
+}
+
+/* Estilo do <code> no alerta */
+.alert code{
+  color:#58a6ff;
+  background:rgba(88,166,255,.1);
+  padding:.15rem .4rem;
+  border-radius:.25rem;
+}
+
+/* Borda/fundo do alerta */
+.alert{
+  border-color:#2a3b5f !important;
+  background-color:rgba(255,255,255,.04) !important;
+}
+
+/* Label mais legível */
+.form-label{
+  color:#f0f3f9;
+  font-weight:500;
+}

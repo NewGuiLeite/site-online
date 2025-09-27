@@ -1,3 +1,8 @@
+/* ==========================================================================
+   TPG Online — THEME compartilhado
+   - Mantém as cores aprovadas (dark + azul)
+   - Estiliza navbar, hero, cards, footer e utilitários
+   ========================================================================== */
 :root{
   --brand-bg-1:#0a0f1a;
   --brand-bg-2:#0d1a2b;
@@ -7,35 +12,24 @@
   --text:#e6edf6;
   --muted:#9fb0c7;
 }
-
-/* Reset tweaks */
 html{scroll-behavior:smooth}
 body{color:var(--text); background:#0b0f14;}
-
 .container-narrow{max-width:980px;}
 
-/* Navbar */
+/* Navbar (inline em cada página) */
 .navbar.tpg{
   backdrop-filter: blur(10px);
   background: rgba(10,14,22,.78) !important;
   border-bottom: 1px solid #1f2636;
 }
-.navbar .navbar-brand{
-  font-weight:800; letter-spacing:.3px; color:var(--text);
-}
+.navbar .navbar-brand{ font-weight:800; letter-spacing:.3px; color:var(--text); }
 .navbar .navbar-brand span{ color:var(--brand-accent); margin-left:.25rem; }
-.tpg .nav-link{
-  color:#c9d7f0; padding:.55rem .9rem; border-radius:12px; transition:.2s;
-}
+.tpg .nav-link{ color:#c9d7f0; padding:.55rem .9rem; border-radius:12px; transition:.2s; }
 .tpg .nav-link:hover{ color:#fff; background:#0e1625; }
-.tpg .nav-link.active{
-  color:#fff; background:#1a2a46; border:1px solid #2a3b5f;
-}
-.tpg .nav-link.active::after{
-  content:""; display:block; height:3px; border-radius:2px; background:var(--brand-accent); margin-top:6px;
-}
+.tpg .nav-link.active{ color:#fff; background:#1a2a46; border:1px solid #2a3b5f; }
+.tpg .nav-link.active::after{ content:""; display:block; height:3px; border-radius:2px; background:var(--brand-accent); margin-top:6px; }
 
-/* Hero */
+/* Hero com gradientes */
 .hero{
   background:
     radial-gradient(800px 500px at 15% -10%, var(--brand-bg-2) 0%, transparent 70%),
@@ -43,26 +37,85 @@ body{color:var(--text); background:#0b0f14;}
 }
 .hero .lead{ color:var(--muted); }
 
-/* Cards & sections */
+/* Cards e seções */
 .card, .bg-surface{ background-color:var(--surface-2) !important; color:var(--text); }
 .card.border-0{ border:0 !important; }
 .section{ padding-block: clamp(2rem, 3vw + 1rem, 4rem); }
+.round-xl{ border-radius:1rem; }
+.shadow-soft{ box-shadow:0 10px 30px rgba(0,0,0,.25); }
 
 /* Footer */
 .site-footer{ color:#a3b3c7; background:#0b0f14; border-top:1px solid #1f2636;}
 
-/* Utilities */
+/* Utilitários */
 .text-muted-2{ color:var(--muted) !important; }
-.round-xl{ border-radius:1rem; }
-.shadow-soft{ box-shadow:0 10px 30px rgba(0,0,0,.25); }
-
-/* Better form spacing on mobile */
+.hero-illus{ max-width:min(560px, 100%); height:auto; }
 .form-label{ margin-bottom:.35rem; }
 .input-group>.form-control{ padding:.65rem .75rem; }
-
-/* Make feature cards equal height & tidy */
 .feature-card{ display:flex; flex-direction:column; height:100%; }
 .feature-card .card-body{ flex:1; }
 
-/* Make the hero image scale nicely */
-.hero-illus{ max-width:min(560px, 100%); height:auto; }
+
+/* Estilo global para todos os botões primários */
+.btn-primary {
+  background-color: #2e8bff;   /* azul mais personalizado */
+  border-color: #2e8bff;
+}
+
+.btn-primary:hover {
+  background-color: #1f6ed4;   /* tom mais escuro no hover */
+  border-color: #1f6ed4;
+}
+
+/* Aparência extra para blocos de fonte e guias */
+.alert.border {
+  border-color: #2a3b5f !important;
+}
+code {
+  background: rgba(255,255,255,.06);
+  padding: .125rem .375rem;
+  border-radius: .35rem;
+}
+
+
+
+/* Ajuste visual: input-group-lg com label alinhado e botões */
+.input-group-lg .input-group-text{ min-width: 72px; justify-content:center; }
+.query-form .btn-lg{ padding-top: .85rem; padding-bottom: .85rem; }
+/* Alinhar cartões/alertas */
+.alert.border{ border-color:#2a3b5f !important; }
+.alert code{ color:#58a6ff; background:rgba(88,166,255,.1); padding:.15rem .4rem; border-radius:.25rem; }
+
+
+
+/* ===== Melhorias páginas de consulta ===== */
+
+/* Botão Consultar: mais destacado, alinhado com o input */
+.query-form .btn-primary.btn-lg {
+  --bs-btn-bg: #2e8bff;
+  --bs-btn-border-color: #2e8bff;
+  --bs-btn-hover-bg: #1f6ed4;
+  --bs-btn-hover-border-color: #1f6ed4;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+}
+
+/* Garante que input + botão tenham mesma altura */
+.input-group-lg .form-control,
+.input-group-lg .input-group-text,
+.query-form .btn-lg {
+  height: calc(3.25rem + 2px);
+}
+
+/* Texto dentro de alertas/descrições mais visível */
+.alert,
+.form-text,
+.text-muted-2 {
+  color: #d0d6e1 !important;   /* cinza mais claro */
+}
+
+/* Labels dos formulários mais fortes */
+.form-label {
+  color: #f0f3f9;
+  font-weight: 500;
+}

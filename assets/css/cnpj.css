@@ -1,0 +1,24 @@
+/* Botão Consultar (CNPJ) — usa variáveis do Bootstrap */
+#cnpj-form .btn-primary{
+  --bs-btn-bg: #2e8bff;
+  --bs-btn-border-color: #2e8bff;
+  --bs-btn-hover-bg: #1f6ed4;
+  --bs-btn-hover-border-color: #1f6ed4;
+  --bs-btn-active-bg: #1b5fb8;
+  --bs-btn-active-border-color: #1b5fb8;
+  --bs-btn-focus-shadow-rgb: 46,139,255;
+  --bs-btn-color: #fff;
+  font-weight: 600;
+  padding: .85rem 1.5rem;
+}
+
+/* Alturas iguais entre input e botão (mantém alinhado) */
+.input-group-lg .form-control,
+.input-group-lg .input-group-text,
+#cnpj-form .btn-lg{
+  height: calc(3.25rem + 2px);
+}
+.input-group-lg .input-group-text{
+  min-width: 72px;
+  justify-content: center;
+}
