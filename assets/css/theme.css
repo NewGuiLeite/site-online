@@ -1,0 +1,68 @@
+:root{
+  --brand-bg-1:#0a0f1a;
+  --brand-bg-2:#0d1a2b;
+  --brand-accent:#2e8bff;
+  --surface:#121826;
+  --surface-2:#141b2a;
+  --text:#e6edf6;
+  --muted:#9fb0c7;
+}
+
+/* Reset tweaks */
+html{scroll-behavior:smooth}
+body{color:var(--text); background:#0b0f14;}
+
+.container-narrow{max-width:980px;}
+
+/* Navbar */
+.navbar.tpg{
+  backdrop-filter: blur(10px);
+  background: rgba(10,14,22,.78) !important;
+  border-bottom: 1px solid #1f2636;
+}
+.navbar .navbar-brand{
+  font-weight:800; letter-spacing:.3px; color:var(--text);
+}
+.navbar .navbar-brand span{ color:var(--brand-accent); margin-left:.25rem; }
+.tpg .nav-link{
+  color:#c9d7f0; padding:.55rem .9rem; border-radius:12px; transition:.2s;
+}
+.tpg .nav-link:hover{ color:#fff; background:#0e1625; }
+.tpg .nav-link.active{
+  color:#fff; background:#1a2a46; border:1px solid #2a3b5f;
+}
+.tpg .nav-link.active::after{
+  content:""; display:block; height:3px; border-radius:2px; background:var(--brand-accent); margin-top:6px;
+}
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(800px 500px at 15% -10%, var(--brand-bg-2) 0%, transparent 70%),
+    linear-gradient(180deg, var(--brand-bg-1), #0b0f14 60%);
+}
+.hero .lead{ color:var(--muted); }
+
+/* Cards & sections */
+.card, .bg-surface{ background-color:var(--surface-2) !important; color:var(--text); }
+.card.border-0{ border:0 !important; }
+.section{ padding-block: clamp(2rem, 3vw + 1rem, 4rem); }
+
+/* Footer */
+.site-footer{ color:#a3b3c7; background:#0b0f14; border-top:1px solid #1f2636;}
+
+/* Utilities */
+.text-muted-2{ color:var(--muted) !important; }
+.round-xl{ border-radius:1rem; }
+.shadow-soft{ box-shadow:0 10px 30px rgba(0,0,0,.25); }
+
+/* Better form spacing on mobile */
+.form-label{ margin-bottom:.35rem; }
+.input-group>.form-control{ padding:.65rem .75rem; }
+
+/* Make feature cards equal height & tidy */
+.feature-card{ display:flex; flex-direction:column; height:100%; }
+.feature-card .card-body{ flex:1; }
+
+/* Make the hero image scale nicely */
+.hero-illus{ max-width:min(560px, 100%); height:auto; }

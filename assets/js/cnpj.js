@@ -1,9 +1,13 @@
-// utilidades
+// Utilities
 const esc = (s) => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const onlyDigits = v => (v||'').replace(/\D/g,'');
 const formatCNPJ = v => {
   const d = onlyDigits(v).slice(0,14);
-  return d.replace(/^(\d{2})(\d)/,'$1.$2').replace(/^(\d{2})\.(\d{3})(\d)/,'$1.$2.$3').replace(/\.(\d{3})(\d)/,'.$1/$2').replace(/(\d{4})(\d)/,'$1-$2');
+  return d
+    .replace(/^(\d{2})(\d)/,'$1.$2')
+    .replace(/^(\d{2})\.(\d{3})(\d)/,'$1.$2.$3')
+    .replace(/\.(\d{3})(\d)/,'.$1/$2')
+    .replace(/(\d{4})(\d)/,'$1-$2');
 };
 const isValidCNPJ = v => {
   const c = onlyDigits(v);
@@ -14,43 +18,44 @@ const isValidCNPJ = v => {
 };
 const fdate = iso => { if(!iso) return ''; const d=new Date(iso); return isNaN(d)? String(iso) : d.toLocaleDateString('pt-BR'); };
 
-document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('cnpj-form');
+  const input = document.getElementById('cnpj');
+  const statusEl = document.getElementById('status');
+  const results = document.getElementById('results');
 
-const form = document.getElementById('cnpj-form');
-const input = document.getElementById('cnpj');
-const statusEl = document.getElementById('status');
-const results = document.getElementById('results');
+  if (!form) return;
 
-input.addEventListener('input', () => {
-  const c = input.selectionStart;
-  input.value = formatCNPJ(input.value);
-  input.selectionStart = input.selectionEnd = c;
-});
+  input.addEventListener('input', () => {
+    const c = input.selectionStart;
+    input.value = formatCNPJ(input.value);
+    input.selectionStart = input.selectionEnd = c;
+  });
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  results.classList.add('d-none');
-  results.innerHTML = '';
-  const cnpj = onlyDigits(input.value);
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    results.classList.add('d-none');
+    results.innerHTML = '';
+    const cnpj = onlyDigits(input.value);
 
-  if (!isValidCNPJ(cnpj)){
-    statusEl.innerHTML = `<div class="alert alert-warning py-2">CNPJ inválido. Verifique os dígitos.</div>`;
-    return;
-  }
+    if (!isValidCNPJ(cnpj)){
+      statusEl.innerHTML = `<div class="alert alert-warning py-2">CNPJ inválido. Verifique os dígitos.</div>`;
+      return;
+    }
 
-  statusEl.innerHTML = `<div class="alert alert-info py-2">Consultando...</div>`;
+    statusEl.innerHTML = `<div class="alert alert-info py-2">Consultando...</div>`;
 
-  try{
-    // Consulta pública (direto do navegador)
-    const r = await fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpj}`, { cache:'no-store' });
-    if (!r.ok) throw new Error('Falha na BrasilAPI');
-    const j = await r.json();
-    render(unifyFromBrasilApi(j));
-    statusEl.innerHTML = '';
-  }catch(err){
-    console.error(err);
-    statusEl.innerHTML = `<div class="alert alert-danger py-2">Não foi possível consultar agora. Tente novamente.</div>`;
-  }
+    try{
+      const r = await fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpj}`, { cache:'no-store' });
+      if (!r.ok) throw new Error('Falha na BrasilAPI');
+      const j = await r.json();
+      render(unifyFromBrasilApi(j), results);
+      statusEl.innerHTML = '';
+    }catch(err){
+      console.error(err);
+      statusEl.innerHTML = `<div class="alert alert-danger py-2">Não foi possível consultar agora. Tente novamente.</div>`;
+    }
+  });
 });
 
 function unifyFromBrasilApi(j){
@@ -69,7 +74,7 @@ function unifyFromBrasilApi(j){
   };
 }
 
-function render(d){
+function render(d, container){
   const end = d.endereco || {};
   const sec = Array.isArray(d.cnaes_secundarias)? d.cnaes_secundarias : [];
   const socios = Array.isArray(d.socios)? d.socios : [];
@@ -78,8 +83,8 @@ function render(d){
 
   cards.push(`
     <div class="col-12">
-      <div class="card shadow-sm border-0">
-        <div class="card-body bg-dark-subtle text-light">
+      <div class="card shadow-soft border-0 round-xl">
+        <div class="card-body bg-surface text-light">
           <h5 class="card-title mb-3">Dados Cadastrais</h5>
           <div class="row row-cols-1 row-cols-md-2 g-2">
             <div><strong>CNPJ:</strong> <span class="badge bg-secondary">${esc(formatCNPJ(d.cnpj||''))}</span></div>
@@ -96,22 +101,22 @@ function render(d){
 
   cards.push(`
     <div class="col-12 col-lg-6">
-      <div class="card shadow-sm border-0">
-        <div class="card-body bg-dark-subtle text-light">
+      <div class="card shadow-soft border-0 round-xl">
+        <div class="card-body bg-surface text-light">
           <h6 class="card-title">Endereço</h6>
           <p class="mb-0">${esc([end.logradouro,end.numero].filter(Boolean).join(', '))}</p>
-          <p class="text-secondary">${esc([end.complemento,end.bairro].filter(Boolean).join(' - '))}</p>
-          <p class="text-secondary">${esc([end.municipio,end.uf].filter(Boolean).join('/'))} • ${esc(end.cep||'')}</p>
+          <p class="text-muted-2">${esc([end.complemento,end.bairro].filter(Boolean).join(' - '))}</p>
+          <p class="text-muted-2">${esc([end.municipio,end.uf].filter(Boolean).join('/'))} • ${esc(end.cep||'')}</p>
         </div>
       </div>
     </div>`);
 
-  const cnaeSecHTML = sec.length ? `<ul class="mb-0">${sec.map(c=>`<li><span class="badge bg-secondary me-1">${esc(c.codigo)}</span> ${esc(c.descricao)}</li>`).join('')}</ul>` : `<p class="text-secondary mb-0">Sem CNAEs secundárias.</p>`;
+  const cnaeSecHTML = sec.length ? `<ul class="mb-0">${sec.map(c=>`<li><span class="badge bg-secondary me-1">${esc(c.codigo)}</span> ${esc(c.descricao)}</li>`).join('')}</ul>` : `<p class="text-muted-2 mb-0">Sem CNAEs secundárias.</p>`;
 
   cards.push(`
     <div class="col-12 col-lg-6">
-      <div class="card shadow-sm border-0">
-        <div class="card-body bg-dark-subtle text-light">
+      <div class="card shadow-soft border-0 round-xl">
+        <div class="card-body bg-surface text-light">
           <h6 class="card-title">Atividades Econômicas (CNAE)</h6>
           <p><strong>Principal:</strong> <span class="badge bg-secondary me-1">${esc(d.cnae_principal?.codigo||'-')}</span> ${esc(d.cnae_principal?.descricao||'-')}</p>
           ${cnaeSecHTML}
@@ -119,18 +124,18 @@ function render(d){
       </div>
     </div>`);
 
-  const sociosHTML = socios.length ? `<ul class="mb-0">${socios.map(s=>`<li>${esc(s.nome)} — <span class="text-secondary">${esc(s.qualificacao||'Sócio')}</span></li>`).join('')}</ul>` : `<p class="text-secondary mb-0">Não informado.</p>`;
+  const sociosHTML = socios.length ? `<ul class="mb-0">${socios.map(s=>`<li>${esc(s.nome)} — <span class="text-muted-2">${esc(s.qualificacao||'Sócio')}</span></li>`).join('')}</ul>` : `<p class="text-muted-2 mb-0">Não informado.</p>`;
 
   cards.push(`
     <div class="col-12">
-      <div class="card shadow-sm border-0">
-        <div class="card-body bg-dark-subtle text-light">
+      <div class="card shadow-soft border-0 round-xl">
+        <div class="card-body bg-surface text-light">
           <h6 class="card-title">Quadro Societário</h6>
           ${sociosHTML}
         </div>
       </div>
     </div>`);
 
-  results.innerHTML = cards.join('');
-  results.classList.remove('d-none');
+  container.innerHTML = cards.join('');
+  container.classList.remove('d-none');
 }
