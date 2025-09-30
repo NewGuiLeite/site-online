@@ -1,0 +1,41 @@
+/* Botão Consultar (FIPE) */
+#fipe-form .btn-primary {
+    --bs-btn-bg: #2e8bff;
+    --bs-btn-border-color: #2e8bff;
+    --bs-btn-hover-bg: #1f6ed4;
+    --bs-btn-hover-border-color: #1f6ed4;
+    --bs-btn-active-bg: #1b5fb8;
+    --bs-btn-active-border-color: #1b5fb8;
+    --bs-btn-color: #fff;
+    font-weight: 600;
+    padding: .85rem 1.5rem;
+  }
+  
+  /* Cartões de resultado */
+  .info-card .info-row {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    background: rgba(255,255,255,.03);
+    margin-bottom: .4rem;
+  }
+  .info-card .info-label {
+    width: 200px;
+    min-width: 140px;
+    color: #cbd6ff;
+    font-weight: 600;
+  }
+  .info-card .info-value {
+    flex: 1;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 576px){
+    .info-card .info-row { flex-wrap: wrap; }
+    .info-card .info-label { width: auto; min-width: 0; }
+  }
+  
