@@ -3,16 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento - Teste de QI</title>
+  <title>Resultado - Teste de QI</title>
   <link rel="stylesheet" href="assets/css/qi.css">
   <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="container">
     <h2>Seu resultado está pronto! 💡</h2>
     <p>Para liberar o certificado, realize o pagamento simbólico de <b>R$ 3,99</b>.</p>
     <button id="btnPagar" class="btn">Pagar com Mercado Pago</button>
+
+    <div id="statusMsg" style="margin-top:20px;color:#555;"></div>
   </div>
+
   <script src="assets/js/pagamento.js"></script>
+
+  <script>
+  // 🧠 Verifica se o usuário já pagou (ou se está voltando da tela de pagamento)
+  async function verificarStatusPagamento() {
+    const preferenceId = localStorage.getItem("preference_id");
+    if (!preferenceId) return;
+
+    try {
+      document.getElementById("statusMsg").innerHTML = "🔄 Verificando pagamento...";
+
+      const res = await fetch(`/.netlify/functions/verificar_pagamento?id=${preferenceId}`);
+      const data = await res.json();
+
+      console.log("🔎 Resposta da verificação:", data);
+
+      if (data.status === "approved") {
+        document.getElementById("statusMsg").innerHTML = "✅ Pagamento aprovado! Redirecionando...";
+        localStorage.removeItem("preference_id");
+
+        // Redireciona para o certificado após 2 segundos
+        setTimeout(() => {
+          window.location.href = "https://tpgonline.com.br/certificado.html";
+        }, 2000);
+      } else if (data.status === "pending" || data.status === "in_process") {
+        document.getElementById("statusMsg").innerHTML =
+          "⌛ Pagamento pendente. Aguarde a confirmação...";
+      } else {
+        document.getElementById("statusMsg").innerHTML =
+          "💬 Ainda não encontramos o pagamento. Tente novamente em alguns minutos.";
+      }
+    } catch (err) {
+      console.error("❌ Erro ao verificar pagamento:", err);
+      document.getElementById("statusMsg").innerHTML =
+        "⚠️ Erro ao verificar pagamento. Tente novamente mais tarde.";
+    }
+  }
+
+  // Executa a verificação automaticamente ao abrir a página
+  verificarStatusPagamento();
+  </script>
 </body>
 </html>

@@ -57,9 +57,12 @@ export async function handler(event, context) {
         ambiente,
         id: data.id,
         init_point: data.init_point,
-        sandbox_init_point: data.sandbox_init_point
+        sandbox_init_point: data.sandbox_init_point,
+        // novo campo para rastrear
+        preference_id: data.id
       })
     };
+    
 
   } catch (error) {
     console.error("❌ Erro na função:", error);
