@@ -1,31 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificado de QI</title>
-  <link rel="stylesheet" href="assets/css/qi.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificado - Teste de QI</title>
+  <link rel="stylesheet" href="./assets/css/certificado.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <div id="certificado" class="container card">
-    <h1>Instituto Simbólico de Avaliação Cognitiva</h1>
-    <p>Certificamos que <strong id="nome"></strong>, nascido em <strong id="nascimento"></strong>, concluiu com sucesso o Teste de QI Online.</p>
-    <p>Pontuação estimada: <strong id="pontuacao">—</strong></p>
-    <p>Emitido em: <span id="data"></span></p>
+  <div class="container">
+    <div id="certificado" class="certificado">
+      <h1>🎓 Certificado de Resultado QI</h1>
+      <p class="descricao">
+        Este certificado simbólico reconhece o desempenho do participante no teste de QI realizado através da plataforma <strong>TPG Online</strong>.
+      </p>
+
+      <div class="info">
+        <p><strong>Nome:</strong> <span id="nome"></span></p>
+        <p><strong>Data de Nascimento:</strong> <span id="dataNascimento"></span></p>
+        <p><strong>Resultado simbólico:</strong> <span id="resultadoQI"></span></p>
+        <p><strong>Data de Emissão:</strong> <span id="dataEmissao"></span></p>
+      </div>
+
+      <div class="assinatura">
+        <img src="./assets/img/selo.png" alt="Selo TPG" class="selo" />
+        <p>Equipe TPG Online</p>
+        <p class="sub">Certificado simbólico - sem valor legal</p>
+      </div>
+    </div>
+
+    <button id="btnBaixar">📄 Baixar Certificado (PDF)</button>
   </div>
-  <button class="btn" onclick="baixarPDF()">Baixar PDF</button>
 
   <script>
-    const result = JSON.parse(localStorage.getItem('qi_result') || '{}');
-    document.getElementById("nome").innerText = result.name || "Participante";
-    document.getElementById("nascimento").innerText = result.dob || "—";
-    document.getElementById("pontuacao").innerText = result.qi || "—";
-    document.getElementById("data").innerText = new Date().toLocaleDateString("pt-BR");
+    // 🧠 Simula dados vindos do resultado (pode integrar depois com backend se quiser)
+    const nome = localStorage.getItem("nome_usuario") || "Usuário Teste";
+    const nascimento = localStorage.getItem("data_nascimento") || "01/01/2000";
+    const qi = localStorage.getItem("resultado_qi") || "123";
 
-    function baixarPDF() {
-      html2pdf().from(document.getElementById('certificado')).save('certificado_QI.pdf');
-    }
+    // 🗓️ Data de emissão automática
+    const dataAtual = new Date().toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+
+    document.getElementById("nome").textContent = nome;
+    document.getElementById("dataNascimento").textContent = nascimento;
+    document.getElementById("resultadoQI").textContent = `${qi} pontos`;
+    document.getElementById("dataEmissao").textContent = dataAtual;
+
+    // 📄 Gera o PDF com html2canvas + jsPDF
+    document.getElementById("btnBaixar").addEventListener("click", async () => {
+      const { jsPDF } = window.jspdf;
+      const certificado = document.getElementById("certificado");
+
+      const canvas = await html2canvas(certificado, { scale: 2 });
+      const imgData = canvas.toDataURL("image/png");
+
+      const pdf = new jsPDF("p", "mm", "a4");
+      const largura = pdf.internal.pageSize.getWidth();
+      const altura = (canvas.height * largura) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 0, 0, largura, altura);
+      pdf.save("Certificado-QI-TPGOnline.pdf");
+    });
   </script>
 </body>
 </html>

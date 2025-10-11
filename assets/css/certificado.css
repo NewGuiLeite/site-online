@@ -1,0 +1,89 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #0a0f1a, #020308);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .certificado {
+    background: linear-gradient(145deg, #0b132b, #1c2541);
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    width: 700px;
+    max-width: 95%;
+    margin: 20px auto;
+    color: #e0f7ff;
+  }
+  
+  .certificado h1 {
+    color: #00bfff;
+    margin-bottom: 10px;
+  }
+  
+  .descricao {
+    font-size: 16px;
+    color: #a9cbe5;
+    margin-bottom: 30px;
+  }
+  
+  .info {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    width: 80%;
+  }
+  
+  .info p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .assinatura {
+    margin-top: 30px;
+  }
+  
+  .assinatura .selo {
+    width: 80px;
+    height: 80px;
+    opacity: 0.9;
+  }
+  
+  .assinatura p {
+    margin: 5px 0;
+  }
+  
+  .assinatura .sub {
+    font-size: 13px;
+    color: #7a90aa;
+    font-style: italic;
+  }
+  
+  button#btnBaixar {
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button#btnBaixar:hover {
+    background-color: #0099cc;
+    transform: scale(1.03);
+  }
+  
