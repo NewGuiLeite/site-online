@@ -34,38 +34,42 @@
   </div>
 
   <script>
-    // 🧠 Simula dados vindos do resultado (pode integrar depois com backend se quiser)
-    const nome = localStorage.getItem("nome_usuario") || "Usuário Teste";
-    const nascimento = localStorage.getItem("data_nascimento") || "01/01/2000";
-    const qi = localStorage.getItem("resultado_qi") || "123";
-
+    // 🔄 Compatibilidade com ambos os formatos de dados (antigo e novo)
+    const result = JSON.parse(localStorage.getItem('qi_result') || '{}');
+  
+    const nome = result.name || localStorage.getItem('nome_usuario') || "Participante";
+    const nascimento = result.dob || localStorage.getItem('data_nascimento') || "—";
+    const qi = result.qi || localStorage.getItem('resultado_qi') || "—";
+  
     // 🗓️ Data de emissão automática
     const dataAtual = new Date().toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric"
     });
-
+  
+    // 🧾 Preenche os dados no certificado
     document.getElementById("nome").textContent = nome;
     document.getElementById("dataNascimento").textContent = nascimento;
     document.getElementById("resultadoQI").textContent = `${qi} pontos`;
     document.getElementById("dataEmissao").textContent = dataAtual;
-
+  
     // 📄 Gera o PDF com html2canvas + jsPDF
     document.getElementById("btnBaixar").addEventListener("click", async () => {
       const { jsPDF } = window.jspdf;
       const certificado = document.getElementById("certificado");
-
+  
       const canvas = await html2canvas(certificado, { scale: 2 });
       const imgData = canvas.toDataURL("image/png");
-
+  
       const pdf = new jsPDF("p", "mm", "a4");
       const largura = pdf.internal.pageSize.getWidth();
       const altura = (canvas.height * largura) / canvas.width;
-
+  
       pdf.addImage(imgData, "PNG", 0, 0, largura, altura);
-      pdf.save("Certificado-QI-TPGOnline.pdf");
+      pdf.save(`Certificado-QI-${nome.replace(/\s+/g, "_")}.pdf`);
     });
   </script>
+  
 </body>
 </html>
