@@ -1,10 +1,8 @@
-import fetch from "node-fetch";
-
 export async function handler(event, context) {
   const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
     method: 'POST',
     headers: {
-      'Authorization': 'Bearer TEST-SEU_ACCESS_TOKEN_SANDBOX', // substitua pelo seu token depois
+      'Authorization': 'Bearer TEST-SEU_ACCESS_TOKEN_SANDBOX', // troque depois pelo seu token real
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -27,6 +25,7 @@ export async function handler(event, context) {
   });
 
   const data = await response.json();
+
   return {
     statusCode: 200,
     body: JSON.stringify(data)
