@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Iniciar Teste de QI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/qi.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <h1>Teste de QI — 30 questões</h1>
+      <p>Responda honestamente. Ao fim, pague <strong>R$ 3,99</strong> para liberar seu resultado e certificado simbólico.</p>
+
+      <label for="name">Nome</label>
+      <input id="name" type="text" placeholder="Seu nome" />
+
+      <label for="gender">Gênero</label>
+      <select id="gender">
+        <option value="male">Homem</option>
+        <option value="female">Mulher</option>
+        <option value="other">Outro / Prefiro não dizer</option>
+      </select>
+
+      <label for="age">Idade</label>
+      <input id="age" type="number" placeholder="Ex: 28" />
+
+      <label for="dob">Data de nascimento</label>
+      <input id="dob" type="date" />
+
+      <button id="startBtn" class="btn">Iniciar Teste</button>
+    </div>
+  </main>
+
+<script>
+document.getElementById('startBtn').addEventListener('click', function(){
+  const payload = {
+    name: document.getElementById('name').value || 'Participante',
+    gender: document.getElementById('gender').value,
+    age: document.getElementById('age').value || '',
+    dob: document.getElementById('dob').value || '',
+    email: (document.getElementById('name').value || 'participante') + '@example.com'
+  };
+  localStorage.setItem('qi_user', JSON.stringify(payload));
+  // create a blank result holder (ensures flow)
+  localStorage.removeItem('qi_result');
+  window.location.href = 'quiz.html';
+});
+</script>
+</body>
+</html>

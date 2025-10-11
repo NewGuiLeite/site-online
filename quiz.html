@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Perguntas - Teste de QI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/qi.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="backBtn" class="btn ghost">← Voltar</button>
+    <div class="progressWrap">
+      <div id="progressBar" class="progressBar"><div id="progressFill"></div></div>
+      <div id="progressText" class="progressText">0 / 30</div>
+    </div>
+    <div id="timer" class="timer">0:00</div>
+  </header>
+
+  <main class="container">
+    <div id="questionCard" class="card question-card">
+      <div id="imgWrap" class="imgWrap"></div>
+      <h2 id="qText">Pergunta</h2>
+      <div id="options" class="options"></div>
+    </div>
+  </main>
+
+  <script src="assets/js/qi.js"></script>
+</body>
+</html>
