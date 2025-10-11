@@ -4,7 +4,7 @@ export async function handler(event, context) {
   const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
     method: 'POST',
     headers: {
-      'Authorization': 'Bearer TEST-SEU_ACCESS_TOKEN_SANDBOX', // depois troque por PROD
+      'Authorization': 'Bearer TEST-SEU_ACCESS_TOKEN_SANDBOX', // substitua pelo seu token depois
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -18,9 +18,9 @@ export async function handler(event, context) {
         }
       ],
       back_urls: {
-        success: "https://SEUSITE.netlify.app/certificado.html",
-        failure: "https://SEUSITE.netlify.app/resultado.html",
-        pending: "https://SEUSITE.netlify.app/resultado.html"
+        success: "https://tpgonline.com.br/certificado.html",
+        failure: "https://tpgonline.com.br/resultado.html",
+        pending: "https://tpgonline.com.br/resultado.html"
       },
       auto_return: "approved"
     })

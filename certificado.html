@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificado de QI</title>
+  <link rel="stylesheet" href="assets/css/qi.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div id="certificado" class="container card">
+    <h1>Instituto Simbólico de Avaliação Cognitiva</h1>
+    <p>Certificamos que <strong id="nome"></strong>, nascido em <strong id="nascimento"></strong>, concluiu com sucesso o Teste de QI Online.</p>
+    <p>Pontuação estimada: <strong id="pontuacao">—</strong></p>
+    <p>Emitido em: <span id="data"></span></p>
+  </div>
+  <button class="btn" onclick="baixarPDF()">Baixar PDF</button>
+
+  <script>
+    const result = JSON.parse(localStorage.getItem('qi_result') || '{}');
+    document.getElementById("nome").innerText = result.name || "Participante";
+    document.getElementById("nascimento").innerText = result.dob || "—";
+    document.getElementById("pontuacao").innerText = result.qi || "—";
+    document.getElementById("data").innerText = new Date().toLocaleDateString("pt-BR");
+
+    function baixarPDF() {
+      html2pdf().from(document.getElementById('certificado')).save('certificado_QI.pdf');
+    }
+  </script>
+</body>
+</html>

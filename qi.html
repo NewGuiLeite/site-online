@@ -42,7 +42,6 @@ document.getElementById('startBtn').addEventListener('click', function(){
     email: (document.getElementById('name').value || 'participante') + '@example.com'
   };
   localStorage.setItem('qi_user', JSON.stringify(payload));
-  // create a blank result holder (ensures flow)
   localStorage.removeItem('qi_result');
   window.location.href = 'quiz.html';
 });
