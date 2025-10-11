@@ -1,4 +1,24 @@
-<script src="assets/js/pagamento.js"></script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado - Teste de QI</title>
+  <link rel="stylesheet" href="assets/css/qi.css">
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+  <div class="container" id="container">
+    <h2>Seu resultado está pronto! 💡</h2>
+    <p>Para liberar o certificado, realize o pagamento simbólico de <b>R$ 0,50</b>.</p>
+    <button id="btnPagar" class="btn">Pagar com Mercado Pago</button>
+
+    <div id="statusMsg" style="margin-top:20px;color:#555;"></div>
+  </div>
+
+  <script src="assets/js/pagamento.js"></script>
+
+  <script src="assets/js/pagamento.js"></script>
 
 <script>
 async function verificarStatusPagamento() {
@@ -48,3 +68,6 @@ async function verificarStatusPagamento() {
 // Executa automaticamente ao abrir a página
 verificarStatusPagamento();
 </script>
+
+</body>
+</html>
