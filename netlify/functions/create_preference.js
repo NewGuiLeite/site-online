@@ -1,6 +1,14 @@
 export async function handler(event, context) {
   try {
-    const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
+    // Verifica qual ambiente está ativo
+    const ambiente = process.env.MP_ACCESS_TOKEN.startsWith("APP_USR-") ? "Produção" : "Sandbox";
+    console.log(`🌎 Ambiente Mercado Pago: ${ambiente}`);
+
+    // Define a URL da API (é a mesma nos dois modos)
+    const url = 'https://api.mercadopago.com/checkout/preferences';
+
+    // Cria a preferência de pagamento
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.MP_ACCESS_TOKEN}`,
@@ -27,26 +35,40 @@ export async function handler(event, context) {
 
     const data = await response.json();
 
-    // 🔍 log detalhado para debug
+    // 🧾 Log completo de retorno
     console.log("🧾 Resposta Mercado Pago:", JSON.stringify(data, null, 2));
 
     if (!response.ok) {
+      console.error("❌ Erro da API:", data);
       return {
         statusCode: response.status,
-        body: JSON.stringify({ message: "Erro Mercado Pago", data })
+        body: JSON.stringify({
+          message: "Erro ao criar preferência de pagamento",
+          ambiente,
+          data
+        })
       };
     }
 
+    // ✅ Tudo certo: devolve a preferência pro front
     return {
       statusCode: 200,
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        ambiente,
+        id: data.id,
+        init_point: data.init_point,
+        sandbox_init_point: data.sandbox_init_point
+      })
     };
 
   } catch (error) {
     console.error("❌ Erro na função:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message })
+      body: JSON.stringify({
+        message: "Erro interno no servidor",
+        error: error.message
+      })
     };
   }
 }
