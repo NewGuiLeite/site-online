@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import fs from "fs";
 
 export async function handler(event, context) {
   try {
@@ -6,12 +7,10 @@ export async function handler(event, context) {
       return { statusCode: 405, body: "Method not allowed" };
     }
 
-    // Corpo da requisição e assinatura vinda do Mercado Pago
     const body = event.body;
     const signature = event.headers["x-signature"] || "";
-    const secret = process.env.MP_WEBHOOK_SECRET; // variável de ambiente no Netlify
+    const secret = process.env.MP_WEBHOOK_SECRET;
 
-    // ✅ Verifica se a requisição veio realmente do Mercado Pago
     if (!secret) {
       console.error("❌ MP_WEBHOOK_SECRET não configurado!");
     } else {
@@ -33,31 +32,29 @@ export async function handler(event, context) {
       const paymentId = payload.data?.id;
       console.log("💰 Pagamento recebido, ID:", paymentId);
 
-      // Consulta detalhes do pagamento
+      // Consulta detalhes do pagamento no Mercado Pago
       const resp = await fetch(`https://api.mercadopago.com/v1/payments/${paymentId}`, {
-        headers: {
-          Authorization: `Bearer ${process.env.MP_ACCESS_TOKEN}`
-        }
+        headers: { Authorization: `Bearer ${process.env.MP_ACCESS_TOKEN}` }
       });
 
       const pagamento = await resp.json();
       console.log("🔎 Status do pagamento:", pagamento.status);
 
+      // ✅ Quando o pagamento for aprovado, grava um arquivo JSON com o status
       if (pagamento.status === "approved") {
-        console.log("✅ Pagamento aprovado com sucesso!");
-        // Aqui você pode salvar ou liberar o certificado automaticamente
+        console.log("✅ Pagamento aprovado! Liberando certificado...");
+        fs.writeFileSync("/tmp/status_pagamento.json", JSON.stringify({ status: "approved", id: paymentId }));
+
+        return {
+          statusCode: 200,
+          body: JSON.stringify({ message: "Pagamento aprovado e salvo" })
+        };
       }
     }
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: "Webhook processado com sucesso" })
-    };
+    return { statusCode: 200, body: JSON.stringify({ message: "Webhook processado com sucesso" }) };
   } catch (error) {
     console.error("❌ Erro no webhook:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message })
-    };
+    return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
 }
