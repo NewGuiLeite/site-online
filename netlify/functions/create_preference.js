@@ -21,7 +21,7 @@ export async function handler(event, context) {
             description: "Liberação do resultado e certificado simbólico",
             quantity: 1,
             currency_id: "BRL",
-            unit_price: 3.99
+            unit_price: 0.50  // 50 centavos
           }
         ],
         back_urls: {
