@@ -91,8 +91,11 @@
       external_reference: 'ext_' + Date.now()
     };
     localStorage.setItem('qi_result', JSON.stringify(record));
+  
+    // Redireciona para a página de pagamento
     window.location.href = 'resultado.html';
   }
+  
 
   function generateSummary(score) {
     if (score <= 15) return 'Abaixo da média';
