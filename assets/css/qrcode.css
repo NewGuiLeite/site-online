@@ -1,0 +1,112 @@
+/* Estilo do gerador */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-option i {
+    font-size: 17px;
+  }
+  
+  .btn-option.url { background: #007bff; }
+  .btn-option.wifi { background: #ff9800; }
+  .btn-option.whatsapp { background: #25D366; }
+  .btn-option.texto { background: #9c27b0; }
+  .btn-option.email { background: #e91e63; }
+  
+  .btn-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px currentColor;
+  }
+  
+  /* Área principal */
+  .conteudo {
+    background: #1b1f29;
+    padding: 35px 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.2);
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  .inputs-area {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #b0b0b0;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #2b3242;
+    color: #fff;
+    font-size: 0.95em;
+  }
+  
+  input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px #00b4ff;
+  }
+  
+  /* Botões */
+  .btn-gerar, .btn-download {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    font-weight: 600;
+  }
+  
+  .btn-gerar:hover, .btn-download:hover {
+    background-color: #1e7e34;
+    transform: scale(1.03);
+  }
+  
+  .resultado {
+    text-align: center;
+    margin-top: 25px;
+  }
+  
+  .qrcode-box {
+    margin: 20px auto;
+    width: 220px;
+    height: 220px;
+  }
+  
+  #mensagem {
+    font-size: 0.95em;
+    color: #bbb;
+    margin-top: 10px;
+  }
+  
