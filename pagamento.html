@@ -94,7 +94,7 @@
         if (data.status === "approved") {
           document.getElementById("statusMsg").innerHTML = "✅ Pagamento aprovado! Redirecionando...";
           localStorage.removeItem("preference_id");
-          setTimeout(() => window.location.href = "https://tpgonline.com.br/certificado.html", 2000);
+          setTimeout(() => window.location.href = "https://tpgonline.com.br/index.html", 2000);
         } else if (["pending", "in_process"].includes(data.status)) {
           document.getElementById("statusMsg").innerHTML = "⌛ Pagamento pendente. Aguarde alguns segundos e atualize a página.";
         } else {

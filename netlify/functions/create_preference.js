@@ -21,13 +21,13 @@ export async function handler(event, context) {
             description: "Liberação do resultado e certificado simbólico",
             quantity: 1,
             currency_id: "BRL",
-            unit_price: 0.50  // 50 centavos
+            unit_price: 1.99  // 50 centavos
           }
         ],
         back_urls: {
-          success: "https://tpgonline.com.br/certificado.html",
-          failure: "https://tpgonline.com.br/resultado.html",
-          pending: "https://tpgonline.com.br/resultado.html"
+          success: "https://tpgonline.com.br/index.html",
+          failure: "https://tpgonline.com.br/pagamento.html",
+          pending: "https://tpgonline.com.br/pagamento.html"
         },
         auto_return: "approved"
       })
