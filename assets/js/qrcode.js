@@ -89,6 +89,14 @@ function abrirFormulario(tipo) {
   }
 }
 
+// ===== Função para remover acentos e caracteres inválidos =====
+function removerAcentos(txt) {
+  return txt
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // remove acentos
+    .replace(/[^A-Z0-9\s\-\.\&]/gi, ""); // mantém letras, números, espaço, ponto, hífen e &
+}
+
 form.addEventListener("submit", e => {
   e.preventDefault();
   qrcodeDiv.innerHTML = "";
@@ -100,8 +108,11 @@ form.addEventListener("submit", e => {
   // ========== PIX ==========
   if (fd.get("chave")) {
     const chave = fd.get("chave").trim();
-    const nome = fd.get("nome").trim().toUpperCase().substring(0, 25);
-    const cidade = (fd.get("cidade")?.trim().toUpperCase() || "BRASILIA").substring(0, 15);
+
+    // ⚡ Nome e cidade tratados
+    const nome = removerAcentos(fd.get("nome").trim().toUpperCase()).substring(0, 25);
+    const cidade = removerAcentos((fd.get("cidade")?.trim().toUpperCase() || "BRASILIA")).substring(0, 15);
+
     const valor = fd.get("valor") ? Number(fd.get("valor")).toFixed(2) : "";
     let txid = (fd.get("txid") || "").replace(/[^A-Z0-9]/gi, "").substring(0, 25);
     if (!txid) txid = "0000";
