@@ -10,177 +10,195 @@
   <link rel="stylesheet" href="assets/css/index.css">
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
 
-  gtag('config', 'G-XZ6RD9SGHR');
-</script>
+    // Configuração padrão (sem consentimento ainda)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
 
+    gtag('js', new Date());
+    gtag('config', 'G-XZ6RD9SGHR');
+  </script>
+
+  <style>
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      background: #111;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+      display: none;
+    }
+    .cookie-banner a { color: #58a6ff; }
+  </style>
 </head>
 
-<div id="cookie-banner" class="cookie-banner">
-  <p>
-    Usamos cookies para melhorar sua experiência. Alguns são essenciais, outros opcionais.
-    Veja nossa <a href="cookies.html">Política de Cookies</a>.
-  </p>
-  <div class="mt-2">
-    <button id="acceptCookies" class="btn btn-primary btn-sm">Aceitar Cookies</button>
-    <button id="rejectCookies" class="btn btn-outline-light btn-sm">Recusar Cookies</button>
-  </div>
-</div>
-
-<style>
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0; right: 0;
-  background: #111;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  z-index: 1000;
-  display: none;
-}
-.cookie-banner a { color: #58a6ff; }
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const banner = document.getElementById("cookie-banner");
-  if (!localStorage.getItem("cookiesChoice")) {
-    banner.style.display = "block";
-  }
-  document.getElementById("acceptCookies").onclick = () => {
-    localStorage.setItem("cookiesChoice", "accepted");
-    banner.style.display = "none";
-  };
-  document.getElementById("rejectCookies").onclick = () => {
-    localStorage.setItem("cookiesChoice", "rejected");
-    banner.style.display = "none";
-  };
-});
-</script>
-
-
 <body>
-  
-<!-- Navbar inline -->
-<nav class="navbar navbar-expand-lg navbar-dark tpg sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">TPG<span>Online</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
-        <li class="nav-item"><a class="nav-link " href="cnpj.html">Consultar CNPJ</a></li>
-        <li class="nav-item"><a class="nav-link "  href="cep.html">Consultar CEP</a></li>
-        <li class="nav-item"><a class="nav-link "  href="ncm.html">Consultar NCM</a></li>
-        <li class="nav-item"><a class="nav-link "  href="fipe.html">Consultar FIPE</a></li>
-        <li class="nav-item"><a class="nav-link " href="qrcode.html">Gerar QR Code</a></li>
-        <li class="nav-item"><a class="nav-link " href="pagamento.html">Pagamento</a></li>
-        <li class="nav-item"><a class="nav-link " href="https://f4e38d4c63c0.ngrok-free.app/ngl/frontend/login.html">Login</a></li>
-      </ul>
+
+  <!-- Banner de Cookies -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      Usamos cookies para melhorar sua experiência. Alguns são essenciais, outros opcionais.
+      Veja nossa <a href="cookies.html">Política de Cookies</a>.
+    </p>
+    <div class="mt-2">
+      <button id="acceptCookies" class="btn btn-primary btn-sm">Aceitar Cookies</button>
+      <button id="rejectCookies" class="btn btn-outline-light btn-sm">Recusar Cookies</button>
     </div>
   </div>
-</nav>
 
-  
-<header class="hero section">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-12 col-lg-6">
-        <h1 class="display-5 fw-bold">TPG Online</h1>
-        <p class="lead">Consultas rápidas, landing pages e muito mais.</p>
-        <div class="d-flex gap-2 flex-wrap">
-          <a class="btn btn-primary btn-lg" href="cnpj.html">Consultar CNPJ</a>
-          <a class="btn btn-outline-light btn-lg" href="cep.html">Consultar CEP</a>
-          <a class="btn btn-outline-light btn-lg" href="ncm.html">Consultar NCM</a>
-          <a class="btn btn-outline-light btn-lg" href="fipe.html">Consultar FIPE</a>
-         <!-- <a class="btn btn-outline-light btn-lg" href="qi.html">Teste QI</a>-->
-         <a class="btn btn-outline-light btn-lg" href="qrcode.html">Gerar QR Code</a>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const banner = document.getElementById("cookie-banner");
+      const choice = localStorage.getItem("cookiesChoice");
 
-                <!-- Botão WhatsApp -->
-                    <a href="https://wa.me/5518997329690?text=Ol%C3%A1%2C+tenho+interesse+em+criar+uma+landing+page" 
-                    target="_blank" 
-                    class="btn btn-success btn-lg">
-                    📲 Criar Minha Landing Page
-                    </a>
+      if (!choice) {
+        banner.style.display = "block";
+      } else if (choice === "accepted") {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      } else if (choice === "rejected") {
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
+      }
+
+      document.getElementById("acceptCookies").onclick = () => {
+        localStorage.setItem("cookiesChoice", "accepted");
+        banner.style.display = "none";
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      };
+
+      document.getElementById("rejectCookies").onclick = () => {
+        localStorage.setItem("cookiesChoice", "rejected");
+        banner.style.display = "none";
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
+      };
+    });
+  </script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark tpg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TPG<span>Online</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cnpj.html">Consultar CNPJ</a></li>
+          <li class="nav-item"><a class="nav-link" href="cep.html">Consultar CEP</a></li>
+          <li class="nav-item"><a class="nav-link" href="ncm.html">Consultar NCM</a></li>
+          <li class="nav-item"><a class="nav-link" href="fipe.html">Consultar FIPE</a></li>
+          <li class="nav-item"><a class="nav-link" href="qrcode.html">Gerar QR Code</a></li>
+          <li class="nav-item"><a class="nav-link" href="pagamento.html">Pagamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://f4e38d4c63c0.ngrok-free.app/ngl/frontend/login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <h1 class="display-5 fw-bold">TPG Online</h1>
+          <p class="lead">Consultas rápidas, landing pages e muito mais.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-primary btn-lg" href="cnpj.html">Consultar CNPJ</a>
+            <a class="btn btn-outline-light btn-lg" href="cep.html">Consultar CEP</a>
+            <a class="btn btn-outline-light btn-lg" href="ncm.html">Consultar NCM</a>
+            <a class="btn btn-outline-light btn-lg" href="fipe.html">Consultar FIPE</a>
+            <a class="btn btn-outline-light btn-lg" href="qrcode.html">Gerar QR Code</a>
+            <a href="https://wa.me/5518997329690?text=Ol%C3%A1%2C+tenho+interesse+em+criar+uma+landing+page" 
+               target="_blank" class="btn btn-success btn-lg">
+               📲 Criar Minha Landing Page
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 text-center">
+          <img src="assets/img/hero.png" class="hero-illus" alt="Ilustração">
         </div>
       </div>
-      <div class="col-12 col-lg-6 text-center">
-        <img src="assets/img/hero.png" class="hero-illus" alt="Ilustração">
-        
+    </div>
+  </header>
+
+  <!-- Seção de Ferramentas -->
+  <section id="features" class="section py-5">
+    <div class="container text-center">
+      <h2 class="text-info fw-bold mb-4">Explore o TPG Online ⚡</h2>
+      <p class="text-muted mb-5">Clique em uma das ferramentas abaixo para começar</p>
+
+      <div class="features-grid">
+        <a href="cnpj.html" class="feature-btn">
+          <i class="fa-solid fa-building"></i>
+          <h5>Consultar CNPJ</h5>
+          <p>Informações completas sobre empresas.</p>
+        </a>
+
+        <a href="cep.html" class="feature-btn">
+          <i class="fa-solid fa-location-dot"></i>
+          <h5>Consultar CEP</h5>
+          <p>Descubra endereços e localidades.</p>
+        </a>
+
+        <a href="ncm.html" class="feature-btn">
+          <i class="fa-solid fa-barcode"></i>
+          <h5>Consultar NCM</h5>
+          <p>Classificação fiscal de produtos.</p>
+        </a>
+
+        <a href="fipe.html" class="feature-btn">
+          <i class="fa-solid fa-car"></i>
+          <h5>Tabela FIPE</h5>
+          <p>Valores atualizados de veículos.</p>
+        </a>
+
+        <a href="qrcode.html" class="feature-btn">
+          <i class="fa-solid fa-qrcode"></i>
+          <h5>Gerar QR Code</h5>
+          <p>Crie QR Codes personalizados.</p>
+        </a>
+
+        <a href="pagamento.html" class="feature-btn">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+          <h5>Apoiar o Site</h5>
+          <p>Contribua com o projeto TPG Online 💙</p>
+        </a>
       </div>
-
     </div>
-    
-  </div>
-</header>
+  </section>
 
-
-
-
-
-<section id="features" class="section py-5">
-  <div class="container text-center">
-    <h2 class="text-info fw-bold mb-4">Explore o TPG Online ⚡</h2>
-    <p class="text-muted mb-5">Clique em uma das ferramentas abaixo para começar</p>
-
-    <div class="features-grid">
-      <a href="cnpj.html" class="feature-btn">
-        <i class="fa-solid fa-building"></i>
-        <h5>Consultar CNPJ</h5>
-        <p>Informações completas sobre empresas.</p>
-      </a>
-
-      <a href="cep.html" class="feature-btn">
-        <i class="fa-solid fa-location-dot"></i>
-        <h5>Consultar CEP</h5>
-        <p>Descubra endereços e localidades.</p>
-      </a>
-
-      <a href="ncm.html" class="feature-btn">
-        <i class="fa-solid fa-barcode"></i>
-        <h5>Consultar NCM</h5>
-        <p>Classificação fiscal de produtos.</p>
-      </a>
-
-      <a href="fipe.html" class="feature-btn">
-        <i class="fa-solid fa-car"></i>
-        <h5>Tabela FIPE</h5>
-        <p>Valores atualizados de veículos.</p>
-      </a>
-
-      <a href="qrcode.html" class="feature-btn">
-        <i class="fa-solid fa-qrcode"></i>
-        <h5>Gerar QR Code</h5>
-        <p>Crie QR Codes personalizados.</p>
-      </a>
-
-      <a href="pagamento.html" class="feature-btn">
-        <i class="fa-solid fa-hand-holding-dollar"></i>
-        <h5>Apoiar o Site</h5>
-        <p>Contribua com o projeto TPG Online 💙</p>
-      </a>
+  <!-- Rodapé -->
+  <footer class="site-footer py-4">
+    <div class="container text-center small">
+      © <span id="year"></span> TPG Online · 
+      <a href="privacy.html">Privacidade</a> · 
+      <a href="terms.html">Termos</a> · 
+      <a href="cookies.html">Cookies</a>
     </div>
-  </div>
-</section>
+  </footer>
 
-
-<footer class="site-footer py-4">
-  <div class="container text-center small">
-    © <span id="year"></span> TPG Online · 
-    <a href="privacy.html">Privacidade</a> · 
-    <a href="terms.html">Termos</a> · 
-    <a href="cookies.html">Cookies</a>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
