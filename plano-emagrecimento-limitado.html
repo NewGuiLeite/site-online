@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-book Emagrecimento Saudável com GLP-1</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, -system-ui, sans-serif;
+      background-color: #0f172a;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2.6rem;
+      border-radius: 999px;
+      background: linear-gradient(to right, #22c55e, #16a34a);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 14px 32px rgba(22,163,74,0.45);
+      transition: all 0.18s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(to right, #16a34a, #15803d);
+      box-shadow: 0 18px 42px rgba(21,128,61,0.6);
+    }
+    .floating-cta {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to right, #22c55e, #16a34a);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 0.85rem 1.9rem;
+      border-radius: 999px;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.55);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      z-index: 40;
+      transition: all 0.2s ease;
+    }
+    .floating-cta:hover {
+      transform: translateX(-50%) translateY(-2px);
+      background: linear-gradient(to right, #16a34a, #15803d);
+    }
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.6rem;
+      border-radius: 999px;
+      background-color: rgba(15,23,42,0.9);
+      color: #22c55e;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .card {
+      border-radius: 1.4rem;
+      border: 1px solid rgba(148,163,253,0.16);
+      background: rgba(15,23,42,0.98);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.75);
+    }
+  </style>
+</head>
+<body class="text-slate-50">
+
+  <!-- TOP BAR -->
+  <header class="w-full bg-slate-950/80 backdrop-blur border-b border-emerald-500/20 sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-[10px]">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-400 flex items-center justify-center text-[9px] font-bold">
+          GLP-1
+        </div>
+        <div class="leading-tight">
+          <p class="font-semibold tracking-[0.16em] text-emerald-400 uppercase">E-book GLP-1 Safe</p>
+          <p class="text-[9px] text-slate-400">Guia rápido para quem quer fazer direito</p>
+        </div>
+      </div>
+      <a href="#oferta"
+         class="hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/40 text-emerald-300 hover:bg-emerald-500/20 transition">
+        <span class="text-[9px] font-semibold">Quero por R$ 29,90</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-emerald-700 via-slate-900 to-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-10 md:py-14 grid md:grid-cols-2 gap-10 items-center">
+      <div class="animate__animated animate__fadeInLeft">
+        <span class="tag-pill mb-3">Emagrecimento Saudável com GLP-1</span>
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-3">
+          Vai usar GLP-1?<br/>Tenha o plano certo para não jogar seu resultado fora.
+        </h1>
+        <p class="text-[11px] text-slate-200 mb-3">
+          Um e-book direto ao ponto para quem já usa ou está avaliando usar GLP-1 com médico
+          e quer saber <strong>o que fazer na prática</strong>: alimentação, músculo, rotina, riscos e como evitar erro bobo.
+        </p>
+        <ul class="text-[10px] text-emerald-200 mb-4 space-y-1">
+          <li>✔ Não vende remédio, não indica dose. É orientação prática e segura.</li>
+          <li>✔ Focado em preservar saúde, massa magra e resultados a longo prazo.</li>
+          <li>✔ Leitura rápida: aplique no mesmo dia.</li>
+        </ul>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="https://mpago.la/2AWeDno" class="btn-primary">
+            Garantir meu acesso por R$ 29,90
+          </a>
+          <span class="text-[8px] text-slate-400 leading-relaxed">
+            Pagamento único • Acesso imediato<br/>
+            Conteúdo 100% digital • Garantia de 7 dias
+          </span>
+        </div>
+      </div>
+
+      <div class="hidden md:block animate__animated animate__fadeInRight">
+        <div class="card p-6 space-y-3">
+          <p class="text-[9px] text-emerald-400 font-semibold uppercase tracking-[0.16em]">
+            Dentro do e-book, em menos de 1 hora você:
+          </p>
+          <ul class="text-[9px] text-slate-200 space-y-1">
+            <li>✔ Entende, sem papo técnico, como o GLP-1 age no seu corpo.</li>
+            <li>✔ Vê como ajustar refeição, proteína e água para não derreter músculo.</li>
+            <li>✔ Aprende uma rotina simples para reduzir enjoo, fraqueza e vacilos.</li>
+            <li>✔ Descobre o que conversar com seu médico e o que NÃO fazer nunca.</li>
+          </ul>
+          <p class="text-[8px] text-slate-500">
+            Não é mais um textão confuso: é o resumo que você gostaria de ouvir na consulta,
+            organizado em passos claros.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRA QUEM É -->
+  <section id="para-quem" class="max-w-6xl mx-auto px-4 pt-8 pb-4">
+    <h2 class="text-xl md:text-2xl font-semibold text-emerald-400 text-center mb-2">
+      Esse e-book é para você se:
+    </h2>
+    <div class="grid md:grid-cols-3 gap-4 text-[9px] md:text-[10px] mt-4">
+      <div class="card p-4">
+        ✔ Já começou ou vai começar GLP-1 com indicação médica e não quer “ir na sorte”.
+      </div>
+      <div class="card p-4">
+        ✔ Tem medo de perder massa magra, passar mal ou recuperar o peso depois.
+      </div>
+      <div class="card p-4">
+        ✔ Quer um guia rápido, objetivo e responsável, em vez de dica solta de internet.
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="https://mpago.la/2AWeDno" class="btn-primary">
+        Me encaixo nisso. Quero o plano agora.
+      </a>
+    </div>
+  </section>
+
+  <!-- O QUE TEM DENTRO -->
+  <section id="conteudo" class="max-w-6xl mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-2 gap-6 items-stretch">
+      <div class="card p-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-2">
+          O que você recebe (sem enrolação):
+        </h3>
+        <ul class="text-[9px] md:text-[10px] text-slate-100 space-y-1.5">
+          <li>✔ Guia GLP-1 explicado simples: o que é, pra quem é, riscos e cuidados.</li>
+          <li>✔ Estrutura de alimentação para proteger músculo e manter energia.</li>
+          <li>✔ Rotina prática de sono, hidratação e movimento para potencializar o remédio.</li>
+          <li>✔ Checklist de exames e sinais de alerta para falar com o médico.</li>
+          <li>✔ Estratégias para não ter efeito sanfona após o tratamento.</li>
+        </ul>
+      </div>
+      <div class="card p-6 bg-gradient-to-br from-slate-900 to-slate-950 border-emerald-500/30">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-2">
+          O que este e-book NÃO é:
+        </h3>
+        <ul class="text-[9px] md:text-[10px] text-slate-200 space-y-1.5">
+          <li>✘ Não vende nem indica marca de medicamento.</li>
+          <li>✘ Não define dose, frequência ou duração do seu tratamento.</li>
+          <li>✘ Não substitui consulta médica ou nutricional.</li>
+          <li>✔ É o complemento que faltava pra você usar GLP-1 de forma consciente.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÔNUS RÁPIDO -->
+  <section id="bonus" class="max-w-6xl mx-auto px-4 pb-10">
+    <h2 class="text-xl md:text-2xl font-semibold text-emerald-400 text-center mb-5">
+      Comprando agora, você leva também:
+    </h2>
+    <div class="grid md:grid-cols-3 gap-4 text-[9px] md:text-[10px]">
+      <div class="card p-4">
+        <p class="font-semibold text-emerald-300 mb-1">Checklist GLP-1 Seguro</p>
+        <p>Perguntas prontas para sua próxima consulta e pontos de atenção essenciais.</p>
+      </div>
+      <div class="card p-4">
+        <p class="font-semibold text-emerald-300 mb-1">Modelo de Rotina Básica</p>
+        <p>Exemplo simples de dia ideal usando GLP-1, sem frescura, pra você adaptar.</p>
+      </div>
+      <div class="card p-4">
+        <p class="font-semibold text-emerald-300 mb-1">Mini Guia Pós-Tratamento</p>
+        <p>Passos fundamentais para não recuperar tudo quando o remédio acabar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA + FAQ CURTO -->
+  <section class="max-w-6xl mx-auto px-4 pb-12">
+    <div class="grid md:grid-cols-2 gap-6 items-start">
+      <div class="card p-6 text-center">
+        <div class="mx-auto mb-3 w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-slate-950 font-bold text-xl">
+          7
+        </div>
+        <h3 class="text-lg font-semibold text-emerald-300 mb-1">Garantia total de 7 dias</h3>
+        <p class="text-[9px] text-slate-200">
+          Se você ler o e-book e sentir que não agregou em nada, basta mandar um e-mail em até 7 dias e devolvemos
+          100% do valor. Simples. Sem burocracia.
+        </p>
+      </div>
+
+      <div class="card p-6 space-y-2 text-[9px] text-slate-200">
+        <p class="font-semibold text-emerald-300">Perguntas rápidas:</p>
+        <p><span class="text-emerald-400">•</span> <strong>É seguro comprar?</strong> Pagamento processado por plataforma segura. Você recebe no e-mail automaticamente.</p>
+        <p><span class="text-emerald-400">•</span> <strong>É só para quem já usa GLP-1?</strong> Serve também para quem está avaliando junto ao médico.</p>
+        <p><span class="text-emerald-400">•</span> <strong>Substitui acompanhamento?</strong> Não. É complemento educativo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA FINAL -->
+  <section id="oferta" class="bg-gradient-to-r from-emerald-700 via-emerald-600 to-slate-900 py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-2">
+        Antes de usar GLP-1 no escuro, invista 29,90 em informação certa.
+      </h2>
+      <p class="text-[10px] text-emerald-100 mb-6">
+        Uma decisão única que pode evitar erros caros, riscos desnecessários e frustração com o tratamento.
+      </p>
+
+      <div class="max-w-md mx-auto card p-7 bg-slate-950/95">
+        <div class="text-[9px] text-slate-500 line-through mb-1">
+          Conteúdo facilmente vendível por R$ 97,00
+        </div>
+        <div class="flex items-baseline justify-center gap-2 mb-4">
+          <span class="text-[10px] text-slate-300">Hoje:</span>
+          <span class="text-4xl font-bold text-emerald-400">R$ 29,90</span>
+          <span class="text-[9px] text-slate-400">pagamento único</span>
+        </div>
+        <ul class="text-left text-[9px] text-slate-200 space-y-1 mb-5">
+          <li>✔ E-book completo “Emagrecimento Saudável com GLP-1”.</li>
+          <li>✔ Checklist GLP-1 Seguro.</li>
+          <li>✔ Modelo de Rotina + Mini Guia Pós-Tratamento.</li>
+          <li>✔ Acesso imediato + Garantia de 7 dias.</li>
+        </ul>
+        <a href="https://mpago.la/2AWeDno" class="btn-primary w-full">
+          Sim, quero acessar agora
+        </a>
+        <p class="mt-2 text-[8px] text-slate-500">
+          Link enviado automaticamente ao e-mail após confirmação do pagamento.
+        </p>
+      </div>
+
+      <p class="mt-5 text-[9px] text-emerald-100">
+        Continuar no achismo ou aprender a usar GLP-1 com consciência é escolha sua. Enquanto esse valor estiver ativo,
+        é literalmente barato demais para ignorar.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA FLUTUANTE -->
+  <div class="floating-cta" onclick="document.getElementById('oferta').scrollIntoView({behavior:'smooth'})">
+    <span>Garantir o e-book GLP-1 por R$ 29,90 agora</span>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="py-6 bg-slate-950 text-slate-500 text-center text-[8px]">
+    <div class="max-w-4xl mx-auto px-4 space-y-1">
+      <p>E-book Emagrecimento Saudável com GLP-1 — conteúdo informativo para uso responsável.</p>
+      <p>Não prescreve, não vende e não substitui acompanhamento médico ou nutricional.</p>
+      <p>© 2025. Todos os direitos reservados. <a href="#" class="text-emerald-400 hover:text-emerald-300">Termos de Uso</a> | <a href="#" class="text-emerald-400 hover:text-emerald-300">Política de Privacidade</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
