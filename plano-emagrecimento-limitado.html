@@ -34,28 +34,39 @@
       background: linear-gradient(to right, #16a34a, #15803d);
       box-shadow: 0 18px 42px rgba(21,128,61,0.6);
     }
-    .floating-cta {
-      position: fixed;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(to right, #22c55e, #16a34a);
-      color: #fff;
-      font-size: 0.78rem;
-      padding: 0.85rem 1.9rem;
-      border-radius: 999px;
-      box-shadow: 0 18px 40px rgba(15,23,42,0.55);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      z-index: 40;
-      transition: all 0.2s ease;
-    }
-    .floating-cta:hover {
-      transform: translateX(-50%) translateY(-2px);
-      background: linear-gradient(to right, #16a34a, #15803d);
-    }
+          /* BOTÃO CORRENDO NA PAGINA */
+          .floating-cta {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: #25D366; /* verde WhatsApp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  z-index: 80;
+  transition: all 0.18s ease;
+}
+
+.floating-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  background: #1ebe5d;
+}
+
+.floating-cta svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff; /* ícone branco, sem aquele círculo verde dentro */
+}
+
+
+
+
     .tag-pill {
       display: inline-flex;
       align-items: center;
@@ -281,10 +292,18 @@
     </div>
   </section>
 
-  <!-- CTA FLUTUANTE -->
-  <div class="floating-cta" onclick="document.getElementById('oferta').scrollIntoView({behavior:'smooth'})">
-    <span>Garantir o e-book GLP-1 por R$ 29,90 agora</span>
-  </div>
+        <!-- CTA FLUTUANTE -->
+              <a class="floating-cta"
+        href="https://wa.me/5518996100443?text=Oi,%20quero%20adquirir%20o%20e-book%20Emagrecimento%20Saud%C3%A1vel%20com%20GLP-1."
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 3C9.37 3 4 8.37 4 15c0 2.1.55 4.06 1.6 5.85L4 29l8.3-1.56A12.1 12.1 0 0 0 16 27c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 2.67c5.15 0 9.33 4.18 9.33 9.33S21.15 24.33 16 24.33c-1.7 0-3.35-.47-4.8-1.35l-.34-.2-4.92.92.94-4.8-.22-.35A9.2 9.2 0 0 1 6.67 15C6.67 9.85 10.85 5.67 16 5.67zm5.02 9.65c-.27-.14-1.6-.79-1.84-.88-.24-.09-.41-.14-.59.14-.18.27-.68.79-.83.95-.15.16-.31.18-.58.04-.27-.14-1.16-.43-2.22-1.38-.82-.73-1.37-1.63-1.53-1.9-.16-.27-.02-.42.12-.56.12-.12.27-.31.41-.46.14-.15.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.59-1.42-.81-1.95-.21-.5-.42-.43-.59-.44l-.5-.01c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26 0 1.33.98 2.61 1.12 2.79.14.18 1.93 3.04 4.67 4.26 2.74 1.22 2.74.82 3.24.77.5-.05 1.6-.65 1.82-1.27.23-.63.23-1.16.16-1.27-.07-.11-.25-.18-.52-.32z"/>
+        </svg>
+      </a>
+
+
 
   <!-- RODAPÉ -->
   <footer class="py-6 bg-slate-950 text-slate-500 text-center text-[8px]">

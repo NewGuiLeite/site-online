@@ -34,6 +34,26 @@
       background: linear-gradient(to right, #16a34a, #15803d);
       box-shadow: 0 20px 46px rgba(21,128,61,0.7);
     }
+    .btn-secondary {
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(148,163,253,0.3);
+      background: transparent;
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover {
+      background-color: rgba(15,23,42,0.9);
+      border-color: #22c55e;
+      color: #bbf7d0;
+    }
     .card {
       border-radius: 1.5rem;
       border: 1px solid rgba(148,163,253,0.16);
@@ -92,7 +112,7 @@
           <p class="text-[10px] md:text-xs text-slate-300 max-w-xl">
             Seu pagamento foi aprovado e o acesso ao
             <strong>“Emagrecimento Saudável com GLP-1”</strong> foi liberado.
-            Guarde este link e faça o download do material para consultar sempre que precisar.
+            Baixe agora e salve o material para consultar sempre que precisar.
           </p>
 
           <!-- BOTÃO DE DOWNLOAD (TROCAR O LINK) -->
@@ -103,34 +123,51 @@
           </a>
 
           <p class="text-[8px] text-slate-400 mt-1">
-            Caso o download não abra, clique com o botão direito e selecione “Salvar link como...”
+            Caso o download não abra, clique com o botão direito e selecione “Salvar link como...”.
           </p>
 
+          <!-- BLOCO: ENVIAR PARA O MEU E-MAIL -->
+          <div class="mt-5 w-full max-w-xs">
+            <p class="text-[9px] text-slate-200 mb-2">
+              Prefere receber o link no seu e-mail também?
+            </p>
+            <div class="flex gap-2">
+              <input
+                id="emailInput"
+                type="email"
+                placeholder="digite seu e-mail aqui"
+                class="w-full px-3 py-2 rounded-2xl bg-slate-900/80 border border-slate-600 text-[9px] text-slate-100 focus:outline-none focus:border-emerald-400"
+              />
+              <button class="btn-secondary" type="button" onclick="sendEmailLink()">
+                Enviar
+              </button>
+            </div>
+            <p id="emailMsg" class="text-[8px] mt-1 text-slate-400"></p>
+          </div>
+
           <!-- Informações adicionais -->
-          <div class="mt-5 grid md:grid-cols-3 gap-4 w-full text-left text-[8px] md:text-[9px] text-slate-300">
+          <div class="mt-6 grid md:grid-cols-3 gap-4 w-full text-left text-[8px] md:text-[9px] text-slate-300">
             <div class="bg-slate-950/80 border border-emerald-500/10 rounded-2xl p-3">
               <p class="font-semibold text-emerald-300 mb-1">Cópia no seu e-mail</p>
-              <p>Enviamos também o link de acesso para o e-mail usado na compra.
-                 Não chegou? Verifique caixa de spam, promoções ou lixeira.</p>
+              <p>Se você informou um e-mail válido no pagamento, o acesso também pode ser enviado por lá.
+                 Caso não encontre, verifique spam, promoções ou lixeira.</p>
             </div>
             <div class="bg-slate-950/80 border border-emerald-500/10 rounded-2xl p-3">
               <p class="font-semibold text-emerald-300 mb-1">Acesso vitalício</p>
-              <p>Recomendo salvar o PDF no seu celular ou computador para consultar sempre
-                 durante seu processo com GLP-1.</p>
+              <p>Salve o PDF no seu celular ou computador para consultar durante todo o seu processo com GLP-1.</p>
             </div>
             <div class="bg-slate-950/80 border border-emerald-500/10 rounded-2xl p-3">
               <p class="font-semibold text-emerald-300 mb-1">Suporte</p>
               <p>Qualquer problema com o acesso, envie uma mensagem para:
-                 <span class="text-emerald-400">seuemail@seudominio.com</span>
-                 informando o comprovante.</p>
+                 <span class="text-emerald-400">grproplano@gmail.com</span>
+                 anexando o comprovante.</p>
             </div>
           </div>
 
           <!-- Call secundária -->
           <p class="mt-6 text-[9px] text-slate-400 max-w-xl">
-            Agora é simples: baixe o e-book, leia os pontos principais e aplique as orientações
-            junto ao acompanhamento do seu médico. Informação certa + uso responsável do GLP-1
-            fazem toda diferença nos seus resultados.
+            Leia os pontos principais ainda hoje e alinhe com o seu médico.
+            Informação certa + uso responsável do GLP-1 fazem toda a diferença nos seus resultados.
           </p>
         </div>
       </div>
@@ -148,6 +185,38 @@
       </p>
     </div>
   </footer>
+
+  <!-- SCRIPT PARA ENVIAR LINK VIA E-MAIL DO PRÓPRIO USUÁRIO -->
+  <script>
+    function sendEmailLink() {
+      const input = document.getElementById('emailInput');
+      const msg = document.getElementById('emailMsg');
+      const email = (input.value || '').trim();
+
+      msg.classList.remove('text-red-400', 'text-emerald-400');
+      msg.textContent = '';
+
+      // Validação simples
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        msg.textContent = 'Por favor, digite um e-mail válido.';
+        msg.classList.add('text-red-400');
+        return;
+      }
+
+      const pdfLink = 'LINK_DO_PDF'; // MESMO LINK DO BOTÃO DE DOWNLOAD
+      const subject = encodeURIComponent('Seu acesso ao E-book Emagrecimento Saudável com GLP-1');
+      const body = encodeURIComponent(
+        'Olá!\n\nAqui está o link para acessar o seu e-book:\n' +
+        pdfLink +
+        '\n\nRecomendo salvar este e-mail para consultar sempre que precisar.\n\nBons estudos e bom processo!');
+
+      // Abre o app de e-mail da própria pessoa com tudo pronto
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+      msg.textContent = 'Se o seu aplicativo de e-mail abriu, é só confirmar o envio para receber o link na sua caixa de entrada.';
+      msg.classList.add('text-emerald-400');
+    }
+  </script>
 
 </body>
 </html>
