@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de IMC • TPG Online</title>
+  <meta name="description" content="Calcule seu IMC de forma simples e veja a classificação específica para adultos e idosos.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/imc.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Config padrão (sem consentimento ainda)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-XZ6RD9SGHR');
+  </script>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2LG2C7K"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark tpg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TPG<span>Online</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cnpj.html">Consultar CNPJ</a></li>
+          <li class="nav-item"><a class="nav-link" href="cep.html">Consultar CEP</a></li>
+          <li class="nav-item"><a class="nav-link" href="ncm.html">Consultar NCM</a></li>
+          <li class="nav-item"><a class="nav-link" href="fipe.html">Consultar FIPE</a></li>
+          <li class="nav-item"><a class="nav-link" href="qrcode.html">Gerar QR Code</a></li>
+          <li class="nav-item"><a class="nav-link" href="pagamento.html">Pagamento</a></li>
+          <li class="nav-item"><a class="nav-link active" href="calculadora-imc.html">Calculadora IMC</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://f4e38d4c63c0.ngrok-free.app/ngl/frontend/login.html">Login</a></li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section">
+    <div class="container container-narrow">
+
+      <h1 class="h3 fw-bold mb-2">Calculadora de IMC</h1>
+      <p class="text-muted-2 mb-3">
+        O <strong>IMC (Índice de Massa Corpórea)</strong> é um indicador utilizado para estimar a relação entre peso e altura.
+        Nesta página você encontra uma calculadora simples, com <strong>tabela específica para adultos e idosos</strong>,
+        baseada em referências técnicas reconhecidas.
+      </p>
+
+      <!-- Bloco de informação -->
+      <div class="info-card mb-3">
+        <h2 class="h6 fw-semibold mb-2">Como o IMC é calculado?</h2>
+        <p class="mb-1">
+          A fórmula é:
+          <span class="imc-formula">IMC = peso (kg) ÷ [altura (m)]²</span>
+        </p>
+        <p class="mb-0 small">
+          Exemplo: 70 kg e 1,75 m → 70 ÷ (1,75 × 1,75) = 22,86.
+        </p>
+        <p class="mt-2 mb-0 small text-highlight">
+          Importante: insira os valores usando ponto como separador decimal (ex: 1.65).
+        </p>
+      </div>
+
+      <!-- Aviso científico -->
+      <div class="alert alert-secondary small bg-transparent border rounded-3 px-3 py-3 mb-4">
+        <div class="d-flex gap-2">
+          <span class="badge bg-info text-dark">Critérios</span>
+          <div>
+            <p class="mb-1">
+              Para <strong>adultos (≤ 65 anos)</strong>, utilizamos os pontos de corte da
+              <strong>Organização Mundial da Saúde (OMS)</strong>.
+            </p>
+            <p class="mb-1">
+              Para <strong>idosos (&gt; 65 anos)</strong>, utilizamos os pontos de corte de
+              <strong>Lipschitz (1994)</strong>, amplamente adotados em avaliações geriátricas.
+            </p>
+            <p class="mb-0 text-muted-2">
+              Esta ferramenta é educativa e não substitui avaliação médica ou nutricional individualizada.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <form id="imc-form" class="row g-3 query-form" novalidate>
+        <div class="col-12 col-md-4">
+          <label for="idade" class="form-label">Idade</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text">anos</span>
+            <input id="idade" type="number" class="form-control form-control-lg"
+                   placeholder="Ex: 30" min="1" max="120" required>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label for="peso" class="form-label">Peso</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text">kg</span>
+            <input id="peso" type="text" class="form-control form-control-lg"
+                   placeholder="Ex: 70.5" required inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <label for="altura" class="form-label">Altura</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text">m</span>
+              <input id="altura" type="text" class="form-control form-control-lg"
+                     placeholder="Ex: 1.89 ou 189" required inputmode="decimal">
+            </div>
+            <div class="form-text text-muted-2">
+              Pode digitar em metros (1.89) ou centímetros (189).
+            </div>
+          </div>
+          
+
+        <div class="col-12">
+          <button class="btn btn-primary btn-lg w-100 mt-2" type="submit">Calcular IMC</button>
+        </div>
+      </form>
+
+      <!-- Status / Erros -->
+      <div id="imc-status" class="mt-3" aria-live="polite"></div>
+
+      <!-- Resultado -->
+      <div id="imc-resultado" class="imc-resultado mt-3 d-none">
+        <div class="card bg-surface text-light border-0 shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 fw-semibold mb-2">Seu resultado</h2>
+            <p class="mb-1">
+              <span class="label">Faixa etária considerada:</span>
+              <span id="imc-faixa-etaria" class="value"></span>
+            </p>
+            <p class="mb-1">
+              <span class="label">IMC calculado:</span>
+              <span id="imc-valor" class="value imc-value"></span>
+            </p>
+            <p class="mb-2">
+              <span class="label">Classificação:</span>
+              <span id="imc-classificacao" class="value badge px-3 py-2"></span>
+            </p>
+            <p id="imc-observacao" class="small text-muted-2 mb-0"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabelas lado a lado em telas grandes -->
+      <div class="row g-3 mt-4">
+        <!-- Adultos -->
+        <div class="col-12 col-lg-6">
+          <div class="card bg-surface border-0 h-100 imc-table-card">
+            <div class="card-body">
+              <h3 class="h6 fw-semibold mb-2">Classificação para Adultos (≤ 65 anos)</h3>
+              <p class="small text-muted-2">
+                Baseado na OMS / WHO para adultos.
+              </p>
+              <div class="table-responsive">
+                <table class="table table-sm table-dark table-striped align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th>IMC (kg/m²)</th>
+                      <th>Classificação</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabela-adulto">
+                    <tr data-range="adulto-baixo">
+                      <td>&lt; 18,5</td>
+                      <td>Baixo peso</td>
+                    </tr>
+                    <tr data-range="adulto-normal">
+                      <td>18,5 a 24,9</td>
+                      <td>Peso normal</td>
+                    </tr>
+                    <tr data-range="adulto-sobrepeso">
+                      <td>25,0 a 29,9</td>
+                      <td>Sobrepeso</td>
+                    </tr>
+                    <tr data-range="adulto-ob1">
+                      <td>30,0 a 34,9</td>
+                      <td>Obesidade Classe I</td>
+                    </tr>
+                    <tr data-range="adulto-ob2">
+                      <td>35,0 a 39,9</td>
+                      <td>Obesidade Classe II</td>
+                    </tr>
+                    <tr data-range="adulto-ob3">
+                      <td>≥ 40,0</td>
+                      <td>Obesidade Classe III</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Idosos -->
+        <div class="col-12 col-lg-6">
+          <div class="card bg-surface border-0 h-100 imc-table-card">
+            <div class="card-body">
+              <h3 class="h6 fw-semibold mb-2">Classificação para Idosos (&gt; 65 anos)</h3>
+              <p class="small text-muted-2">
+                Critérios de Lipschitz (1994), recomendados em avaliações nutricionais geriátricas.
+              </p>
+              <div class="table-responsive">
+                <table class="table table-sm table-dark table-striped align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th>IMC (kg/m²)</th>
+                      <th>Classificação</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabela-idoso">
+                    <tr data-range="idoso-baixo">
+                      <td>≤ 22</td>
+                      <td>Baixo peso</td>
+                    </tr>
+                    <tr data-range="idoso-adequado">
+                      <td>&gt; 22 e &lt; 27</td>
+                      <td>Adequado / Eutrófico</td>
+                    </tr>
+                    <tr data-range="idoso-sobrepeso">
+                      <td>≥ 27</td>
+                      <td>Sobrepeso</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="small text-muted-2 mt-2">
+                Em idosos, IMC muito baixo pode indicar risco nutricional importante. Avaliação deve ser feita por profissional de saúde.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé educativo -->
+      <div class="mt-4 small text-muted-2">
+        <strong>Atenção:</strong> o IMC é um indicador geral. Não considera composição corporal,
+        massa muscular, distribuição de gordura ou condições específicas (gravidez, atletas, etc.).
+        Use como referência inicial e, em caso de dúvida, procure um médico ou nutricionista.
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container text-center small">
+      © <span id="year"></span> TPG Online ·
+      <a href="privacy.html">Privacidade</a> ·
+      <a href="terms.html">Termos</a> ·
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/imc.js" defer></script>
+</body>
+</html>
