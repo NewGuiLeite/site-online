@@ -1,0 +1,25 @@
+/* colaborar.css — estilos da página de colaboração */
+.container-narrow{ max-width: 760px; }
+#colab-card{ border-radius: 0.9rem; }
+
+.progress{
+  height: 0.9rem;
+  background: rgba(148,163,184,0.18);
+  border-radius: 999px;
+}
+.progress-bar{
+  background: linear-gradient(90deg, #2e8bff, #1f6ed4);
+  font-size: .75rem;
+}
+
+.btn-primary.btn-lg{
+  --bs-btn-bg: #2e8bff;
+  --bs-btn-border-color: #2e8bff;
+  --bs-btn-hover-bg: #1f6ed4;
+  --bs-btn-hover-border-color: #1f6ed4;
+  --bs-btn-active-bg: #1b5fb8;
+  --bs-btn-active-border-color: #1b5fb8;
+  --bs-btn-color: #fff;
+  font-weight: 600;
+  padding: .9rem 1.25rem;
+}
