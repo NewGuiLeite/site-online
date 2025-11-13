@@ -1,18 +1,30 @@
 /* colaborar.css — estilos da página de colaboração */
-.container-narrow{ max-width: 760px; }
-#colab-card{ border-radius: 0.9rem; }
 
-.progress{
+/* largura máxima do conteúdo */
+.container-narrow {
+  max-width: 760px;
+}
+
+/* cartão principal */
+#colab-card {
+  border-radius: 0.9rem;
+}
+
+/* barra de progresso */
+.progress {
   height: 0.9rem;
-  background: rgba(148,163,184,0.18);
+  background: rgba(148, 163, 184, 0.18);
   border-radius: 999px;
-}
-.progress-bar{
-  background: linear-gradient(90deg, #2e8bff, #1f6ed4);
-  font-size: .75rem;
+  overflow: hidden;
 }
 
-.btn-primary.btn-lg{
+.progress-bar {
+  background: linear-gradient(90deg, #2e8bff, #1f6ed4);
+  font-size: 0.75rem;
+}
+
+/* botão padrão grande (caso use em outros lugares) */
+.btn-primary.btn-lg {
   --bs-btn-bg: #2e8bff;
   --bs-btn-border-color: #2e8bff;
   --bs-btn-hover-bg: #1f6ed4;
@@ -20,6 +32,42 @@
   --bs-btn-active-bg: #1b5fb8;
   --bs-btn-active-border-color: #1b5fb8;
   --bs-btn-color: #fff;
+
   font-weight: 600;
-  padding: .9rem 1.25rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 0.9rem;
+}
+
+/* botão do Mercado Pago – mesmo estilo do botão azul anterior */
+.mercadopago-button {
+  width: 100% !important;
+  display: block !important;
+  text-align: center !important;
+
+  padding: 0.9rem 1.25rem !important;
+  border-radius: 0.9rem !important;
+
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+
+  background: #2e8bff !important;         /* azul principal */
+  border: none !important;
+  color: #fff !important;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35) !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+}
+
+.mercadopago-button:hover {
+  background: #1f6ed4 !important;         /* hover igual ao .btn-primary */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.mercadopago-button:active {
+  background: #1b5fb8 !important;         /* estado ativo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35) !important;
+  transform: translateY(0);
 }
