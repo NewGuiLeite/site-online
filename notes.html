@@ -68,6 +68,31 @@
                   required
                 ></textarea>
               </div>
+              <div class="col-12">
+                <label class="form-label">Cor do card</label>
+                <div class="note-color-picker" id="note-color-picker">
+                  <button type="button" class="note-color-option active" data-color="#0f172a" style="--note-color:#0f172a">
+                    <span class="visually-hidden">Azul profundo</span>
+                  </button>
+                  <button type="button" class="note-color-option" data-color="#1e1b4b" style="--note-color:#1e1b4b">
+                    <span class="visually-hidden">Indigo</span>
+                  </button>
+                  <button type="button" class="note-color-option" data-color="#134e4a" style="--note-color:#134e4a">
+                    <span class="visually-hidden">Verde escuro</span>
+                  </button>
+                  <button type="button" class="note-color-option" data-color="#92400e" style="--note-color:#92400e">
+                    <span class="visually-hidden">Ambar</span>
+                  </button>
+                  <button type="button" class="note-color-option" data-color="#9d174d" style="--note-color:#9d174d">
+                    <span class="visually-hidden">Magenta</span>
+                  </button>
+                  <button type="button" class="note-color-option" data-color="#312e81" style="--note-color:#312e81">
+                    <span class="visually-hidden">Roxo</span>
+                  </button>
+                </div>
+                <input type="hidden" id="note-color" value="#0f172a" />
+                <small class="text-muted-2">Clique em uma cor para personalizar o cartao.</small>
+              </div>
               <div class="col-12 d-flex gap-2">
                 <button type="submit" class="btn btn-primary" id="note-submit-btn">
                   Salvar nota

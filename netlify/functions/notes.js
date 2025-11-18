@@ -2,6 +2,7 @@
 import { neon } from '@netlify/neon';
 
 const sql = neon();
+const DEFAULT_NOTE_COLOR = '#1f2937';
 
 async function ensureNotesTable() {
   await sql`
@@ -10,9 +11,15 @@ async function ensureNotesTable() {
       user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
       title TEXT NOT NULL,
       content TEXT NOT NULL,
+      color TEXT NOT NULL DEFAULT ${DEFAULT_NOTE_COLOR},
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
+  `;
+
+  await sql`
+    ALTER TABLE notes
+    ADD COLUMN IF NOT EXISTS color TEXT NOT NULL DEFAULT ${DEFAULT_NOTE_COLOR}
   `;
 }
 
@@ -49,6 +56,18 @@ function normalizeText(value, fieldName) {
   return str;
 }
 
+function normalizeColor(value) {
+  const str = (value ?? '').toString().trim();
+  if (!str) return DEFAULT_NOTE_COLOR;
+
+  const normalized = str.startsWith('#') ? str : `#${str}`;
+  if (!/^#[0-9a-fA-F]{6}$/.test(normalized)) {
+    throw new Error('INVALID_COLOR');
+  }
+
+  return normalized.toLowerCase();
+}
+
 export const handler = async (event) => {
   const method = event.httpMethod || 'GET';
   console.log('[notes] Nova requisição', {
@@ -67,7 +86,7 @@ export const handler = async (event) => {
       );
 
       const notes = await sql`
-        SELECT id, user_id, title, content, created_at, updated_at
+        SELECT id, user_id, title, content, color, created_at, updated_at
         FROM notes
         WHERE user_id = ${userId}
         ORDER BY updated_at DESC
@@ -81,11 +100,12 @@ export const handler = async (event) => {
       const userId = parseId(data.userId, 'user_id');
       const title = normalizeText(data.title, 'title');
       const content = normalizeText(data.content, 'content');
+      const color = normalizeColor(data.color);
 
       const rows = await sql`
-        INSERT INTO notes (user_id, title, content)
-        VALUES (${userId}, ${title}, ${content})
-        RETURNING id, user_id, title, content, created_at, updated_at
+        INSERT INTO notes (user_id, title, content, color)
+        VALUES (${userId}, ${title}, ${content}, ${color})
+        RETURNING id, user_id, title, content, color, created_at, updated_at
       `;
 
       return jsonResponse(201, { note: rows[0] });
@@ -97,14 +117,16 @@ export const handler = async (event) => {
       const noteId = parseId(data.id, 'id');
       const title = normalizeText(data.title, 'title');
       const content = normalizeText(data.content, 'content');
+      const color = normalizeColor(data.color);
 
       const rows = await sql`
         UPDATE notes
         SET title = ${title},
             content = ${content},
+            color = ${color},
             updated_at = NOW()
         WHERE id = ${noteId} AND user_id = ${userId}
-        RETURNING id, user_id, title, content, created_at, updated_at
+        RETURNING id, user_id, title, content, color, created_at, updated_at
       `;
 
       if (rows.length === 0) {

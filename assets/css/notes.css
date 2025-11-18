@@ -6,12 +6,17 @@
     gap: 1rem;
   }
   
-  .note-card {
-    background: var(--surface, #020617);
+.note-card {
+    --note-card-bg: var(--surface, #020617);
+    --note-card-border: rgba(148, 163, 253, 0.16);
+    --note-card-text: #e5e7eb;
+    --note-card-meta: rgba(229, 231, 235, 0.7);
+    background: var(--note-card-bg);
     border-radius: 0.75rem;
-    border: 1px solid rgba(148, 163, 253, 0.16);
+    border: 1px solid var(--note-card-border);
     padding: 0.9rem 1rem;
     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.6);
+    color: var(--note-card-text);
   }
   
   .note-card-header {
@@ -27,14 +32,14 @@
     font-size: 0.95rem;
   }
   
-  .note-meta {
+.note-meta {
     font-size: 0.7rem;
-    color: #9ca3af;
+    color: var(--note-card-meta);
   }
   
-  .note-content {
+.note-content {
     font-size: 0.8rem;
-    color: #e5e7eb;
+    color: inherit;
     white-space: pre-wrap;
   }
   
@@ -44,8 +49,46 @@
     gap: 0.5rem;
   }
   
-  .note-actions button {
+.note-actions button {
     font-size: 0.75rem;
+  }
+
+.note-card-compact {
+    padding: 0.8rem;
+  }
+
+.note-card-compact .note-title {
+    font-size: 0.85rem;
+  }
+
+.note-card-compact .note-content {
+    font-size: 0.75rem;
+  }
+
+.note-color-picker {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+.note-color-option {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: var(--note-color, #0f172a);
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
+    position: relative;
+  }
+
+.note-color-option:hover {
+    transform: translateY(-2px);
+  }
+
+.note-color-option.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.5);
   }
   
   /* Responsivo: 2 colunas em telas médias, 3 em grandes */
