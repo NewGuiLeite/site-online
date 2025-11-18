@@ -1,26 +1,35 @@
 /* assets/css/login.css */
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      sans-serif;
-    background: #020617; /* fundo bem escuro */
-    color: #e5e7eb;
-  }
-  
-  .auth-container {
-    background: #020617;
-    border: 1px solid #1f2937;
-    border-radius: 16px;
-    padding: 32px;
-    max-width: 420px;
-    width: 100%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  }
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* centraliza só a área do formulário, não a navbar/footer */
+.auth-page {
+  min-height: calc(100vh - 140px); /* só pra dar respiro, pode ajustar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* o resto pode ficar como já estava */
+.auth-container {
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ... (resto do CSS que você já tem: .auth-title, .tabs, .field etc.) */
+
   
   .auth-title {
     font-size: 1.5rem;
@@ -126,4 +135,5 @@ body {
   .back-link:hover {
     text-decoration: underline;
   }
+
   
