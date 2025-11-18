@@ -28,7 +28,7 @@ form.addEventListener('submit', async (e) => {
         body: JSON.stringify(payload)
       });
   
-      const text = await res.text();        // 👈 lê como texto
+      const text = await res.text();   // 👈 primeiro como texto
       let data = {};
   
       try {
