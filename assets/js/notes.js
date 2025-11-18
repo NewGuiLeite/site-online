@@ -3,7 +3,10 @@
 function getCurrentUser() {
     try {
       const raw =
-        localStorage.getItem('tpgUser') || sessionStorage.getItem('tpgUser');
+        localStorage.getItem('tpg_user') ||
+        sessionStorage.getItem('tpg_user') ||
+        localStorage.getItem('tpgUser') ||
+        sessionStorage.getItem('tpgUser');
       if (!raw) return null;
       return JSON.parse(raw);
     } catch (e) {
