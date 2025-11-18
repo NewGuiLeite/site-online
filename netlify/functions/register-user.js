@@ -1,7 +1,8 @@
+// netlify/functions/register-user.js
 import { neon } from '@netlify/neon';
 import crypto from 'node:crypto';
 
-const sql = neon(); // usa NETLIFY_DATABASE_URL automaticamente
+const sql = neon(); // usa NETLIFY_DATABASE_URL
 
 async function ensureUsersTable() {
   await sql`
@@ -16,7 +17,7 @@ async function ensureUsersTable() {
 }
 
 function hashPassword(password) {
-  // Para projeto simples, ok. Para produção real, use bcrypt/argon2.
+  // pra projeto simples, ok. Em produção real: bcrypt/argon2.
   return crypto.createHash('sha256').update(password).digest('hex');
 }
 
@@ -24,6 +25,7 @@ export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -37,6 +39,7 @@ export const handler = async (event) => {
     if (!name || !email || !password) {
       return {
         statusCode: 400,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: 'Preencha nome, e-mail e senha.' })
       };
     }
@@ -44,6 +47,7 @@ export const handler = async (event) => {
     const normalizedEmail = String(email).toLowerCase().trim();
     const passwordHash = hashPassword(password);
 
+    // verifica se já existe
     const existing = await sql`
       SELECT id FROM users WHERE email = ${normalizedEmail}
     `;
@@ -51,6 +55,7 @@ export const handler = async (event) => {
     if (existing.length > 0) {
       return {
         statusCode: 409,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: 'E-mail já cadastrado.' })
       };
     }
@@ -63,17 +68,18 @@ export const handler = async (event) => {
 
     const user = inserted[0];
 
+    console.log('Usuário cadastrado:', user);
+
     return {
       statusCode: 201,
-      body: JSON.stringify({
-        success: true,
-        user
-      })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ success: true, user })
     };
   } catch (err) {
-    console.error('Erro no cadastro:', err);
+    console.error('ERRO register-user:', err);
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: 'Erro interno ao cadastrar usuário.' })
     };
   }

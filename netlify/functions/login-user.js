@@ -1,3 +1,4 @@
+// netlify/functions/login-user.js
 import { neon } from '@netlify/neon';
 import crypto from 'node:crypto';
 
@@ -11,6 +12,7 @@ export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -22,6 +24,7 @@ export const handler = async (event) => {
     if (!email || !password) {
       return {
         statusCode: 400,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: 'Informe e-mail e senha.' })
       };
     }
@@ -40,23 +43,25 @@ export const handler = async (event) => {
     if (rows.length === 0) {
       return {
         statusCode: 401,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: 'E-mail ou senha inválidos.' })
       };
     }
 
     const user = rows[0];
 
+    console.log('Login OK para usuário:', user);
+
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        user
-      })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ success: true, user })
     };
   } catch (err) {
-    console.error('Erro no login:', err);
+    console.error('ERRO login-user:', err);
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: 'Erro interno ao fazer login.' })
     };
   }
