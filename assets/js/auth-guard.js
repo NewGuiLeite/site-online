@@ -18,9 +18,8 @@
 
   const isPublic = publicPages.some((p) => path === p);
 
-  // 👇 Aqui tem que bater com o que o auth.js usa pra salvar o usuário
-  const userStr =
-    localStorage.getItem('tpgUser') || sessionStorage.getItem('tpgUser');
+  // 👇 Tem que bater com o que o auth.js usa pra salvar o usuário
+  const userStr = localStorage.getItem('tpg_user');
 
   // Se não estiver logado e a página NÃO for pública → manda pro login
   if (!userStr && !isPublic) {
