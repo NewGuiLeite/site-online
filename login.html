@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - TPG Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- use o mesmo CSS base do seu site -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    body {
+      background: #020617;
+      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .auth-container {
+      background: #020617;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .auth-title {
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+    .auth-subtitle {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 24px;
+    }
+    .tabs {
+      display: flex;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: #0b1120;
+      padding: 4px;
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 8px 0;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+    }
+    .tab.active {
+      background: #2563eb;
+      color: #f9fafb;
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    .field label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+      color: #d1d5db;
+    }
+    .field input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      background: #020617;
+      color: #f9fafb;
+      outline: none;
+      font-size: 0.95rem;
+    }
+    .field input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.4);
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #2563eb;
+      color: #f9fafb;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+    .message {
+      margin-top: 12px;
+      font-size: 0.85rem;
+    }
+    .message.error {
+      color: #fca5a5;
+    }
+    .message.success {
+      color: #6ee7b7;
+    }
+    .back-link {
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #60a5fa;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <h1 class="auth-title">TPG Online</h1>
+    <p class="auth-subtitle">Entre ou crie sua conta para acessar suas ferramentas.</p>
+
+    <div class="tabs">
+      <button class="tab active" data-mode="login">Entrar</button>
+      <button class="tab" data-mode="register">Criar conta</button>
+    </div>
+
+    <form id="auth-form">
+      <div class="field field-name" style="display:none;">
+        <label for="name">Nome</label>
+        <input type="text" id="name" autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" autocomplete="email" required />
+      </div>
+
+      <div class="field">
+        <label for="password">Senha</label>
+        <input type="password" id="password" autocomplete="current-password" required />
+      </div>
+
+      <button type="submit" class="btn-primary">Continuar</button>
+      <div id="message" class="message"></div>
+    </form>
+
+    <a href="index.html" class="back-link">← Voltar para o site</a>
+  </div>
+
+  <script src="assets/js/auth.js" defer></script>
+</body>
+</html>

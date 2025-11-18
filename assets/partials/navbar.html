@@ -1,22 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-dark tpg sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">TPG<span>Online</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="cnpj.html">Consultar CNPJ</a></li>
-          <li class="nav-item"><a class="nav-link" href="cep.html">Consultar CEP</a></li>
-          <li class="nav-item"><a class="nav-link" href="ncm.html">Consultar NCM</a></li>
-          <li class="nav-item"><a class="nav-link" href="fipe.html">Consultar FIPE</a></li>
-          <li class="nav-item"><a class="nav-link" href="qrcode.html">Gerar QR Code</a></li>
-          <li class="nav-item"><a class="nav-link" href="calculadora-imc.html">Calculadora IMC</a></li>
-          <li class="nav-item"><a class="nav-link" href="colaborar.html">Colaborar</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://f4e38d4c63c0.ngrok-free.app/ngl/frontend/login.html">Login</a></li>
-        </ul>
-      </div>
+  <div class="container">
+    <a class="navbar-brand" href="index.html">TPG<span>Online</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="cnpj.html">Consultar CNPJ</a></li>
+        <li class="nav-item"><a class="nav-link" href="cep.html">Consultar CEP</a></li>
+        <li class="nav-item"><a class="nav-link" href="ncm.html">Consultar NCM</a></li>
+        <li class="nav-item"><a class="nav-link" href="fipe.html">Consultar FIPE</a></li>
+        <li class="nav-item"><a class="nav-link" href="qrcode.html">Gerar QR Code</a></li>
+        <li class="nav-item"><a class="nav-link" href="calculadora-imc.html">Calculadora IMC</a></li>
+        <li class="nav-item"><a class="nav-link" href="colaborar.html">Colaborar</a></li>
+
+        <!-- LOGIN padrão (aparece só quando NÃO estiver logado) -->
+        <li class="nav-item" id="nav-login-item">
+          <a class="nav-link" href="login.html" id="login-link">Login</a>
+        </li>
+
+        <!-- Saudação (aparece só quando ESTIVER logado) -->
+        <li class="nav-item d-none" id="nav-user-item">
+          <span class="nav-link">
+            Olá, <span id="user-name"></span>!
+          </span>
+        </li>
+
+        <!-- Botão Sair (aparece só quando ESTIVER logado) -->
+        <li class="nav-item d-none" id="nav-logout-item">
+          <button class="btn btn-sm btn-outline-light ms-lg-2" type="button" id="logout-btn">
+            Sair
+          </button>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>
