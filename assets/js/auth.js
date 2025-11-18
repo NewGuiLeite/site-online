@@ -101,7 +101,7 @@ if (form) {
       messageEl.className = 'message success';
 
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
       }, 1200);
 
     } catch (err) {
