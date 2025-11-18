@@ -2,7 +2,7 @@
 import { neon } from '@netlify/neon';
 import crypto from 'node:crypto';
 
-const sql = neon(); // usa NETLIFY_DATABASE_URL
+const sql = neon(); // usa NETLIFY_DATABASE_URL automático
 
 async function ensureUsersTable() {
   await sql`
@@ -17,7 +17,7 @@ async function ensureUsersTable() {
 }
 
 function hashPassword(password) {
-  // pra projeto simples, ok. Em produção real: bcrypt/argon2.
+  // Para produção séria: usar bcrypt/argon2.
   return crypto.createHash('sha256').update(password).digest('hex');
 }
 
@@ -47,7 +47,6 @@ export const handler = async (event) => {
     const normalizedEmail = String(email).toLowerCase().trim();
     const passwordHash = hashPassword(password);
 
-    // verifica se já existe
     const existing = await sql`
       SELECT id FROM users WHERE email = ${normalizedEmail}
     `;
@@ -67,7 +66,6 @@ export const handler = async (event) => {
     `;
 
     const user = inserted[0];
-
     console.log('Usuário cadastrado:', user);
 
     return {

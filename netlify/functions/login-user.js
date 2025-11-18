@@ -49,7 +49,6 @@ export const handler = async (event) => {
     }
 
     const user = rows[0];
-
     console.log('Login OK para usuário:', user);
 
     return {

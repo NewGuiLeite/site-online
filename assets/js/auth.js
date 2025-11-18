@@ -7,9 +7,9 @@ const messageEl = document.getElementById('message');
 
 let mode = 'login'; // 'login' ou 'register'
 
-// se não achar o form, já avisa no console
+// proteção caso o script carregue em outra página sem o form
 if (!form) {
-  console.error('Formulário #auth-form não encontrado em login.html');
+  console.warn('auth.js: formulário #auth-form não encontrado (página não é login).');
 }
 
 tabs.forEach((tab) => {
@@ -33,12 +33,27 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    messageEl.textContent = 'Processando...';
-    messageEl.className = 'message';
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
+
+    // Validação simples no front
+    if (mode === 'register' && !name) {
+      messageEl.textContent = 'Informe seu nome.';
+      messageEl.className = 'message error';
+      return;
+    }
+    if (!email || !password) {
+      messageEl.textContent = 'Informe e-mail e senha.';
+      messageEl.className = 'message error';
+      return;
+    }
+
+    messageEl.textContent = 'Processando...';
+    messageEl.className = 'message';
+    if (submitBtn) submitBtn.disabled = true;
 
     try {
       let url;
@@ -76,7 +91,7 @@ if (form) {
         throw new Error(data.error || `Erro no servidor (${res.status}).`);
       }
 
-      // guarda usuário
+      // guarda usuário logado
       localStorage.setItem('tpg_user', JSON.stringify(data.user));
 
       messageEl.textContent =
@@ -92,6 +107,8 @@ if (form) {
       console.error(err);
       messageEl.textContent = err.message || 'Erro inesperado.';
       messageEl.className = 'message error';
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 }
