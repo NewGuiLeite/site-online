@@ -12,14 +12,18 @@ function getCurrentUser() {
     }
   }
   
+  
   document.addEventListener('DOMContentLoaded', () => {
     const user = getCurrentUser();
-  
-    // Se por algum motivo não tiver user aqui, envia para login
-    if (!user || !user.id) {
+
+    // Se não tiver usuário nenhum, manda pro login
+    if (!user) {
       window.location.href = 'login.html';
       return;
     }
+    
+    console.log('Usuário detectado em notes:', user);
+    
   
     // Elementos
     const notesUsername = document.getElementById('notes-username');
