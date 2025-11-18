@@ -1,0 +1,82 @@
+/* Estilos específicos da área logada (main.html) */
+
+/* Hero da área logada */
+.main-hero {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    background: radial-gradient(circle at top left, #1d283a 0, #020617 45%, #020617 100%);
+  }
+  
+  .main-hero .lead {
+    max-width: 520px;
+  }
+  
+  /* Grid de atalhos, inspirado no features-grid do index */
+  .main-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  /* Responsividade da grid */
+  @media (min-width: 576px) {
+    .main-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .main-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  /* Cartões da área logada */
+  .main-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.4rem 1.3rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    background: linear-gradient(135deg, #020617, #020617);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.8);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+      background 0.15s ease;
+  }
+  
+  .main-card h5 {
+    margin-bottom: 0.4rem;
+    color: #e5e7eb;
+    font-weight: 600;
+  }
+  
+  .main-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+  
+  /* Tag / badge no rodapé do card */
+  .main-card-tag {
+    margin-top: 1rem;
+    align-self: flex-start;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background: rgba(37, 99, 235, 0.14);
+    color: #93c5fd;
+    border: 1px solid rgba(37, 99, 235, 0.35);
+  }
+  
+  /* Efeito hover */
+  .main-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.7);
+    background: radial-gradient(circle at top left, #111827 0, #020617 50%, #020617 100%);
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.95);
+  }
+  

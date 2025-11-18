@@ -94,7 +94,7 @@ if (form) {
       // guarda usuário logado
       localStorage.setItem('tpg_user', JSON.stringify(data.user));
 
-      messageEl.textContent =
+            messageEl.textContent =
         mode === 'register'
           ? 'Cadastro realizado com sucesso! Redirecionando...'
           : 'Login realizado com sucesso! Redirecionando...';
@@ -103,6 +103,7 @@ if (form) {
       setTimeout(() => {
         window.location.href = 'index.html';
       }, 1200);
+
     } catch (err) {
       console.error(err);
       messageEl.textContent = err.message || 'Erro inesperado.';
@@ -110,5 +111,15 @@ if (form) {
     } finally {
       if (submitBtn) submitBtn.disabled = false;
     }
+
+    const forgotBtn = document.getElementById('btn-forgot');
+if (forgotBtn) {
+  forgotBtn.addEventListener('click', () => {
+    alert('Recuperação de senha por e-mail ainda não está ativa.\nPor enquanto, peça para o administrador redefinir sua senha.');
+  });
+}
+
+
+
   });
 }
