@@ -43,12 +43,12 @@
     border: 1px solid rgba(148, 163, 184, 0.18);
     box-shadow: 0 18px 35px rgba(15, 23, 42, 0.8);
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease,
-      background 0.15s ease;
+    background 0.15s ease;
   }
   
   .main-card h5 {
     margin-bottom: 0.4rem;
-    color: #e5e7eb;
+    color: #fdfdfd;
     font-weight: 600;
   }
   
