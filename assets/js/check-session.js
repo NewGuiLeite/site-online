@@ -1,56 +1,57 @@
 // assets/js/check-session.js
 
 (function () {
-  function applySessionToNavbar() {
-    const raw = localStorage.getItem('tpg_user');
+  let user = null;
+  const raw = localStorage.getItem('tpg_user');
 
-    const navLoginItem = document.getElementById('nav-login-item');
-    const navUserItem = document.getElementById('nav-user-item');
-    const navLogoutItem = document.getElementById('nav-logout-item');
-    const userNameEl = document.getElementById('user-name');
-    const logoutBtn = document.getElementById('logout-btn');
-
-    // se a navbar ainda não foi carregada (includes.js), só sai
-    if (!navLoginItem && !navUserItem && !navLogoutItem) {
-      return;
-    }
-
-    if (!raw) {
-      // Ninguém logado
-      if (navLoginItem) navLoginItem.classList.remove('d-none');
-      if (navUserItem) navUserItem.classList.add('d-none');
-      if (navLogoutItem) navLogoutItem.classList.add('d-none');
-      return;
-    }
-
+  if (raw) {
     try {
-      const user = JSON.parse(raw);
-
-      if (userNameEl) {
-        user.name ||= user.email || 'usuário';
-        userNameEl.textContent = user.name;
-      }
-
-      if (navLoginItem) navLoginItem.classList.add('d-none');
-      if (navUserItem) navUserItem.classList.remove('d-none');
-      if (navLogoutItem) navLogoutItem.classList.remove('d-none');
-
-      if (logoutBtn && !logoutBtn.dataset._tpgBound) {
-        logoutBtn.addEventListener('click', () => {
-          localStorage.removeItem('tpg_user');
-          window.location.reload();
-        });
-        logoutBtn.dataset._tpgBound = '1';
-      }
+      user = JSON.parse(raw);
+      window.TPG_USER = user;
     } catch (e) {
-      console.error('Erro ao ler sessão:', e);
+      console.error('Erro ao ler usuário do localStorage:', e);
       localStorage.removeItem('tpg_user');
-      if (navLoginItem) navLoginItem.classList.remove('d-none');
-      if (navUserItem) navUserItem.classList.add('d-none');
-      if (navLogoutItem) navLogoutItem.classList.add('d-none');
+      user = null;
     }
   }
 
-  document.addEventListener('DOMContentLoaded', applySessionToNavbar);
-  window.tpgRefreshSessionUI = applySessionToNavbar;
+  window.tpgRefreshSessionUI = function () {
+    const loginItem = document.getElementById('nav-login-item');
+    const userItem = document.getElementById('nav-user-item');
+    const logoutItem = document.getElementById('nav-logout-item');
+    const userNameSpan = document.getElementById('user-name');
+
+    if (!loginItem && !userItem && !logoutItem) {
+      return;
+    }
+
+    if (user) {
+      if (userNameSpan) {
+        userNameSpan.textContent = user.name || user.email || 'Usuário';
+      }
+      if (loginItem) loginItem.classList.add('d-none');
+      if (userItem) userItem.classList.remove('d-none');
+      if (logoutItem) logoutItem.classList.remove('d-none');
+    } else {
+      if (loginItem) loginItem.classList.remove('d-none');
+      if (userItem) userItem.classList.add('d-none');
+      if (logoutItem) logoutItem.classList.add('d-none');
+    }
+
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn && !logoutBtn._tpgBound) {
+      logoutBtn._tpgBound = true;
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('tpg_user');
+        user = null;
+        window.TPG_USER = null;
+        window.tpgRefreshSessionUI();
+        window.location.href = 'index.html';
+      });
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    window.tpgRefreshSessionUI();
+  });
 })();
