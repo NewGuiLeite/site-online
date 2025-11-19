@@ -53,29 +53,61 @@
   <div data-include="/assets/partials/navbar.html"></div>
   <!-- ============================================================= -->
 
+  <!-- Dashboard de notas -->
+  <section id="main-notes-section" class="section py-5 main-notes-section">
+    <div class="container">
+      <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-4">
+        <div>
+          <p class="text-info text-uppercase small fw-semibold mb-1">Notas rápidas</p>
+          <h2 class="text-white fw-bold mb-1">Suas notas salvas ficam aqui no topo</h2>
+          <p class="text-muted mb-0 small">
+            Visualize rapidamente tudo o que voce registrou sem sair do painel.
+          </p>
+        </div>
+        <a href="notes.html" class="btn btn-outline-light btn-sm">Gerenciar notas</a>
+      </div>
+      <div class="notes-dashboard">
+        <p class="small text-muted-2 mb-3" data-notes-status></p>
+        <div class="notes-grid" data-notes-list></div>
+        <div class="notes-dashboard-empty text-muted-2 d-none" data-notes-empty>
+          Nenhuma nota encontrada ainda. <a href="notes.html" class="link-info">Crie sua primeira nota</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Hero da área logada -->
   <header class="section main-hero">
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-12 col-lg-7">
-          <h1 class="display-5 fw-bold">
-            Bem-vindo à sua área TPG Online
+          <p class="text-info text-uppercase small fw-semibold mb-2">Painel pessoal</p>
+          <h1 class="display-5 fw-bold mb-3">
+            Tudo o que voce precisa no TPG Online, em um unico lugar
           </h1>
-          <p class="lead text-muted">
-            Aqui você encontra, em um só lugar, as principais ferramentas que já usa no TPG Online.
+          <p class="lead text-muted mb-3">
+            Consulte documentos, descubra dados de empresas, gere utilitarios e cuide das suas notas pessoais sem sair daqui.
           </p>
-          <p class="text-muted mb-0 small">
-            Acesse consultas, utilitários e também suas notas pessoais — tudo de graça.
-          </p>
+          <ul class="hero-highlights text-muted mb-4">
+            <li>Acesso rapido aos principais servicos do portal</li>
+            <li>Notas sincronizadas e com cores personalizadas</li>
+            <li>Atalhos para consultas, calculadoras e ferramentas extras</li>
+          </ul>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="notes.html" class="btn btn-primary">Criar nova nota</a>
+            <a href="#main-tools" class="btn btn-outline-light">Ver atalhos</a>
+          </div>
         </div>
-        <div class="col-12 col-lg-5 text-lg-end text-center">
-          <p class="text-info mb-1 small">Dica</p>
-          <p class="text-muted mb-2">
-            Clique no seu nome na barra superior para voltar a esta página quando quiser.
-          </p>
-          <p class="text-muted mb-0">
-            Use os atalhos abaixo para acelerar seu fluxo de trabalho.
-          </p>
+        <div class="col-12 col-lg-5">
+          <div class="hero-card">
+            <p class="text-info small text-uppercase mb-1">Dica rapida</p>
+            <p class="text-white mb-2">
+              Clique no seu nome na barra superior a qualquer momento para retornar ao painel.
+            </p>
+            <p class="text-muted mb-0 small">
+              Precisa de algo especifico? Use o menu de atalhos ou acesse o bloco de notas acima.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -172,28 +204,6 @@
         <p class="text-muted mb-0 small">
           Tem alguma ideia? Use o atalho <strong>“Colaborar com o TPG Online”</strong> para mandar sua sugestão.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dashboard de notas -->
-  <section id="main-notes-section" class="section py-5 main-notes-section">
-    <div class="container">
-      <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-4">
-        <div>
-          <h2 class="text-info fw-bold mb-1">Suas notas salvas</h2>
-          <p class="text-muted mb-0 small">
-            Visualize rapidamente tudo o que voce registrou sem sair do painel.
-          </p>
-        </div>
-        <a href="notes.html" class="btn btn-outline-light btn-sm">Gerenciar notas</a>
-      </div>
-      <div class="notes-dashboard">
-        <p class="small text-muted-2 mb-3" data-notes-status></p>
-        <div class="notes-grid" data-notes-list></div>
-        <div class="notes-dashboard-empty text-muted-2 d-none" data-notes-empty>
-          Nenhuma nota encontrada ainda. <a href="notes.html" class="link-info">Crie sua primeira nota</a>.
-        </div>
       </div>
     </div>
   </section>

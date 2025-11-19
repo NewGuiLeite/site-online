@@ -94,4 +94,22 @@
     margin-top: 1rem;
     text-align: center;
   }
+
+  .hero-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hero-highlights li + li {
+    margin-top: 0.35rem;
+  }
+
+  .hero-card {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(2, 6, 23, 0.85);
+  }
   
