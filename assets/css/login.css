@@ -6,6 +6,34 @@ body {
     sans-serif;
   background: #020617;
   color: #e5e7eb;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.55), transparent 60%);
+}
+
+body::after {
+  bottom: -220px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.45), transparent 65%);
 }
 
 /* Centraliza só a área do login, não a navbar/footer */
@@ -18,13 +46,14 @@ body {
 }
 
 .auth-container {
-  background: #020617;
-  border: 1px solid #1f2937;
+  background: rgba(5, 11, 22, 0.9);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   border-radius: 16px;
   padding: 32px;
   max-width: 420px;
   width: 100%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 80px rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(6px);
 }
 
 .auth-title {
@@ -79,7 +108,7 @@ body {
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #1f2937;
-  background: #020617;
+  background: rgba(2, 6, 23, 0.85);
   color: #f9fafb;
   outline: none;
   font-size: 0.95rem;
@@ -154,4 +183,3 @@ body {
 .link-button:hover {
   text-decoration: underline;
 }
-
