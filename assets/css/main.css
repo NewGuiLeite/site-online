@@ -1,14 +1,21 @@
 /* Estilos específicos da área logada (main.html) */
 
-/* Hero da área logada */
-.main-hero {
-    padding-top: 4rem;
-    padding-bottom: 1.5rem;
-    background: radial-gradient(circle at top left, #1d283a 0, #020617 45%, #020617 100%);
+/* Painel compacto */
+.dashboard-summary {
+    background: #020617;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
   }
-  
-  .main-hero .lead {
-    max-width: 520px;
+
+.dashboard-card {
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), rgba(2, 6, 23, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 1.25rem;
+    padding: 2rem 2.25rem;
+    box-shadow: 0 22px 45px rgba(2, 6, 23, 0.85);
+  }
+
+.dashboard-card p {
+    color: #cbd5f5;
   }
   
   /* Grid de atalhos, inspirado no features-grid do index */
@@ -93,23 +100,5 @@
   .notes-dashboard-empty {
     margin-top: 1rem;
     text-align: center;
-  }
-
-  .hero-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .hero-highlights li + li {
-    margin-top: 0.35rem;
-  }
-
-  .hero-card {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 20px 40px rgba(2, 6, 23, 0.85);
   }
   

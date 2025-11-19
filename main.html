@@ -90,42 +90,31 @@
     </div>
   </section>
 
-  <!-- Hero da área logada -->
-  <header class="section main-hero">
+  <!-- Painel compacto -->
+  <section class="section dashboard-summary">
     <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-7">
-          <p class="text-info text-uppercase small fw-semibold mb-2">Painel pessoal</p>
-          <h1 class="display-5 fw-bold mb-3">
-            Tudo o que voce precisa no TPG Online, em um unico lugar
-          </h1>
-          <p class="lead text-muted mb-3">
-            Consulte documentos, descubra dados de empresas, gere utilitarios e cuide das suas notas pessoais sem sair daqui.
-          </p>
-          <ul class="hero-highlights text-muted mb-4">
-            <li>Acesso rapido aos principais servicos do portal</li>
-            <li>Notas sincronizadas e com cores personalizadas</li>
-            <li>Atalhos para consultas, calculadoras e ferramentas extras</li>
-          </ul>
-          <div class="d-flex flex-column flex-sm-row gap-3">
-            <a href="notes.html" class="btn btn-primary">Criar nova nota</a>
-            <a href="#main-tools" class="btn btn-outline-light">Ver atalhos</a>
+      <div class="dashboard-card">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-8">
+            <p class="text-info text-uppercase small fw-semibold mb-2">Painel rápido</p>
+            <h2 class="h3 text-white fw-bold mb-2">Bem-vindo de volta ao TPG Online</h2>
+            <p class="text-muted mb-0">
+              Use os botões ao lado para criar novas notas ou abrir os atalhos mais usados. Tudo fica no mesmo lugar.
+            </p>
           </div>
-        </div>
-        <div class="col-12 col-lg-5">
-          <div class="hero-card">
-            <p class="text-info small text-uppercase mb-1">Dica rapida</p>
-            <p class="text-white mb-2">
-              Clique no seu nome na barra superior a qualquer momento para retornar ao painel.
-            </p>
-            <p class="text-muted mb-0 small">
-              Precisa de algo especifico? Use o menu de atalhos ou acesse o bloco de notas acima.
-            </p>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <div class="d-flex flex-column flex-sm-row flex-lg-column gap-2 justify-content-lg-end">
+              <a href="notes.html" class="btn btn-primary flex-fill">Criar nova nota</a>
+              <a href="#main-tools" class="btn btn-outline-light flex-fill">Ver atalhos</a>
+            </div>
+            <small class="text-muted-2 d-block mt-2 text-lg-end">
+              Dica: clique no seu nome no topo para voltar aqui sempre que quiser.
+            </small>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Grade de atalhos (estilo parecido com o index) -->
   <section id="main-tools" class="section py-5">
