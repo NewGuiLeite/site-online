@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Juros Compostos • TPG Online</title>
+  <meta name="description" content="Simule juros compostos com aporte mensal, veja o valor final, total investido e total de juros de forma simples e rápida.">
+
+ 
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/juros-compostos.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-XZ6RD9SGHR');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W2LG2C7K');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2LG2C7K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- INCLUDES -->
+  <div data-include="/assets/partials/cookie-banner.html"></div>
+  <div data-include="/assets/partials/navbar.html"></div>
+
+  <main class="section">
+    <div class="container container-narrow">
+
+      <h1 class="h3 fw-bold mb-2">Calculadora de Juros Compostos</h1>
+      <p class="text-muted-2 mb-3">
+        Simule o crescimento de um investimento com <strong>juros compostos</strong>,
+        considerando um valor inicial e <strong>aportes mensais</strong>.
+        Veja o valor final, o total investido e quanto disso é juros.
+      </p>
+
+      <div class="card border-0 shadow-sm mb-3">
+        <div class="card-body">
+          <h2 class="h6 fw-semibold mb-2">Como funciona o cálculo</h2>
+          <p class="small mb-1">
+            Fórmula utilizada (com aportes mensais):
+          </p>
+          <p class="small mb-1">
+            <code>VF = P × (1 + i)<sup>n</sup> + PMT × [((1 + i)<sup>n</sup> − 1) ÷ i]</code>
+          </p>
+          <p class="small mb-0 text-muted-2">
+            Onde:
+            P = valor inicial, PMT = aporte mensal, i = taxa ao mês, n = número de meses.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <form id="form-juros" class="row g-3" novalidate>
+        <div class="col-md-6">
+          <label for="valorInicial" class="form-label">Valor inicial (P)</label>
+          <div class="input-group">
+            <span class="input-group-text">R$</span>
+            <input type="number" class="form-control" id="valorInicial" min="0" step="0.01" value="0">
+          </div>
+          <div class="form-text text-muted-2">Pode ser zero, se você for começar apenas com aportes mensais.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="aporteMensal" class="form-label">Aporte mensal (PMT)</label>
+          <div class="input-group">
+            <span class="input-group-text">R$</span>
+            <input type="number" class="form-control" id="aporteMensal" min="0" step="0.01" value="200">
+          </div>
+          <div class="form-text text-muted-2">Valor que será investido todo mês.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="taxa" class="form-label">Taxa de juros (%)</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="taxa" min="0" step="0.01" value="1">
+            <span class="input-group-text">ao mês</span>
+          </div>
+          <div class="form-text text-muted-2">Informe a taxa já na base mensal. Ex: 1% ao mês.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="periodo" class="form-label">Período</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="periodo" min="1" step="1" value="12">
+            <select class="form-select" id="tipoPeriodo">
+              <option value="meses" selected>meses</option>
+              <option value="anos">anos</option>
+            </select>
+          </div>
+          <div class="form-text text-muted-2">Ex: 12 meses ou 5 anos.</div>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btn-lg w-100 mt-2">
+            Calcular
+          </button>
+        </div>
+      </form>
+
+      <!-- Mensagens / erros -->
+      <div id="status-juros" class="mt-3" aria-live="polite"></div>
+
+      <!-- Resultado -->
+      <div id="resultado-juros" class="mt-3 d-none">
+        <div class="card border-0 shadow-sm mb-3">
+          <div class="card-body">
+            <h2 class="h6 fw-semibold mb-2">Resultado da simulação</h2>
+            <p class="mb-2" id="resumoSimulacao" class="small"></p>
+
+            <dl class="row mb-0">
+              <dt class="col-6 col-sm-4">Valor final</dt>
+              <dd class="col-6 col-sm-8" id="valorFinal"></dd>
+
+              <dt class="col-6 col-sm-4">Total investido</dt>
+              <dd class="col-6 col-sm-8" id="totalInvestido"></dd>
+
+              <dt class="col-6 col-sm-4">Total em juros</dt>
+              <dd class="col-6 col-sm-8" id="totalJuros"></dd>
+            </dl>
+          </div>
+        </div>
+
+        <p class="small text-muted-2 mb-0">
+          Esta calculadora é apenas uma <strong>simulação aproximada</strong>, sem considerar impostos,
+          taxas de corretora, inflação, etc.
+        </p>
+      </div>
+         <section class="text-center mt-5">
+        <a href="index.html" class="btn btn-outline-info">Ir para o painel principal</a>
+      </section>
+      
+    </div>
+  </main>
+
+  <!-- Rodapé (include) -->
+  <div data-include="/assets/partials/footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/d...t/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/juros-compostos.js" defer></script>
+  <script src="assets/js/check-session.js" defer></script>
+</body>
+</html>

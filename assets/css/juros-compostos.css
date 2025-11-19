@@ -1,0 +1,64 @@
+/* Estilos específicos para a página de Juros Compostos */
+
+/* Centraliza e limita a largura do conteúdo */
+main.section .container-narrow {
+  max-width: 780px;
+}
+
+/* Espaçamento vertical da seção */
+main.section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Texto auxiliar */
+.text-muted-2 {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Card da explicação da fórmula mais “limpo” */
+main.section .card {
+  border-radius: 1rem;
+}
+
+/* Código da fórmula com leve fundo */
+main.section code {
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+}
+
+/* Resultado da simulação */
+#resultado-juros .card-body dl {
+  margin-bottom: 0;
+}
+
+#resultado-juros dt {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#resultado-juros dd {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* Campo de taxa e período: melhor alinhamento em telas pequenas */
+@media (max-width: 575.98px) {
+  main.section {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+  }
+
+  main.section .container-narrow {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  #resultado-juros dt,
+  #resultado-juros dd {
+    font-size: 0.9rem;
+  }
+}
