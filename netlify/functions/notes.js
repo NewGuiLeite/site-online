@@ -11,7 +11,7 @@ async function ensureNotesTable() {
       user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
       title TEXT NOT NULL,
       content TEXT NOT NULL,
-      color TEXT NOT NULL DEFAULT ${DEFAULT_NOTE_COLOR},
+      color TEXT NOT NULL DEFAULT '#1f2937',
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
@@ -19,7 +19,7 @@ async function ensureNotesTable() {
 
   await sql`
     ALTER TABLE notes
-    ADD COLUMN IF NOT EXISTS color TEXT NOT NULL DEFAULT ${DEFAULT_NOTE_COLOR}
+    ADD COLUMN IF NOT EXISTS color TEXT NOT NULL DEFAULT '#1f2937'
   `;
 }
 
