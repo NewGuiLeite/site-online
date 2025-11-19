@@ -1,24 +1,6 @@
 /* Estilos específicos da área logada (main.html) */
 
-/* Painel compacto */
-.dashboard-summary {
-    background: #020617;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-  }
-
-.dashboard-card {
-    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), rgba(2, 6, 23, 0.95));
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    border-radius: 1.25rem;
-    padding: 2rem 2.25rem;
-    box-shadow: 0 22px 45px rgba(2, 6, 23, 0.85);
-  }
-
-.dashboard-card p {
-    color: #cbd5f5;
-  }
-  
-  /* Grid de atalhos, inspirado no features-grid do index */
+/* Grid de atalhos, inspirado no features-grid do index */
   .main-grid {
     display: grid;
     gap: 1.5rem;

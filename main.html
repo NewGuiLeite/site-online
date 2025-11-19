@@ -60,7 +60,6 @@
             style="display:none;visibility:hidden">
     </iframe>
   </noscript>
-
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- ====== INCLUDES (carregados pelo assets/js/includes.js) ====== -->
@@ -75,38 +74,22 @@
         <div>
           <p class="text-info text-uppercase small fw-semibold mb-1">Notas rápidas</p>
           <h2 class="text-white fw-bold mb-1">Suas notas salvas ficam aqui no topo</h2>
+          <p class="text-muted mb-0 small">
+            Visualize rapidamente tudo o que voce registrou sem sair do painel.
+          </p>
         </div>
         <a href="notes.html" class="btn btn-outline-light btn-sm">Gerenciar notas</a>
       </div>
+      <div class="notes-dashboard">
+        <p class="small text-muted-2 mb-3" data-notes-status></p>
+        <div class="notes-grid" data-notes-list></div>
+        <div class="notes-dashboard-empty text-muted-2 d-none" data-notes-empty>
+          Nenhuma nota encontrada ainda. <a href="notes.html" class="link-info">Crie sua primeira nota</a>.
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Painel compacto -->
-  <section class="section dashboard-summary">
-    <div class="container">
-      <div class="dashboard-card">
-        <div class="row align-items-center g-4">
-          <div class="col-12 col-lg-8">
-            <p class="text-info text-uppercase small fw-semibold mb-2">Painel rápido</p>
-            <h2 class="h3 text-white fw-bold mb-2">Bem-vindo de volta ao TPG Online</h2>
-            <p class="text-muted mb-0">
-              Use os botões ao lado para criar novas notas ou abrir os atalhos mais usados. Tudo fica no mesmo lugar.
-            </p>
-          </div>
-          <div class="col-12 col-lg-4 text-lg-end">
-            <div class="d-flex flex-column flex-sm-row flex-lg-column gap-2 justify-content-lg-end">
-              <a href="notes.html" class="btn btn-primary flex-fill">Criar nova nota</a>
-              <a href="#main-tools" class="btn btn-outline-light flex-fill">Ver atalhos</a>
-            </div>
-            <small class="text-muted-2 d-block mt-2 text-lg-end">
-              Dica: clique no seu nome no topo para voltar aqui sempre que quiser.
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Grade de atalhos (estilo parecido com o index) -->
   <section id="main-tools" class="section py-5">
