@@ -16,6 +16,26 @@ html{scroll-behavior:smooth}
 body{color:var(--text); background:#0b0f14;}
 .container-narrow{max-width:980px;}
 
+html.auth-check-pending body{
+  opacity:0;
+  visibility:hidden;
+}
+
+html.auth-check-complete body{
+  opacity:1;
+  visibility:visible;
+  transition:opacity .2s ease;
+}
+
+[data-include]{
+  opacity:0;
+  transition:opacity .2s ease;
+}
+
+[data-include][data-include-loaded]{
+  opacity:1;
+}
+
 /* Navbar (inline em cada página) */
 .navbar.tpg{
   backdrop-filter: blur(10px);

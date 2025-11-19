@@ -1,16 +1,20 @@
 // assets/js/includes.js
 
+document.documentElement.classList.add('includes-loading');
+
 document.addEventListener('DOMContentLoaded', async () => {
   // carrega parciais marcadas com data-include="caminho/do/arquivo.html"
   const nodes = document.querySelectorAll('[data-include]');
+  let loadedCount = 0;
   for (const el of nodes) {
     const url = el.getAttribute('data-include');
     try {
       const res = await fetch(url, { cache: 'no-cache' });
       if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
       el.innerHTML = await res.text();
+      el.setAttribute('data-include-loaded', 'true');
 
-      // 🔹 NOVO: depois que a parcial entra (navbar/footer/etc),
+      // NOVO: depois que a parcial entra (navbar/footer/etc),
       // atualiza a UI de sessão, se a função existir
       if (window.tpgRefreshSessionUI) {
         window.tpgRefreshSessionUI();
@@ -18,8 +22,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (e) {
       console.error('Include error:', url, e);
       el.innerHTML = `<div class="text-danger small">Erro ao carregar: ${url}</div>`;
+      el.setAttribute('data-include-loaded', 'error');
     }
+
+    loadedCount += 1;
   }
+
+  document.documentElement.classList.remove('includes-loading');
+  document.documentElement.classList.toggle('includes-ready', loadedCount === nodes.length);
 
   // depois que as parciais entram, ajusta o resto
   marcarNavAtiva();

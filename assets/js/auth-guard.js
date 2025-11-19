@@ -1,6 +1,13 @@
 // assets/js/auth-guard.js
 
 (function () {
+  document.documentElement.classList.add('auth-check-pending');
+
+  function finishAuthCheck() {
+    document.documentElement.classList.remove('auth-check-pending');
+    document.documentElement.classList.add('auth-check-complete');
+  }
+
   const path = window.location.pathname.toLowerCase();
 
   // Páginas públicas (não precisam de login)
@@ -18,7 +25,7 @@
 
   const isPublic = publicPages.some((p) => path === p);
 
-  // 👇 Tem que bater com o que o auth.js usa pra salvar o usuário
+  // Tem que bater com o que o auth.js usa pra salvar o usuário
   const userStr = localStorage.getItem('tpg_user');
 
   // Se não estiver logado e a página NÃO for pública → manda pro login
@@ -31,4 +38,6 @@
   if (userStr && path.endsWith('/login.html')) {
     window.location.href = 'main.html';
   }
+
+  finishAuthCheck();
 })();
