@@ -1,0 +1,203 @@
+/* assets/css/recibo-simples.css */
+
+/* Layout geral da página */
+.recibo-container {
+  max-width: 980px;
+}
+
+/* Ajuste de espaçamento da seção */
+.section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Texto auxiliar */
+.text-muted-2 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Card do formulário */
+.recibo-form-card {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 55%),
+    #020617;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+}
+
+/* Inputs menores cabendo bem ao lado do “papel” do recibo */
+.recibo-form .form-control,
+.recibo-form .input-group-text {
+  background-color: #020617;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.recibo-form .form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.55);
+}
+
+.recibo-form .input-group-text {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+/* Botões */
+.recibo-form .btn-primary {
+  border-radius: 999px;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+}
+
+.recibo-form .btn-outline-light {
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* Área de prévia do recibo */
+.recibo-preview-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.recibo-preview-card {
+  width: 100%;
+  background: #020617;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Papel do recibo (região que será impressa) */
+.recibo-preview {
+  background: #f9fafb;
+  color: #111827;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.35rem;
+  min-height: 260px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.92rem;
+}
+
+/* Placeholder inicial */
+.recibo-placeholder {
+  text-align: left;
+}
+
+/* Estilo interno do recibo gerado */
+.recibo-doc-header {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.recibo-doc-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.recibo-doc-header .recibo-numero {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+
+
+
+.recibo-doc-body strong {
+  font-weight: 600;
+}
+
+.recibo-doc-assinaturas {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.recibo-doc-assinaturas .linha-assinatura {
+  border-top: 1px solid #111827;
+  padding-top: 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Rodapé por fora do papel */
+.recibo-rodape {
+  font-size: 0.8rem;
+  padding-inline: 0.25rem;
+}
+
+.recibo-preview {
+  background: #f9fafb;
+  color: #111827;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.35rem;
+  min-height: 260px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.92rem;
+  overflow-x: hidden;        /* <<< impede de “estourar” pros lados */
+}
+
+
+.recibo-doc-body p {
+  margin-bottom: 0.4rem;
+  word-break: break-word;    /* <<< quebra palavras muito grandes */
+}
+
+/* Parágrafo da descrição (vai receber uma classe especial) */
+.recibo-descricao {
+  word-break: break-word;
+  white-space: pre-wrap;     /* <<< respeita ENTERs e também quebra linha automática */
+}
+
+
+/* Responsivo */
+@media (max-width: 991.98px) {
+  .recibo-container {
+    max-width: 100%;
+  }
+
+  .recibo-preview-card {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .recibo-preview {
+    padding: 1rem 1.05rem;
+  }
+}
+
+/* Impressão: só o papel do recibo */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .recibo-preview,
+  .recibo-preview * {
+    visibility: visible;
+  }
+
+  .recibo-preview {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

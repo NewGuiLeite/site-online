@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Recibo Simples para Serviços • TPG Online</title>
+  <meta name="description" content="Gere um recibo simples para serviços, com campos de pagador, recebedor, valor, data e descrição. Imprima ou salve em PDF direto do navegador.">
+  <meta name="robots" content="index,follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tpgonline.com.br/recibo-simples.html">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TPG Online">
+  <meta property="og:title" content="Recibo Simples para Serviços • TPG Online">
+  <meta property="og:description" content="Gere um recibo simples para serviços, com campos de pagador, recebedor, valor, data e descrição. Imprima ou salve em PDF direto do navegador.">
+  <meta property="og:url" content="https://tpgonline.com.br/recibo-simples.html">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/recibo-simples.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-XZ6RD9SGHR');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W2LG2C7K');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2LG2C7K"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- INCLUDES (cookie + navbar) -->
+  <div data-include="/assets/partials/cookie-banner.html"></div>
+  <div data-include="/assets/partials/navbar.html"></div>
+
+  <main class="section">
+    <div class="container container-narrow recibo-container">
+      <header class="mb-4">
+        <p class="text-info text-uppercase small fw-semibold mb-1">Documento simples</p>
+        <h1 class="h3 fw-bold mb-1">Recibo simples para serviços</h1>
+        <p class="text-muted-2 mb-0">
+          Preencha os dados abaixo para gerar um recibo simples. Você poderá
+          <strong>imprimir</strong> ou <strong>salvar em PDF</strong> direto pelo navegador.
+        </p>
+      </header>
+
+      <div class="row g-4">
+        <!-- Formulário -->
+        <div class="col-12 col-lg-5">
+          <div class="card border-0 shadow-sm recibo-form-card">
+            <div class="card-body">
+              <h2 class="h6 fw-semibold mb-3">Dados do recibo</h2>
+
+              <form id="recibo-form" class="recibo-form" novalidate>
+                <div class="mb-3">
+                  <label for="pagador" class="form-label small fw-semibold">Nome de quem paga</label>
+                  <input type="text" id="pagador" class="form-control form-control-sm" placeholder="Nome completo de quem está pagando" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="recebedor" class="form-label small fw-semibold">Nome de quem recebe</label>
+                  <input type="text" id="recebedor" class="form-control form-control-sm" placeholder="Nome completo de quem está recebendo" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="valor" class="form-label small fw-semibold">Valor</label>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-text">R$</span>
+                    <input type="number" id="valor" class="form-control" min="0" step="0.01" placeholder="0,00" required>
+                  </div>
+                  <div class="form-text text-muted-2">
+                    Informe apenas números. O valor será formatado automaticamente.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="data" class="form-label small fw-semibold">Data</label>
+                  <input type="date" id="data" class="form-control form-control-sm" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="descricao" class="form-label small fw-semibold">Descrição do serviço</label>
+                  <textarea id="descricao" rows="3" class="form-control form-control-sm" placeholder="Ex: Serviços de diarista realizados no endereço X, no período de..." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="local" class="form-label small fw-semibold">Cidade / UF (opcional)</label>
+                  <input type="text" id="local" class="form-control form-control-sm" placeholder="Ex: São Paulo/SP">
+                </div>
+
+                <div class="d-grid gap-2 mt-3">
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    Gerar recibo
+                  </button>
+                  <button type="button" id="btn-imprimir" class="btn btn-outline-light btn-sm" disabled>
+                    Imprimir / Salvar em PDF
+                  </button>
+                </div>
+
+                <p class="small text-muted-2 mt-3 mb-0">
+                  <strong>Atenção:</strong> este é um <strong>recibo simples</strong>,
+                  para uso pessoal. <strong>Não substitui nota fiscal ou documento fiscal oficial.</strong>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prévia do recibo -->
+        <div class="col-12 col-lg-7">
+          <div class="recibo-preview-wrapper">
+            <div class="recibo-preview-card">
+              <div id="recibo-preview" class="recibo-preview">
+                <div class="recibo-placeholder text-muted-2">
+                  <p class="mb-1 fw-semibold">Prévia do recibo</p>
+                  <p class="mb-0 small">
+                    Preencha os dados ao lado e clique em <strong>“Gerar recibo”</strong>
+                    para visualizar o documento pronto para impressão.
+                  </p>
+                </div>
+              </div>
+              <p class="recibo-rodape small text-muted-2 mb-0">
+                Recibo simples gerado pelo TPG Online. Este documento não substitui nota fiscal
+                ou qualquer documento fiscal exigido por lei.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+         <section class="text-center mt-5">
+        <a href="index.html" class="btn btn-outline-info">Ir para o painel principal</a>
+      </section>
+      
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <div data-include="/assets/partials/footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/check-session.js" defer></script>
+  <script src="assets/js/recibo-simples.js" defer></script>
+</body>
+</html>
