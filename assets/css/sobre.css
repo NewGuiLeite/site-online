@@ -1,0 +1,120 @@
+/* assets/css/sobre.css */
+
+/* Limita a largura e dá respiro na página Sobre */
+.sobre-section .container-narrow {
+  max-width: 960px;
+}
+
+.sobre-section.section {
+  padding-top: 2.6rem;
+  padding-bottom: 2.8rem;
+}
+
+/* Texto auxiliar */
+.text-muted-2 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Hero */
+.sobre-hero {
+  margin-bottom: 2rem;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #60a5fa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Cards genéricos da página Sobre */
+.sobre-card {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 55%),
+    #020617;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+}
+
+/* Lista dentro dos cards */
+.sobre-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sobre-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.sobre-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.3rem;
+  top: -0.1rem;
+  font-size: 0.8rem;
+  color: #60a5fa;
+}
+
+/* Steps (como linha do tempo) */
+.sobre-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sobre-step {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.9rem 0.8rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.sobre-step-badge {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  background: linear-gradient(135deg, #2563eb, #22d3ee);
+}
+
+/* Card especial de privacidade */
+.sobre-privacy-card {
+  border-left: 3px solid #22c55e;
+}
+
+/* Card de apoio */
+.sobre-support-card {
+  background:
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.22), transparent 55%),
+    #020617;
+  border-radius: 1rem;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+}
+
+/* Responsivo */
+@media (max-width: 575.98px) {
+  .sobre-section.section {
+    padding-top: 2.1rem;
+    padding-bottom: 2.3rem;
+  }
+
+  .sobre-step {
+    padding: 0.8rem 0.7rem;
+  }
+}
