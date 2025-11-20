@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO básico -->
+  <title>Gerador de Anúncios para WhatsApp • TPG Online</title>
+  <meta name="description" content="Gere anúncios prontos para WhatsApp a partir de links de Shopee, Amazon, Mercado Livre e outras lojas no TPG Online. Formatação automática de preço e benefícios.">
+  <meta name="robots" content="index,follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="http://tpgonline.com.br/anuncio-whats.html">
+
+  <!-- Open Graph (para Google / WhatsApp / Facebook entenderem melhor a página) -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TPG Online">
+  <meta property="og:title" content="Gerador de Anúncios para WhatsApp • TPG Online">
+  <meta property="og:description" content="Gere anúncios prontos para WhatsApp a partir de links de Shopee, Amazon, Mercado Livre e outras lojas com benefícios automáticos.">
+  <meta property="og:url" content="http://tpgonline.com.br/anuncio-whats.html">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/gerador-anuncio.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ6RD9SGHR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Config padrão (sem consentimento ainda)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-XZ6RD9SGHR');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W2LG2C7K');</script>
+</head>
+<body>
+
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2LG2C7K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ====== INCLUDES ====== -->
+  <div data-include="/assets/partials/cookie-banner.html"></div>
+  <div data-include="/assets/partials/navbar.html"></div>
+  <!-- ====================== -->
+
+<main class="section">
+  <div class="container container-narrow anuncio-whats">
+    <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+      <div>
+        <h1 class="h3 fw-bold mb-1">Gerador de Anúncio para WhatsApp</h1>
+        <p class="text-muted-2 mb-0">Cole o link do produto, preencha os campos e gere um texto pronto para enviar.</p>
+      </div>
+      <span class="badge rounded-pill text-bg-info text-dark align-self-start">Ferramenta rápida</span>
+    </div>
+
+    <div class="card card-body bg-surface shadow-soft round-xl">
+      <form class="row g-3" onsubmit="event.preventDefault(); gerarAnuncio();">
+        <div class="col-12">
+          <label for="plataforma" class="form-label">Plataforma</label>
+          <select id="plataforma" class="form-select form-select-lg">
+            <option value="shopee">Shopee</option>
+            <option value="amazon">Amazon</option>
+            <option value="mercadolivre">Mercado Livre</option>
+            <option value="magalu">Magalu</option>
+            <option value="aliexpress">AliExpress</option>
+            <option value="shein">Shein</option>
+            <option value="netshoes">Netshoes</option>
+            <option value="dafiti">Dafiti</option>
+            <option value="outro">Outra loja</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <label for="link" class="form-label">Link do produto</label>
+          <input type="url" id="link" class="form-control form-control-lg" placeholder="https://..." required />
+        </div>
+
+        <div class="col-12">
+          <label for="nome" class="form-label">Nome do produto</label>
+          <input type="text" id="nome" class="form-control form-control-lg" placeholder="Ex: Fone Bluetooth TWS XYZ" required />
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="preco" class="form-label">Preço</label>
+          <input type="text" id="preco" class="form-control form-control-lg" placeholder="Digite o preço (ex: 7990 → R$ 79,90)" />
+          <div class="form-text text-muted-2">Digite apenas números; o formato real sai automático.</div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="desconto" class="form-label">Cupom / Desconto (opcional)</label>
+          <input type="text" id="desconto" class="form-control form-control-lg" placeholder="Ex: CUPOM10 ou Frete grátis" />
+        </div>
+
+        <div class="col-12">
+          <label for="beneficios" class="form-label">Benefícios / Destaques (opcional)</label>
+          <textarea id="beneficios" class="form-control" rows="4" placeholder="Separe por linha ou vírgula. Se deixar vazio, geramos sugestões automáticas."></textarea>
+        </div>
+
+        <div class="col-12 col-md-6 d-grid">
+          <button class="btn btn-primary btn-lg" type="submit">Gerar anúncio</button>
+        </div>
+        <div class="col-12 col-md-6 d-grid">
+          <button class="btn btn-outline-light btn-lg" type="button" onclick="copiarTexto()">Copiar texto</button>
+        </div>
+      </form>
+
+      <div class="mt-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+          <label for="saida" class="fw-semibold mb-0">Mensagem gerada</label>
+          <span class="badge rounded-pill text-bg-secondary bg-opacity-50">Pronto para enviar</span>
+        </div>
+        <textarea id="saida" class="form-control anuncio-output" rows="7" readonly placeholder="O anúncio gerado vai aparecer aqui..."></textarea>
+        <p class="form-text text-muted-2 mt-2">Dica: ajuste o texto como quiser antes de copiar e colar no WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="index.html" class="btn btn-outline-info">Ir para o painel principal</a>
+    </div>
+  </div>
+</main>
+
+  <script>
+    const nomesPlataforma = {
+      shopee: 'Shopee',
+      amazon: 'Amazon',
+      mercadolivre: 'Mercado Livre',
+      magalu: 'Magalu',
+      aliexpress: 'AliExpress',
+      shein: 'Shein',
+      netshoes: 'Netshoes',
+      dafiti: 'Dafiti',
+      outro: 'loja online'
+    };
+
+    // Máscara de preço: digita só números e ele vira "R$ 1.234,56"
+    function formatarPreco(event) {
+      let value = event.target.value.replace(/\D/g, ''); // só dígitos
+
+      if (!value) {
+        event.target.value = '';
+        return;
+      }
+
+      if (value.length === 1) {
+        value = '0' + value; // mínimo 2 dígitos para os centavos
+      }
+
+      const inteiro = value.slice(0, -2);
+      const centavos = value.slice(-2);
+
+      const inteiroFormatado = parseInt(inteiro, 10).toLocaleString('pt-BR');
+
+      event.target.value = `R$ ${inteiroFormatado},${centavos}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputPreco = document.getElementById('preco');
+      inputPreco.addEventListener('input', formatarPreco);
+    });
+
+    function gerarAnuncio() {
+      const plataforma = document.getElementById('plataforma').value;
+      const link = document.getElementById('link').value.trim();
+      const nome = document.getElementById('nome').value.trim();
+      const preco = document.getElementById('preco').value.trim();
+      const desconto = document.getElementById('desconto').value.trim();
+      const beneficios = document.getElementById('beneficios').value.trim();
+      const saida = document.getElementById('saida');
+
+      if (!link || !nome) {
+        alert('Preencha pelo menos o LINK e o NOME do produto.');
+        return;
+      }
+
+      const nomePlat = nomesPlataforma[plataforma] || 'loja online';
+
+      let mensagem = `🔥 *Oferta imperdível na ${nomePlat}!* 🔥\n\n`;
+      mensagem += `🛒 *${nome}*\n`;
+
+      if (beneficios) {
+        const linhas = beneficios
+          .split(/[\n,]+/)
+          .map(l => l.trim())
+          .filter(l => l);
+
+        if (linhas.length > 0) {
+          mensagem += `\n✅ Benefícios:\n`;
+          linhas.forEach(l => {
+            mensagem += `• ${l}\n`;
+          });
+        }
+      } else {
+        const beneficiosPadrao = [
+          `Compra segura pela ${nomePlat === 'loja online' ? 'internet' : nomePlat}`,
+          'Ótimo custo-benefício',
+          'Produto selecionado especialmente para você',
+          'Oferta por tempo limitado'
+        ];
+        mensagem += `\n✅ Benefícios:\n`;
+        beneficiosPadrao.forEach(b => {
+          mensagem += `• ${b}\n`;
+        });
+      }
+
+      if (preco) {
+        mensagem += `\n💰 *Preço:* ${preco}\n`;
+      }
+
+      if (desconto) {
+        mensagem += `🎁 *Promoção:* ${desconto}\n`;
+      }
+
+      mensagem += `\n👉 Compre pelo meu link e aproveite:\n${link}\n`;
+      mensagem += `\n📦 Corre antes que acabe!`;
+
+      saida.value = mensagem;
+    }
+
+    function copiarTexto() {
+      const saida = document.getElementById('saida');
+      const texto = saida.value.trim();
+
+      if (!texto) {
+        alert('Nenhum anúncio gerado ainda. Clique em "Gerar anúncio" primeiro.');
+        return;
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto)
+          .then(() => alert('Texto copiado para a área de transferência!'))
+          .catch(() => fallbackCopy(saida));
+      } else {
+        fallbackCopy(saida);
+      }
+    }
+
+    function fallbackCopy(element) {
+      element.select();
+      document.execCommand('copy');
+      alert('Texto copiado para a área de transferência!');
+    }
+  </script>
+
+  <!-- Rodapé (include) -->
+  <div data-include="/assets/partials/footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/check-session.js" defer></script>
+</body>
+</html>

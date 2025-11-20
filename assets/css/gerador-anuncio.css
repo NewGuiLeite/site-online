@@ -1,0 +1,55 @@
+/* Estilos do gerador de anúncio - alinhado ao tema global */
+.anuncio-whats .card{
+  border:1px solid #1f2636;
+  background: var(--surface-2);
+}
+
+.anuncio-whats .form-control,
+.anuncio-whats .form-select,
+.anuncio-whats textarea{
+  background:#0f1624;
+  border-color:#1f2636;
+  color:var(--text);
+}
+
+.anuncio-whats .form-control:focus,
+.anuncio-whats .form-select:focus,
+.anuncio-whats textarea:focus{
+  border-color:#2e8bff;
+  box-shadow:0 0 0 .15rem rgba(46,139,255,.25);
+}
+
+.anuncio-whats .form-control::placeholder,
+.anuncio-whats textarea::placeholder{
+  color:#7f8ba5;
+}
+
+.anuncio-whats .badge{
+  background:rgba(46,139,255,.12);
+  border:1px solid rgba(46,139,255,.5);
+  color:var(--text);
+}
+
+.anuncio-output{
+  min-height:220px;
+  white-space:pre-wrap;
+  line-height:1.5;
+  font-family:"SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+.anuncio-whats .btn-outline-light{
+  border-color:#2a3b5f;
+  color:var(--text);
+  background:transparent;
+}
+
+.anuncio-whats .btn-outline-light:hover{
+  background:rgba(255,255,255,.08);
+  border-color:#2e8bff;
+  color:#fff;
+}
+
+@media (max-width: 576px){
+  .anuncio-output{ min-height:180px; }
+  .anuncio-whats .badge{ width:100%; text-align:center; }
+}
